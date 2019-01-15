@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('posts', 'PostController@show')->name('show');
 
 Route::get('/', function () {
     return view('welcome');

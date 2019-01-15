@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
     /**
@@ -46,7 +46,9 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $posts = $post::latest('fecha_publi')->get(); // orden descendente
+        //dd($posts);
+        return view('welcome',compact('posts'));
     }
 
     /**
