@@ -1,0 +1,848 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"la",
+				"label\t<label> with <input>"
+			],
+			[
+				"b",
+				"bootstrap.min.css\t(layout.blade.php)"
+			],
+			[
+				"sc",
+				"script\tTag"
+			],
+			[
+				"boo",
+				"bootstrap-datepicker.js"
+			],
+			[
+				"date",
+				"datepicker"
+			],
+			[
+				"admin",
+				"adminlte\t(layout.blade.php)"
+			],
+			[
+				"st",
+				"style\t(layout.blade.php)"
+			],
+			[
+				"scrip",
+				"script"
+			],
+			[
+				"form-",
+				"form-control"
+			],
+			[
+				"form",
+				"form-control\t(data.html)"
+			],
+			[
+				"fun",
+				"fun\tfunction …"
+			],
+			[
+				"pos",
+				"post\t(data.html)"
+			],
+			[
+				"fore",
+				"foreach\tblade-foreach"
+			],
+			[
+				"name",
+				"namespace\t(PagesController.php)"
+			],
+			[
+				"ret",
+				"return\t(web.php)"
+			],
+			[
+				"Pag",
+				"PagesController\t(PagesController.php)"
+			],
+			[
+				"Home",
+				"HomeController@index"
+			],
+			[
+				"admn",
+				"adminlte"
+			],
+			[
+				"a",
+				"a\t<a href=\"mailto:\"> "
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"re",
+				"remember"
+			],
+			[
+				"auto",
+				"autofocus\tAttr"
+			],
+			[
+				"vi",
+				"view"
+			],
+			[
+				"post",
+				"posts"
+			],
+			[
+				"belo",
+				"belongsTo"
+			],
+			[
+				"ti",
+				"title\t<title>"
+			],
+			[
+				"Ca",
+				"Categoria\t(Post.php)"
+			],
+			[
+				"pub",
+				"published_at\t(web.php)"
+			],
+			[
+				"exe",
+				"excerpt\t(welcome.blade.php)"
+			],
+			[
+				"cate",
+				"categoria\t(Post.php)"
+			],
+			[
+				"func",
+				"create_function"
+			],
+			[
+				"comp",
+				"compact"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"time",
+				"timestamps"
+			],
+			[
+				"cont",
+				"content\t(contact.blade.php)"
+			],
+			[
+				"for",
+				"foreach\tblade-foreach"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"AC",
+				"action\tAttr"
+			],
+			[
+				"con",
+				"contact"
+			],
+			[
+				"ab",
+				"about"
+			],
+			[
+				"text",
+				"text-decoration\tproperty"
+			],
+			[
+				"Por",
+				"PortfolioController\t(PortfolioController.php)"
+			],
+			[
+				"sect",
+				"section\tTag"
+			],
+			[
+				"com",
+				"compact"
+			],
+			[
+				"secti",
+				"section\t(welcome.blade.php)"
+			],
+			[
+				"au",
+				"auth"
+			],
+			[
+				"no",
+				"notifications\t(app.blade.php)"
+			],
+			[
+				"vie",
+				"view\t(web.php)"
+			],
+			[
+				"view",
+				"viewport\t(app.blade.php)"
+			],
+			[
+				"mes",
+				"message\t(HomeController.php)"
+			],
+			[
+				"me",
+				"message"
+			],
+			[
+				"Me",
+				"MessageSent"
+			],
+			[
+				"NO",
+				"Notifications\t(MessageSent.php)"
+			],
+			[
+				"Messa",
+				"MessageSent\t(MessageSent.php)"
+			],
+			[
+				"rec",
+				"recipient_id"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"sessio",
+				"session_register"
+			],
+			[
+				"pro",
+				"protected\t(User.php)"
+			],
+			[
+				"met",
+				"method\tAttr"
+			],
+			[
+				"sot",
+				"store\t(web.php)"
+			],
+			[
+				"hr",
+				"href\tAttr"
+			],
+			[
+				"se",
+				"section\tTag"
+			],
+			[
+				"Cre",
+				"create"
+			],
+			[
+				"rOU",
+				"Route"
+			],
+			[
+				"mtho",
+				"method_field\t(edit.blade.php)"
+			],
+			[
+				"cs",
+				"csrf_field\t(contacto.blade.php)"
+			],
+			[
+				"sub",
+				"submit\t(contacto.blade.php)"
+			],
+			[
+				"rout",
+				"route"
+			],
+			[
+				"mo",
+				"method\tblade-method"
+			],
+			[
+				"metho",
+				"method"
+			],
+			[
+				"men",
+				"mensaje"
+			],
+			[
+				"bo",
+				"border\tAttr"
+			],
+			[
+				"sto",
+				"store\t(web.php)"
+			],
+			[
+				"ta",
+				"table"
+			],
+			[
+				"inpu",
+				"inputb\tinput - button"
+			],
+			[
+				"pri",
+				"print_r"
+			],
+			[
+				"C",
+				"CreateMessageRequest\t(CreateMessageRequest.php)"
+			],
+			[
+				"va",
+				"validated"
+			],
+			[
+				"cre",
+				"CreateMessageRequest"
+			],
+			[
+				"app",
+				"App"
+			],
+			[
+				"po",
+				"post\t(contacto.blade.php)"
+			],
+			[
+				"ac",
+				"activeMennu"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"he",
+				"header\t<header>"
+			],
+			[
+				"hea",
+				"header\t<header>"
+			],
+			[
+				"ht",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"h",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"html",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"rou",
+				"route\t(welcome.blade.php)"
+			],
+			[
+				"g",
+				"get"
+			],
+			[
+				"e",
+				"echo\techo \"…\""
+			],
+			[
+				"sa",
+				"saludos"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/rbart/Downloads/Zendero-csuicg/index.html",
+			"settings":
+			{
+				"buffer_size": 15633,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/welcome.blade.php",
+			"settings":
+			{
+				"buffer_size": 19023,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"pre",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 164.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/laragon/www/docutec",
+		"/C/laragon/www/docutec/resources",
+		"/C/laragon/www/docutec/resources/views"
+	],
+	"file_history":
+	[
+		"/C/laragon/www/blogvue/resources/views/admin/posts/index.blade.php",
+		"/C/laragon/www/blogvue/resources/views/admin/posts/create.blade.php",
+		"/C/laragon/www/blogvue/app/Providers/AppServiceProvider.php",
+		"/C/laragon/www/blogvue/.gitignore",
+		"/C/laragon/www/blogvue/vendor/laravel/framework/src/Illuminate/Support/Facades/Schema.php",
+		"/C/laragon/www/blogvue/resources/views/admin/layout.blade.php",
+		"/C/laragon/www/blogvue/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/laragon/www/blogvue/vendor/phpunit/php-file-iterator/src/Facade.php",
+		"/C/laragon/www/blogvue/resources/views/admin/dashboard.blade.php",
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/pages/tables/data.html",
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/pages/forms/advanced.html",
+		"/C/laragon/www/blogvue/app/Http/Controllers/Admin/PostsController.php",
+		"/C/laragon/www/blogvue/resources/views/admin/partials/nav.blade.php",
+		"/C/laragon/www/blogvue/app/Http/Controllers/Admin/AdminController.php",
+		"/C/laragon/www/blogvue/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/C/laragon/www/blogvue/app/Http/Controllers/Auth/LoginController.php",
+		"/C/laragon/www/blogvue/routes/web.php",
+		"/C/laragon/www/blogvue/app/Http/Controllers/HomeController.php",
+		"/C/laragon/www/blogvue/resources/views/auth/login.blade.php",
+		"/C/laragon/www/blogvue/config/app.php",
+		"/C/laragon/www/blogvue/.env",
+		"/C/laragon/www/blogvue/resources/views/home.blade.php",
+		"/C/laragon/www/blogvue/app/Http/Controllers/PagesController.php",
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/pages/examples/login.html",
+		"/C/laragon/www/blogvue/app/Post.php",
+		"/C/laragon/www/blogvue/resources/views/welcome.blade.php",
+		"/C/laragon/www/blogvue/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/starter.html",
+		"/C/laragon/www/blogvue/resources/views/layouts/app.blade.php",
+		"/C/laragon/www/blogvue/resources/views/admin/layout.old.blade.php",
+		"/C/laragon/www/blogvue/vendor/symfony/routing/Router.php",
+		"/C/laragon/www/blogvue/config/auth.php",
+		"/C/laragon/www/blogvue/vendor/symfony/routing/Route.php",
+		"/C/Users/rbart/Downloads/AdminLTE-2.4.5/AdminLTE-2.4.5/starter.html",
+		"/C/laragon/www/blogvue/database/migrations/2019_01_09_085509_create_categorias_table.php",
+		"/C/laragon/www/blogvue/database/migrations/2019_01_08_185418_create_posts_table.php",
+		"/C/laragon/www/blogvue/database/migrations/2019_01_09_112931_create_etiqueta_post_table.php",
+		"/C/laragon/www/blogvue/database/seeds/PostsTableSeeder.php",
+		"/C/laragon/www/blogvue/database/migrations/2019_01_09_112351_create_etiquetas_table.php",
+		"/C/laragon/www/blogvue/database/seeds/DatabaseSeeder.php",
+		"/C/laragon/www/blogvue/resources/views/layout.blade.php",
+		"/C/laragon/www/app/resources/views/contact.blade.php",
+		"/C/laragon/www/app/app/Http/Controllers/MensajesController.php",
+		"/C/laragon/www/app/routes/web.php",
+		"/C/laragon/www/app/resources/views/layout.blade.php",
+		"/C/laragon/www/app/resources/views/about.blade.php",
+		"/C/laragon/www/app/resources/views/partials/nav.blade.php",
+		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Http/Request.php",
+		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+		"/C/laragon/www/app/app/Http/Controllers/PortfolioController.php",
+		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/C/laragon/www/app/app/helpers.php",
+		"/C/laragon/www/app/composer.json",
+		"/C/laragon/www/app/app/Providers/AppServiceProvider.php",
+		"/C/laragon/www/app/resources/views/home.blade.php",
+		"/C/laragon/www/app/resources/views/portfolio.blade.php",
+		"/C/laragon/www/notifications/resources/sass/app.scss",
+		"/C/laragon/www/notifications/app/User.php",
+		"/C/laragon/www/notifications/vendor/mockery/mockery/tests/Mockery/Fixtures/SemiReservedWordsAsMethods.php",
+		"/C/wamp64/www/appdoc/application/controllers/Documentos.php",
+		"/C/laragon/www/notifications/app/Notifications/MessageSent.php",
+		"/C/laragon/www/notifications/app/Http/Controllers/HomeController.php",
+		"/C/wamp64/www/quilates/.gitignore",
+		"/C/laragon/www/notifications/app/Http/Controllers/NotificationsController.php",
+		"/C/laragon/www/notifications/routes/web.php",
+		"/C/laragon/www/notifications/resources/views/resources/views/notifications/index.blade.php",
+		"/C/laragon/www/notifications/resources/views/home.blade.php",
+		"/C/laragon/www/notifications/resources/views/welcome.blade.php",
+		"/C/laragon/www/notifications/resources/views/layouts/app.blade.php",
+		"/C/laragon/www/notifications/app/Providers/AppServiceProvider.php",
+		"/C/laragon/www/notifications/app/Message.php",
+		"/C/laragon/www/notifications/database/migrations/2018_12_28_122720_create_messages_table.php",
+		"/C/laragon/www/notifications/.env",
+		"/C/laragon/www/blog/app/Http/Controllers/PagesController.php",
+		"/C/laragon/www/blog/resources/views/messages/show.blade.php",
+		"/C/laragon/www/blog/resources/views/messages/edit.blade.php",
+		"/C/laragon/www/blog/resources/views/messages/index.blade.php",
+		"/C/laragon/www/blog/app/Http/Controllers/MessagesController.php",
+		"/C/laragon/www/blog/resources/views/messages/create.blade.php",
+		"/C/laragon/www/blog/app/Message.php",
+		"/C/laragon/www/blog/routes/web.php",
+		"/C/laragon/www/blog/resources/views/layout.blade.php",
+		"/C/laragon/www/blog/resources/views/contacto.blade.php",
+		"/C/laragon/www/blog/resources/views/errors/404.blade.php",
+		"/C/laragon/www/blog/app/Http/Requests/CreateMessageRequest.php",
+		"/C/laragon/www/blog/app/Http/Middleware/VerifyCsrfToken.php",
+		"/C/laragon/www/blog/.env",
+		"/C/laragon/www/blog/database/migrations/2018_12_20_115356_create_messages_table.php",
+		"/C/laragon/www/blog/database/migrations/2018_12_20_120126_add_phone_to_messages_table.php",
+		"/C/laragon/www/blog/app/Http/Requests/MessageRequest.php",
+		"/C/laragon/www/blog/app/Http/Requests/CreateMessageRequest2.php",
+		"/C/laragon/www/blog/resources/views/welcome.blade.php",
+		"/C/laragon/www/blog/resources/views/saludo.blade.php",
+		"/C/laragon/www/blog/config/app.php",
+		"/C/laragon/www/blog/resources/lang/es/validation.php",
+		"/C/laragon/www/blog/resources/lang/es/auth.php",
+		"/C/laragon/www/blog/resources/lang/es/passwords.php",
+		"/C/laragon/www/blog/resources/lang/es/pagination.php",
+		"/C/laragon/www/blog/app/Http/Controllers/PageController.php",
+		"/C/laragon/www/blog/resources/views/home.blade.php",
+		"/C/laragon/www/blog/resources/views/contacto.php",
+		"/C/laragon/www/blog/resources/views/home.php",
+		"/C/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/C/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php",
+		"/C/wamp64/www/laravel/blogbluuweb/routes/web.php",
+		"/C/wamp64/www/fisiolan/js/webcam/webcam.js",
+		"/C/wamp64/www/fisiolan/application/views/main.php",
+		"/C/wamp64/www/fisiolan/fsl.sublime-project",
+		"/C/wamp64/www/fisiolan/application/views/pacientes/frmwebcam2.php",
+		"/C/wamp64/www/fisiolan/application/controllers/Pacientes.php",
+		"/C/wamp64/www/fisiolan/application/views/pacientes/frmwebcam3.php",
+		"/C/Users/rbart/Documents/aa.html",
+		"/C/Users/rbart/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/rbart/Documents/aa.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"datepi",
+			"example1",
+			"alexander",
+			"../../dist",
+			"has-erro",
+			"form",
+			"=\"dist",
+			"=\"bootstrap",
+			"=\"dist",
+			"=\"bootstrap",
+			"showloginform",
+			"funciton auth",
+			"auth",
+			"src=\"dist/",
+			"img",
+			"=\"dist",
+			"=\"bower_components/"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/rbart/Downloads/Zendero-csuicg/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								15633
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/welcome.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17753,
+								17753
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9316.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 73.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "",
+	"project": "docutec.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"facade",
+				"vendor\\phpunit\\php-file-iterator\\src\\Facade.php"
+			],
+			[
+				"nav.php",
+				"resources\\views\\admin\\partials\\nav.blade.php"
+			],
+			[
+				"home",
+				"app\\Http\\Controllers\\HomeController.php"
+			],
+			[
+				"postsco",
+				"app\\Http\\Controllers\\Admin\\PostsController.php"
+			],
+			[
+				"router.php",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php"
+			],
+			[
+				"auth",
+				"config\\auth.php"
+			],
+			[
+				"router",
+				"vendor\\symfony\\routing\\Router.php"
+			],
+			[
+				"rou",
+				"vendor\\symfony\\routing\\Route.php"
+			],
+			[
+				"mensa",
+				"app\\Http\\Controllers\\MensajesController.php"
+			],
+			[
+				"noti",
+				"app\\Http\\Controllers\\NotificationsController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
