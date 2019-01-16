@@ -19,7 +19,7 @@ class PostsTableSeeder extends Seeder
     {
 
     	Post::truncate();
-    	//Categoria::truncate();
+    	Categoria::truncate();
 
  		$faker = Faker::create();
 
@@ -30,15 +30,15 @@ class PostsTableSeeder extends Seeder
 	        $post->extracto = $faker->sentence();
 	        $post->cuerpo = $faker->paragraph();
 	        $post->fecha_publi = $faker->dateTime();
-	      //  $post->categoria_id = $faker->randomDigitNotNull();
+	        $post->categoria_id = $faker->randomDigitNotNull();
 	        $post->save();
 	    }
 
-	    // for ($i=1; $i <= 10; $i++) { 
-	    // 	$categoria = new Categoria;
-	    // 	$categoria->nombre = "Categoria ".$i;
-	    // 	$categoria->save();
-	    // }
+	    for ($i=1; $i <= 10; $i++) { 
+	    	$categoria = new Categoria;
+	    	$categoria->nombre = "Categoria ".$i;
+	    	$categoria->save();
+	    }
 
 			// DB::table('posts')->insert([
 		 //            'title' => $faker->sentence(),
