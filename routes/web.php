@@ -14,6 +14,7 @@ Route::group([
 		//esto es igual a lo de abajo, al meterlo aquí se entraría con admin/admin y no
 		Route::get('/', 'AdminController@index')->name('admin');
 		Route::get('posts', 'PostController@index')->name('admin.posts.index');	
+		Route::get('posts/create', 'PostController@create')->name('admin.posts.create');	
 
 		//resto rutas admin
 });
