@@ -1,11 +1,20 @@
 <?php
 
-Route::get('posts', 'PostController@show')->name('show');
+//Route::get('posts', 'PostController@show')->name('show');
 
-Route::get('/', function () {
-	return 'home, ruta inicio en routes/web';
-    //return view('welcome');
+Route::get('/', 'PagesController@home');
+Route::get('home', 'HomeController@index')->name('admin');
+
+Route::group([
+		'prefix' => 'admin',
+		'namespace' => 'Admin', 
+		'middleware' => 'auth'], 
+	function (){
+		Route::get('posts', 'PostController@index');	
+		//resto rutas admin
 });
-Route::get('home', 'HomeController@index'});
+
 
 Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
