@@ -6,8 +6,8 @@ Route::get('/', function () {
 	return 'home, ruta inicio en routes/web';
     //return view('welcome');
 });
-Route::get('admin', function(){
+Route::get('home', function(){
 	return view('admin.dashboard');
-});
+})->middleware('auth');
 
 Auth::routes(['register' => false]);
