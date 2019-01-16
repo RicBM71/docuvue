@@ -15,6 +15,7 @@ Route::group([
 		Route::get('/', 'AdminController@index')->name('admin');
 		Route::get('posts', 'PostController@index')->name('admin.posts.index');	
 		Route::get('posts/create', 'PostController@create')->name('admin.posts.create');	
+		Route::post('posts/store', 'PostController@store')->name('admin.posts.store');	
 
 		//resto rutas admin
 });

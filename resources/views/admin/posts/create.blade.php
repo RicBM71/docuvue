@@ -12,17 +12,27 @@
 @stop
 @section('contenido')
 	<div class="row">
-		<form action="create_submit" method="get" accept-charset="utf-8">
+		<form action="{{ route('admin.posts.store') }}" method="POST">
+			@csrf
 			<div class="col-md-8">			
 			 	<div class="box box-primary">		        
 			        	<div class="box-body">
-			        		<div class="form-group">
+			        		<div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
 			        			<label>Título</label>
-			        			<input type="text" class="form-control" name="titulo" placeholder="título">
+			        			<input type="text" class="form-control" 
+			        					name="titulo" 
+			        					placeholder="título"
+			        					value = {{ old('titulo') }}>
+			        			{!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
+			        			
 			        		</div>
-			        		<div class="form-group">
+			        		<div class="form-group {{ $errors->has('cuerpo') ? 'has-error' : '' }}">
 			        			<label>Contenido</label>
-			        			<textarea id="editor" rows="10" class="form-control" name="cuerpo" placeholder="Body del post"></textarea>
+			        			<textarea id="editor" 
+			        					rows="10" class="form-control" 
+			        					name="cuerpo" 
+			        					placeholder="Body del post">{{ old('cuerpo') }}</textarea>
+			        			{!! $errors->first('cuerpo', '<span class="help-block">:message</span>') !!}
 			        		</div>
 			        	</div>		        
 			   	</div>
@@ -36,32 +46,43 @@
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
 			                  </div>
-			                  <input name="fecha-publi" type="text" class="form-control pull-right" id="datepicker">
+			                  <input name="fecha-publi" 
+			                  	type="text" 
+			                  	class="form-control pull-right" 
+			                  	id="datepicker"
+			                  	value = "{{ old('fecha-publi') }}">
 			            </div>
-   		        		<div class="form-group">
+   		        		<div class="form-group {{ $errors->has('categoria') ? 'has-error' : '' }}">
 		        			<label>Categorías</label>
 		        			<select name="categoria" class="form-control">
 		        				<option value="">Selecciona</option>	
 		        				@foreach ($categorias as $categoria)
-		        					<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>	
+		        					<option value="{{ $categoria->id }}"
+		        							{{ old('categoria') == $categoria->id ? 'selected' : '' }}
+		        							>{{ $categoria->nombre }}</option>	
 		        				@endforeach
-		        			</select>	        				
+		        			</select>	   
+		        			{!! $errors->first('categoria', '<span class="help-block">:message</span>') !!}     				
 	        			</div>
-	        			<div class="form-group">
+	        			<div class="form-group {{ $errors->has('etiquetas') ? 'has-error' : '' }}">
 	        				<label>Etiquetas</label>	        				
-                				<select class="form-control select2" 
+                				<select name="etiquetas[]" class="form-control select2"                 					
                 					multiple="multiple"
                 					data-placeholder="Seleciona etiquetas"
                 					style="width: 100%;">
                 					@foreach ($etiquetas as $etiqueta)
-                						<option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                						<option {{ collect(old('etiquetas'))->contains($etiqueta->id) ? 'selected' : '' }} value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
                 					@endforeach                  					
                   				</select>
+                  				{!! $errors->first('etiquetas', '<span class="help-block">:message</span>') !!}   
 	        				</div>
 
-   		        		<div class="form-group">
+   		        		<div class="form-group {{ $errors->has('extracto') ? 'has-error' : '' }}">
 		        			<label>Extracto</label>
-		        			<textarea class="form-control" name="extracto" placeholder="Extracto del post"></textarea>
+		        			<textarea class="form-control" 
+		        					name="extracto"
+		        					placeholder="Extracto del post">{{ old('extracto') }}</textarea>
+		        			{!! $errors->first('extracto', '<span class="help-block">:message</span>') !!}   
 	        			</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-block">Guardar</button>
