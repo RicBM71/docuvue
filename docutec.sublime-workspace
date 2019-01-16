@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"et",
+				"etiqueta\t(welcome.blade.php)"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"un",
+				"unsignedInteger\t(2019_01_15_183101_create_posts_table.php)"
+			],
+			[
+				"class",
+				"class"
+			],
+			[
+				"cater",
+				"categoria\t(PostsTableSeeder.php)"
+			],
+			[
 				"nul",
 				"nullable\t(2014_10_12_000000_create_users_table.php)"
 			],
@@ -74,10 +94,6 @@
 			[
 				"name",
 				"namespace\t(PagesController.php)"
-			],
-			[
-				"ret",
-				"return\t(web.php)"
 			],
 			[
 				"Pag",
@@ -404,7 +420,7 @@
 			"file": "app/Post.php",
 			"settings":
 			{
-				"buffer_size": 132,
+				"buffer_size": 463,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -413,7 +429,34 @@
 			"file": "resources/views/welcome.blade.php",
 			"settings":
 			{
-				"buffer_size": 15750,
+				"buffer_size": 15843,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/admin/layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 15416,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 68,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "database/migrations/2019_01_16_094717_create_etiqueta_post_table.php",
+			"settings":
+			{
+				"buffer_size": 721,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -422,16 +465,16 @@
 			"file": "database/seeds/PostsTableSeeder.php",
 			"settings":
 			{
-				"buffer_size": 1152,
+				"buffer_size": 1337,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "database/migrations/2019_01_15_193853_create_categorias_table.php",
+			"file": "database/migrations/2019_01_15_183101_create_posts_table.php",
 			"settings":
 			{
-				"buffer_size": 639,
+				"buffer_size": 815,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -440,7 +483,7 @@
 			"file": "routes/web.php",
 			"settings":
 			{
-				"buffer_size": 511,
+				"buffer_size": 556,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -528,13 +571,16 @@
 	"expanded_folders":
 	[
 		"/C/laragon/www/docutec",
-		"/C/laragon/www/docutec/app",
-		"/C/laragon/www/docutec/database",
-		"/C/laragon/www/docutec/database/migrations",
-		"/C/laragon/www/docutec/database/seeds"
+		"/C/laragon/www/docutec/resources",
+		"/C/laragon/www/docutec/resources/views",
+		"/C/laragon/www/docutec/resources/views/admin"
 	],
 	"file_history":
 	[
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/starter.html",
+		"/C/laragon/www/docutec/app/Etiqueta.php",
+		"/C/laragon/www/docutec/database/migrations/2019_01_16_094200_create_etiquetas_table.php",
+		"/C/laragon/www/docutec/database/migrations/2019_01_15_193853_create_categorias_table.php",
 		"/C/Users/rbart/Downloads/Zendero-csuicg/index.html",
 		"/C/laragon/www/docutec/resources/views/welcome.blade.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/PostController.php",
@@ -575,7 +621,6 @@
 		"/C/laragon/www/blogvue/app/Post.php",
 		"/C/laragon/www/blogvue/resources/views/welcome.blade.php",
 		"/C/laragon/www/blogvue/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/starter.html",
 		"/C/laragon/www/blogvue/resources/views/layouts/app.blade.php",
 		"/C/laragon/www/blogvue/resources/views/admin/layout.old.blade.php",
 		"/C/laragon/www/blogvue/vendor/symfony/routing/Router.php",
@@ -659,12 +704,11 @@
 		"/C/wamp64/www/fisiolan/application/controllers/Pacientes.php",
 		"/C/wamp64/www/fisiolan/application/views/pacientes/frmwebcam3.php",
 		"/C/Users/rbart/Documents/aa.html",
-		"/C/Users/rbart/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
-		"/C/Users/rbart/Documents/aa.php"
+		"/C/Users/rbart/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings"
 	],
 	"find":
 	{
-		"height": 73.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -678,6 +722,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\"dist/",
+			"=\"bootstrap",
 			"datepi",
 			"example1",
 			"alexander",
@@ -742,7 +788,7 @@
 						"translation.y": 1092.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -751,15 +797,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 132,
+						"buffer_size": 463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								113,
-								113
+								395,
+								395
 							]
 						],
 						"settings":
@@ -767,7 +813,7 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 113.0,
+						"translation.y": 71.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -779,15 +825,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15750,
+						"buffer_size": 15843,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								396,
-								396
+								1237,
+								1237
 							]
 						],
 						"settings":
@@ -797,7 +843,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 168.0,
+						"translation.y": 336.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -805,27 +851,30 @@
 				},
 				{
 					"buffer": 3,
-					"file": "database/seeds/PostsTableSeeder.php",
+					"file": "resources/views/admin/layout.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1152,
+						"buffer_size": 15416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								297,
-								297
+								11802,
+								11802
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"open_with_edit": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 504.0,
+						"translation.y": 8056.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -833,26 +882,25 @@
 				},
 				{
 					"buffer": 4,
-					"file": "database/migrations/2019_01_15_193853_create_categorias_table.php",
+					"file": "resources/views/admin/dashboard.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 639,
+						"buffer_size": 68,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								423,
-								423
+								62,
+								62
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"open_with_edit": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -863,19 +911,49 @@
 				},
 				{
 					"buffer": 5,
-					"file": "routes/web.php",
+					"file": "database/migrations/2019_01_16_094717_create_etiqueta_post_table.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 511,
+						"buffer_size": 721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								390,
-								390
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "database/seeds/PostsTableSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								7
 							]
 						],
 						"settings":
@@ -887,6 +965,64 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "database/migrations/2019_01_15_183101_create_posts_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								550,
+								550
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 556,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1005,12 +1141,12 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -1032,7 +1168,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 270.0,
 	"status_bar_visible": true,
 	"template_settings":
