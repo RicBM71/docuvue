@@ -45,7 +45,7 @@
         @if($errors->has('username'))
           <span class="help-block"><strong>{{ $errors->first('username') }}</strong>
         @endif
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }} has-feedback">
         <input type="password" name="password" class="form-control" placeholder="Password" value="{{ old('email') }}">
