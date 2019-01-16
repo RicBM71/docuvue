@@ -13,4 +13,10 @@ class Post extends Model
     {
     	return $this->belongsTo(Categoria::class);
     }
+
+    // establecemos la relación muchos a muchos
+    public function etiquetas()
+    {
+    	return $this->belongsToMany(Etiqueta::class);
+    }
 }

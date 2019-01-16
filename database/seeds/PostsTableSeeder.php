@@ -1,7 +1,7 @@
 <?php
 
-
 use App\Categoria;
+use App\Etiqueta;
 use App\Post;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
@@ -20,6 +20,7 @@ class PostsTableSeeder extends Seeder
 
     	Post::truncate();
     	Categoria::truncate();
+    	Etiqueta::truncate();
 
  		$faker = Faker::create();
 
@@ -39,6 +40,13 @@ class PostsTableSeeder extends Seeder
 	    	$categoria->nombre = "Categoria ".$i;
 	    	$categoria->save();
 	    }
+
+	    for ($i=1; $i <= 10; $i++) { 
+	    	$etiqueta = new Etiqueta;
+	    	$etiqueta->nombre = "Etiqueta ".$i;
+	    	$etiqueta->save();
+	    }
+
 
 			// DB::table('posts')->insert([
 		 //            'title' => $faker->sentence(),
