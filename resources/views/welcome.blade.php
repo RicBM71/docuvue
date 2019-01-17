@@ -2,8 +2,13 @@
 
 @section('contenido')
     <section class="posts container">
+
         @foreach ($posts as $post)
-            <article class="post no-image">
+            <article class="post">
+                <h1>{{ $post->fotos->count() }}</h1>
+                @if ($post->fotos->count()===1)
+                     <figure><img src="{{ $post->fotos->first()->url }}" alt="" class="img-responsive"></figure>
+                @endif
                 <div class="content-post">
                     <header class="container-flex space-between">
                         <div class="date">
