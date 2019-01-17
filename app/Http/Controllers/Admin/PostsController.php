@@ -17,16 +17,40 @@ class PostsController extends Controller
     	return view('admin.posts.index',compact('posts'));
     }
 
-    public function create()
-    {
+    // public function create()
+    // {
 
-    	$categorias = Categoria::all();
-        $etiquetas = Etiqueta::all();
+    // 	$categorias = Categoria::all();
+    //     $etiquetas = Etiqueta::all();
 
-    	return view('admin.posts.create',compact('categorias','etiquetas'));
+    // 	return view('admin.posts.create',compact('categorias','etiquetas'));
+    // }
+
+     public function store(Request $request)
+     {
+         $this->validate($request, [
+             'titulo'    => 'required',
+         ]);
+
+         $post = Post::create(['titulo' =>  $request->get('titulo')]);
+
+         return redirect()->route('admin.posts.edit', compact('post'));
+    
     }
 
-    public function store(Request $request)
+    //public function edit($post) cambiando a public function edit(Post $post)
+    // busca el post automáticamente con model biding
+
+    public function edit(Post $post)
+    {
+        $categorias = Categoria::all();
+        $etiquetas = Etiqueta::all();
+
+        return view('admin.posts.edit',compact('categorias','etiquetas','post'));
+        
+    }
+
+    public function update(Post $post, Request $request)
     {
         $this->validate($request, [
             'titulo'    => 'required',
@@ -36,20 +60,51 @@ class PostsController extends Controller
             'etiquetas'    => 'required'
         ]);
 
-        //return Post::create($request->all());
-
-        $post = new Post;
-
         $post->titulo = $request->get('titulo');
         $post->cuerpo = $request->get('cuerpo');
         $post->extracto = $request->get('extracto');
         $post->categoria_id = $request->get('categoria');
-        $post->fecha_publi = $request->has('fecha_publi')  ? Carbon::parse($request->get('fecha_publi')) : null;
+
+        //dd(Carbon::createFromFormat('d/m/Y', '30/06/1990'));
+
+       // $fecha Carbon::createFromFormat('d/m/Y', $request->get('fecha_publi'));
+
+        //$post->fecha_publi = $request->has('fecha_publi')  ? Carbon::parse($request->get('fecha_publi')) : null;
+        $post->fecha_publi = $request->has('fecha_publi')  ?Carbon::createFromFormat('d/m/Y', $request->get('fecha_publi')) : null;
 
         $post->save();
 
-        $post->etiquetas()->attach($request->get('etiquetas'));
+        //$post->etiquetas()->attach($request->get('etiquetas'));
+        // con esto no duplica al editar
+        $post->etiquetas()->sync($request->get('etiquetas'));
 
         return back()->with('flash','Post guardado');
     }
+
+    // public function store(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'titulo'    => 'required',
+    //         'cuerpo'    => 'required',
+    //         'categoria'    => 'required',
+    //         'extracto'    => 'required',
+    //         'etiquetas'    => 'required'
+    //     ]);
+
+    //     //return Post::create($request->all());
+
+    //     $post = new Post;
+
+    //     $post->titulo = $request->get('titulo');
+    //     $post->cuerpo = $request->get('cuerpo');
+    //     $post->extracto = $request->get('extracto');
+    //     $post->categoria_id = $request->get('categoria');
+    //     $post->fecha_publi = $request->has('fecha_publi')  ? Carbon::parse($request->get('fecha_publi')) : null;
+
+    //     $post->save();
+
+    //     $post->etiquetas()->attach($request->get('etiquetas'));
+
+    //     return back()->with('flash','Post guardado');
+    // }
 }

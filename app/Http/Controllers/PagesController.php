@@ -13,6 +13,7 @@ class PagesController extends Controller
     {
     	
     	$posts = Post::publicados()->get();
+    	//$posts = Post::all();
         //dd($posts);
         return view('welcome',compact('posts'));
     }

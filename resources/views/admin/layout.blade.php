@@ -381,5 +381,6 @@ desired effect
 @stack('scripts')
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
+@include('admin.posts.create')
 </body>
 </html>

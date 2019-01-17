@@ -17,7 +17,7 @@ class CreateEtiquetaPostTable extends Migration
             $table->increments('id');            
             $table->unsignedInteger('post_id');
             $table->unsignedInteger('etiqueta_id');
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
