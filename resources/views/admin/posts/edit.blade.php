@@ -43,15 +43,16 @@
 	        			<div class="form-group">
 			                <label>Fecha</label>
 			                <div class="input-group date">
-			                  <div class="input-group-addon">
-			                    <i class="fa fa-calendar"></i>
-			                  </div>
-			                  <input name="fecha_publi" 
-			                  	type="text" 
-			                  	class="form-control pull-right" 
-			                  	id="datepicker"
-			                  	value = "{{ old('fecha_publi', $post->fecha_publi ? $post->fecha_publi->format('d/m/Y') : '') }}">
-			            </div>
+				                  <div class="input-group-addon">
+				                    <i class="fa fa-calendar"></i>
+				                  </div>
+				                  <input name="fecha_publi" 
+				                  	type="text" 
+				                  	class="form-control pull-right" 
+				                  	id="datepicker"
+				                  	value = "{{ old('fecha_publi', $post->fecha_publi ? $post->fecha_publi->format('d/m/Y') : '') }}">
+			           		</div>
+			           	</div>
    		        		<div class="form-group {{ $errors->has('categoria') ? 'has-error' : '' }}">
 		        			<label>Categorías</label>
 		        			<select name="categoria" class="form-control">
@@ -75,7 +76,7 @@
                 					@endforeach                  					
                   				</select>
                   				{!! $errors->first('etiquetas', '<span class="help-block">:message</span>') !!}   
-	        				</div>
+	        			</div>
 
    		        		<div class="form-group {{ $errors->has('extracto') ? 'has-error' : '' }}">
 		        			<label>Extracto</label>
@@ -84,15 +85,21 @@
 		        					placeholder="Extracto del post">{{ old('extracto', $post->extracto) }}</textarea>
 		        			{!! $errors->first('extracto', '<span class="help-block">:message</span>') !!}   
 	        			</div>
+	        			<div class="form-group">
+	        				<div class="dropzone">
+	        					
+	        				</div>
+	        			</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-block">Guardar</button>
 						</div>
 	        		</div>
-			 	</div>
-
+				</div>
 			</div>
 		</form>
 	</div>
+	
+
 
 @stop
 
@@ -101,6 +108,7 @@
   <link rel="stylesheet" href="/adminlte/plugins/datepicker/datepicker3.css">
   	<!-- Select2 -->
   <link rel="stylesheet" href="/adminlte/plugins/select2/select2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
 @endpush
 
 @push('scripts')
@@ -110,6 +118,7 @@
 	<script src="/adminlte/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
 	<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
 	<script src="/adminlte/plugins/select2/select2.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 	
 	<script>
 		//Date picker
@@ -122,6 +131,15 @@
 	    CKEDITOR.replace('editor');
 
 	    $('.select2').select2();
+
+	    new Dropzone('.dropzone', {
+	    	url: '/admin/posts/{{ $post->id }}/photos', 
+	    	headers: {
+	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
+	    	},
+	    	dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
+	    });
+	    Dropzone.autoDiscover = false;
 	</script>
 @endpush
 

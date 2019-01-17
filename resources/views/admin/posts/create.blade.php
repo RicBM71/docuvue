@@ -15,7 +15,8 @@
 						<input type="text" class="form-control" 
 						name="titulo" 
 						placeholder="título"
-						value = {{ old('titulo') }}>
+						required="required" 
+						value = "{{ old('titulo') }}">
 						{!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
 
 					</div>
