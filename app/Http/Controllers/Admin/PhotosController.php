@@ -8,8 +8,12 @@ use App\Http\Controllers\Controller;
 
 class PhotosController extends Controller
 {
-    public function store()    
+    public function store(Post $post)    
     {
-    	return 'procesando';
+    	$this->validate(request(),[
+    		'foto' => 'required|image|max:2048'	//jpeg png, gif, svg
+    	]);
+
+    	$foto = request()->file('foto');
     }
 }

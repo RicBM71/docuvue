@@ -132,13 +132,25 @@
 
 	    $('.select2').select2();
 
-	    new Dropzone('.dropzone', {
+	    var myDropzone = new Dropzone('.dropzone', {
 	    	url: '/admin/posts/{{ $post->id }}/photos', 
+	    	acceptedFiles: 'image/*',
+	    	maxFilesize: 2,
+	    	maxFiles: 10,
+	    	paramName: 'foto',
 	    	headers: {
 	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
 	    	},
 	    	dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
 	    });
+
+	    myDropzone.on('error', function(file, res){
+	    	//console.log(res.errors.foto[0]);
+	    	var msg = res.errors.foto[0];
+	    	$('.dz-error-message:last > span').text(msg)
+
+	    });
+
 	    Dropzone.autoDiscover = false;
 	</script>
 @endpush
