@@ -36,4 +36,9 @@ class Post extends Model
                     ->latest('fecha_publi'); 
 
     }
+    // creamos la relación uno a muchos, un post tendrá una o varias fotos
+    public function fotos()
+    {
+        return $this->hasMany(Photo::class);
+    }
 }
