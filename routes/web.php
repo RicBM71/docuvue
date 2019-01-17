@@ -3,6 +3,7 @@
 //Route::get('posts', 'PostController@show')->name('show');
 
 Route::get('/', 'PagesController@home');
+Route::get('blog/{id}', 'PostsController@show');
 
 
 Route::group([
@@ -13,9 +14,9 @@ Route::group([
 		//Route::get('admin', 'AdminController@index')->name('admin');
 		//esto es igual a lo de abajo, al meterlo aquí se entraría con admin/admin y no
 		Route::get('/', 'AdminController@index')->name('admin');
-		Route::get('posts', 'PostController@index')->name('admin.posts.index');	
-		Route::get('posts/create', 'PostController@create')->name('admin.posts.create');	
-		Route::post('posts/store', 'PostController@store')->name('admin.posts.store');	
+		Route::get('posts', 'PostsController@index')->name('admin.posts.index');	
+		Route::get('posts/create', 'PostsController@create')->name('admin.posts.create');	
+		Route::post('posts/store', 'PostsController@store')->name('admin.posts.store');	
 
 		//resto rutas admin
 });
