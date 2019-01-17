@@ -15,5 +15,11 @@ class PhotosController extends Controller
     	]);
 
     	$foto = request()->file('foto');
+
+    	//foto laravel lo convierte en un instancia de la clase uploadedfiles
+    	// por lo que tenemos varios métodos, store
+    	// guarda la imagen en storage/public
+    	$fotoUrl = $foto->store('public/fotos');
+
     }
 }

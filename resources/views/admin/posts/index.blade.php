@@ -1,6 +1,7 @@
 @extends('admin.layout')
 
 @section('cabecera')
+
 <h1>
         Todos los posts
         <small>Optional description</small>
@@ -35,7 +36,8 @@
 				 				<td>{{ $post->titulo }}</td>
 				 				<td>{{ $post->extracto }}</td>
 				 				<td>
-				 					<a href="#" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+				 					<a href="{{ route('posts.show', $post) }}" class="btn btn-xs btn-default" target="_blank"><i class="fa fa-eye"></i></a>
+				 					<a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
 				 					<a href="#" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
 				 				</td>
 				 			</tr>
@@ -45,7 +47,9 @@
 				 	</table>
 				 </div>
 @stop
-@include('admin.posts.create')
+
+
+
 @push('styles')
 	<link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
 @endpush

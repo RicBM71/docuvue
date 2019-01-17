@@ -3,7 +3,8 @@
 //Route::get('posts', 'PostController@show')->name('show');
 
 Route::get('/', 'PagesController@home');
-Route::get('blog/{id}', 'PostsController@show');
+
+Route::get('blog/{id}', 'PostsController@show')->name('posts.show');
 
 
 Route::group([
