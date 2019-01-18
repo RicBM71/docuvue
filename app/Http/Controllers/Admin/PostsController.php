@@ -63,7 +63,11 @@ class PostsController extends Controller
         $post->titulo = $request->get('titulo');
         $post->cuerpo = $request->get('cuerpo');
         $post->extracto = $request->get('extracto');
-        $post->categoria_id = $request->get('categoria');
+
+        // asigna la categoría si existe, si no existe, la crea!
+        $post->categoria_id = Categoria::find($cat = $request->get('categoria'))
+                                ? $cat 
+                                : Categoria::create(['nombre' => $cat])->id;
 
         //dd(Carbon::createFromFormat('d/m/Y', '30/06/1990'));
 
@@ -72,11 +76,20 @@ class PostsController extends Controller
         //$post->fecha_publi = $request->has('fecha_publi')  ? Carbon::parse($request->get('fecha_publi')) : null;
         $post->fecha_publi = $request->has('fecha_publi')  ?Carbon::createFromFormat('d/m/Y', $request->get('fecha_publi')) : null;
 
+        
         $post->save();
+
+        $etiquetas = [];
+        foreach ($request->get('etiquetas') as $etiqueta) {
+
+            $etiquetas[] = Etiqueta::find($etiqueta)
+                                ? $etiqueta
+                                : Etiqueta::create(['nombre' => $etiqueta])->id;
+        }
 
         //$post->etiquetas()->attach($request->get('etiquetas'));
         // con esto no duplica al editar
-        $post->etiquetas()->sync($request->get('etiquetas'));
+        $post->etiquetas()->sync($etiquetas);
 
         return back()->with('flash','Post guardado');
     }
