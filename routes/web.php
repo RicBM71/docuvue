@@ -5,6 +5,8 @@
 Route::get('/', 'PagesController@home');
 
 Route::get('blog/{id}', 'PostsController@show')->name('posts.show');
+Route::get('categorias/{categoria}', 'CategoriasController@show')->name('categorias.show');
+Route::get('etiquetas/{etiqueta}', 'EtiquetasController@show')->name('etiquetas.show');
 
 
 Route::group([

@@ -14,7 +14,7 @@ class PagesController extends Controller
     	
     	//$posts = Post::publicados()->get();
 		//return $posts = Post::publicados()->paginate(1);
-		$posts = Post::publicados()->paginate(1);
+		$posts = Post::publicados()->paginate(15);
 
     	//$posts = Post::all();
         //dd($posts);

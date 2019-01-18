@@ -2,6 +2,9 @@
 
 @section('contenido')
     <section class="posts container">
+        @if (isset($titulo))
+            <h2>Post {{ $titulo }}</h2>
+        @endif
 
         @foreach ($posts as $post)
             <article class="post">                
@@ -27,7 +30,9 @@
                             <span class="c-gray-1">{{ $post->fecha_publi->format('M Y') }}</span>
                         </div>
                         <div class="post-category">
-                            <span class="category text-capitalize">{{ $post->categoria->nombre }}</span>
+                            <span class="category text-capitalize">
+                                <a href="{{ route('categorias.show', $post->categoria) }}">{{ $post->categoria->nombre }}</a>
+                            </span>
                         </div>
                     </header>
                     <h1>{{ $post->titulo }}</h1>
@@ -39,7 +44,7 @@
                         </div>
                         <div class="tags container-flex">
                             @forelse($post->etiquetas as $etiqueta)
-                                <span class="tag c-gray-1 text-capitalize">#{{  $etiqueta->nombre }}</span>
+                                <span class="tag c-gray-1 text-capitalize"><a href="{{ route('etiquetas.show',$etiqueta) }}">#{{  $etiqueta->nombre }}</a></span>
                             @empty
                                 <span class="tag c-gray-1 text-capitalize"></span>
                             @endforelse
