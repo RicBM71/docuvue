@@ -37,4 +37,16 @@ class PhotosController extends Controller
     	 	'post_id' => $post->id
     	]);
     }
+    public function destroy(Photo $foto)
+    {
+
+       // dd($fotoo);
+       $foto->delete();
+
+       $fotoPath = str_replace('storage', 'public', $foto->url);
+
+       Storage::delete($fotoPath);
+
+       return back()->with('flash', 'Se ha borrado la foto');
+    }
 }

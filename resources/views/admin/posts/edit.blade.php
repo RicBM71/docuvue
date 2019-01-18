@@ -11,30 +11,56 @@
       </ol>
 @stop
 @section('contenido')
+	@if ($post->fotos->count() > 0)
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box box-primary">
+					<div class="box box-body">
+						<div class="row">
+							@foreach ($post->fotos as $foto)		        			
+							<form action="{{ route('admin.photos.destroy', $foto) }}" method="POST">
+
+								@csrf	
+								@method('DELETE')	        						        					
+
+								<div class="col-md-2">	
+									<button class="btn btn-danger btn-xs" style="position: absolute;">
+										<i class="fa fa-remove"></i>
+									</button>
+									<img class="img-responsive" src="{{ url($foto->url) }}" alt="">
+								</div>		        				
+							</form>
+							@endforeach
+						</div>			
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	@endif
 	<div class="row">
 		<form action="{{ route('admin.posts.update', $post) }}" method="POST">
 			@csrf {{ method_field('PUT') }}
 			<div class="col-md-8">			
 			 	<div class="box box-primary">		        
-			        	<div class="box-body">
-			        		<div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
-			        			<label>Título</label>
-			        			<input type="text" class="form-control" 
-			        					name="titulo" 
-			        					placeholder="título"
-			        					value = "{{ old('titulo', $post->titulo) }}">
-			        			{!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
-			        			
-			        		</div>
-			        		<div class="form-group {{ $errors->has('cuerpo') ? 'has-error' : '' }}">
-			        			<label>Contenido</label>
-			        			<textarea id="editor" 
-			        					rows="10" class="form-control" 
-			        					name="cuerpo" 
-			        					placeholder="Body del post">{{ old('cuerpo', $post->cuerpo) }}</textarea>
-			        			{!! $errors->first('cuerpo', '<span class="help-block">:message</span>') !!}
-			        		</div>
-			        	</div>		        
+		        	<div class="box-body">
+		        		<div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
+		        			<label>Título</label>
+		        			<input type="text" class="form-control" 
+		        					name="titulo" 
+		        					placeholder="título"
+		        					value = "{{ old('titulo', $post->titulo) }}">
+		        			{!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
+		        		</div>
+		        		<div class="form-group {{ $errors->has('cuerpo') ? 'has-error' : '' }}">
+		        			<label>Contenido</label>
+		        			<textarea id="editor" 
+		        					rows="10" class="form-control" 
+		        					name="cuerpo" 
+		        					placeholder="Body del post">{{ old('cuerpo', $post->cuerpo) }}</textarea>
+		        			{!! $errors->first('cuerpo', '<span class="help-block">:message</span>') !!}
+		        		</div>		        		
+		        	</div>		
 			   	</div>
 			</div>
 			<div class="col-md-4">			
@@ -97,6 +123,7 @@
 				</div>
 			</div>
 		</form>
+
 	</div>
 	
 
@@ -129,6 +156,7 @@
 	      	format: 'dd/mm/yyyy'      
 	    });
 	    CKEDITOR.replace('editor');
+	    CKEDITOR.config.height= 315;
 
 	    $('.select2').select2();
 
