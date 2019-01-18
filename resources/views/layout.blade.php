@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     @stack('styles')
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    @stack('scripts')
+    
 </head>
 <body>
     <div class="preload"></div>
@@ -60,6 +60,6 @@
             </div>
         </footer>
     </section>
-    
+    @stack('scripts')
 </body>
 </html>

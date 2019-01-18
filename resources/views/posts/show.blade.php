@@ -54,8 +54,18 @@
   </article>
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="/css/twitter-bootstrap.css">
+                          
+@endpush()
+
 @push('scripts')
 	<script id="dsq-count-scr" src="//zendero.disqus.com/count.js" async></script>
-  <script type="/js/twitter-bootstrap.js"></script>
+  @stack('scripts')
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+  <script src="/js/twitter-bootstrap.js"></script>
 @endpush
  
