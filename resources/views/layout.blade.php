@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    @stack('styles')
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('scripts')
 </head>
@@ -23,7 +24,7 @@
                 <div class="pure-menu"></div>
                 <ul class="container-flex list-unstyled">
                     <li><a href="/" class="text-uppercase">Home</a></li>
-                    <li><a href="#" class="text-uppercase">About</a></li>
+                    <li><a href="/admin" class="text-uppercase">About</a></li>
                     <li><a href="#" class="text-uppercase">Archive</a></li>
                     <li><a href="#" class="text-uppercase">Contact</a></li>
                 </ul>

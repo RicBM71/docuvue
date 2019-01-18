@@ -5,7 +5,12 @@
 
 
 @section('contenido')
-  <article class="post image-w-text container">
+  <article class="post container">
+      @if ($post->fotos->count()===1)
+                     <figure><img src="{{ $post->fotos->first()->url }}" alt="66" class="img-responsive"></figure>
+      @elseif($post->fotos->count() > 1)
+          @include('posts.carousel')
+      @endif
     <div class="content-post">
       <header class="container-flex space-between">
         <div class="date">
@@ -51,5 +56,6 @@
 
 @push('scripts')
 	<script id="dsq-count-scr" src="//zendero.disqus.com/count.js" async></script>
+  <script type="/js/twitter-bootstrap.js"></script>
 @endpush
  
