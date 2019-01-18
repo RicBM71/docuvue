@@ -77,7 +77,7 @@
                     </div>
                 </footer>
             </div>
-        </ar --}}ticle>
+        </article>
 
        {{--  <article class="post w-gallery">
             <div class="gallery-photos masonry">
@@ -250,12 +250,12 @@
         </article>
  --}}
     </section><!-- fin del div.posts.container -->
-
-    <div class="pagination">
+    {{ $posts->links() }}
+    {{-- <div class="pagination">
         <ul class="list-unstyled container-flex space-center">
             <li><a href="#" class="pagination-active">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
         </ul>
-    </div>
+    </div> --}}
 @stop

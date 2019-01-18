@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/framework.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/pagination-bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     @stack('styles')
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
