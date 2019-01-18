@@ -27,7 +27,7 @@ class PhotosController extends Controller
     	//return Storage::url($fotoUrl);
 
     	//dejar así:
-    	$foto = request()->file('foto')->store('public');
+    	$foto = request()->file('foto')->store('public/images');
 
     	$fotoUrl = Storage::url($foto);
 
