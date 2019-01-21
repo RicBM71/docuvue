@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $dates =['fecha_publi'];
-    protected $guarded=[];
+    //protected $guarded=[];
+
+    // con esto le decimos al formulario que solo se puede actualizar estos campos
+    protected $fillable = [
+        'titulo', 'cuerpo', 'extracto', 'fecha_publi', 'categoria_id',
+    ];
 
     // establecemos la relación única post->categoría, un post solo pertenece a una categoría
     public function categoria()
@@ -42,9 +47,30 @@ class Post extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function setFechaPubliAttribute($fecha_publi)
+    {
+        $this->attributes['fecha_publi'] = $fecha_publi  
+            ? Carbon::createFromFormat('d/m/Y', $fecha_publi)
+            : null;
+    }
 
-    // public function setTituloAttribute($titulo)
-    // {
-    //     $this->attributes['titulo'] = $titulo;
-    // }
+    public function setCategoriaIdAttribute($categoria)
+    {
+        // asigna la categoría si existe, si no existe, la crea!
+
+        $this->attributes['categoria_id'] = Categoria::find($categoria)
+            ? $categoria 
+            : Categoria::create(['nombre' => $categoria])->id;
+
+    }
+
+    public function syncEtiquetas($etiquetas)
+    {
+         $etiquetasIds = collect($etiquetas)->map(function($etiqueta){
+            return Etiqueta::find($etiqueta) ? $etiqueta : Etiqueta::create(['nombre' => $etiqueta])->id;
+        });
+
+
+         return $this->etiquetas()->sync($etiquetasIds);
+    }
 }
