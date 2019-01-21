@@ -20,5 +20,5 @@ class CategoriasController extends Controller
 
     	$titulo = $categoria->nombre;
     	
-    	return view('welcome', compact('posts','titulo'));
+    	return view('pages.home', compact('posts','titulo'));
     }}

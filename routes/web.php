@@ -2,9 +2,12 @@
 
 //Route::get('posts', 'PostController@show')->name('show');
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@home')->name('pages.home');
+Route::get('/about', 'PagesController@about')->name('pages.about');
+Route::get('/archive', 'PagesController@archive')->name('pages.archive');
+Route::get('/contact', 'PagesController@contact')->name('pages.contact');
 
-Route::get('blog/{id}', 'PostsController@show')->name('posts.show');
+Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
 Route::get('categorias/{categoria}', 'CategoriasController@show')->name('categorias.show');
 Route::get('etiquetas/{etiqueta}', 'EtiquetasController@show')->name('etiquetas.show');
 

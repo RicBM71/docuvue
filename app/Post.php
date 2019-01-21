@@ -42,6 +42,10 @@ class Post extends Model
 
     // TODO: ver por qué se añade scope
 
+    public function esPublico(){
+        return ! is_null($this->fecha_publi) && $this->fecha_publi < today();
+    }
+
     public function scopePublicados($query)
     {
         // $posts = $this::whereNotNull('fecha_publi')

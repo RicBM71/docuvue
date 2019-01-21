@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function show($id)
+    public function show(Post $post)
     {
 
-    	$post = Post::find($id);
+    	//dd($post);
+    	//$post = Post::find($id);
+    	if ($post->esPublico() || auth()->check()){
 
-    	return view('posts.show', compact('post'));
+    		return view('posts.show', compact('post'));
+
+    	}
+    	abort(404);
     }
 }

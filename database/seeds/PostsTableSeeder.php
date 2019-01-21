@@ -26,6 +26,11 @@ class PostsTableSeeder extends Seeder
     	Etiqueta::truncate();
 
  		$faker = Faker::create();
+	    for ($i=1; $i <= 10; $i++) { 
+	    	$categoria = new Categoria;
+	    	$categoria->nombre = "Categoria ".$i;
+	    	$categoria->save();
+	    }
 
  		for ($i=0; $i < 10; $i++) { 
 
@@ -38,11 +43,6 @@ class PostsTableSeeder extends Seeder
 	        $post->save();
 	    }
 
-	    for ($i=1; $i <= 10; $i++) { 
-	    	$categoria = new Categoria;
-	    	$categoria->nombre = "Categoria ".$i;
-	    	$categoria->save();
-	    }
 
 	    for ($i=1; $i <= 10; $i++) { 
 	    	$etiqueta = new Etiqueta;

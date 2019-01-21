@@ -13,6 +13,6 @@ class EtiquetasController extends Controller
     	$posts = $etiqueta->posts()->paginate();
     	$titulo = $etiqueta->nombre;
 
-    	return view('welcome', compact('posts','titulo'));
+    	return view('pages.home', compact('posts','titulo'));
     }
 }

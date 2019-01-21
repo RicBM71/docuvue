@@ -382,7 +382,7 @@ desired effect
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
 @include('admin.posts.create')
-@unless (request()->is('admin.posts/*'))
+
 
     <script>
 
@@ -399,7 +399,7 @@ desired effect
           $('#titulo').focus();
       });
     </script>
-@unless
+
 
 </body>
 </html>
