@@ -17,9 +17,10 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->mediumText('extracto')->nullable();
-            $table->Text('cuerpo')->nullable();
-            $table->unsignedInteger('categoria_id')->nullable();
+            $table->Text('cuerpo')->nullable();            
             $table->timestamp('fecha_publi')->nullable()->nullable();
+            $table->unsignedInteger('categoria_id')->nullable();
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

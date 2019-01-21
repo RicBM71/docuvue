@@ -12,7 +12,7 @@ class Post extends Model
 
     // con esto le decimos al formulario que solo se puede actualizar estos campos
     protected $fillable = [
-        'titulo', 'cuerpo', 'extracto', 'fecha_publi', 'categoria_id',
+        'titulo', 'cuerpo', 'extracto', 'fecha_publi', 'categoria_id', 'user_id',
     ];
 
 
@@ -89,5 +89,11 @@ class Post extends Model
 
 
          return $this->etiquetas()->sync($etiquetasIds);
+    }
+
+    public function owner($value='')
+    {
+        // aquí si especificamos el campo de búsqueda porque al llamarlo owner, buscaría owner_id
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

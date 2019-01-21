@@ -40,6 +40,7 @@ class PostsTableSeeder extends Seeder
 	        $post->cuerpo = $faker->paragraph();
 	        $post->fecha_publi = $faker->dateTime()->format('d/m/Y');
 	        $post->categoria_id = $faker->randomDigitNotNull();
+	        $post->user_id = 1;
 	        $post->save();
 	    }
 

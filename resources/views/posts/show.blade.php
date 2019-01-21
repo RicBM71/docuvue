@@ -12,14 +12,9 @@
           @include('posts.carousel')
       @endif
     <div class="content-post">
-      <header class="container-flex space-between">
-        <div class="date">
-          <span class="c-gris">{{ optional($post->fecha_publi)->format('M d') }}</span>
-        </div>
-        <div class="post-category">
-          <span class="category"> {{ $post->categoria->nombre }}</span>
-        </div>
-      </header>
+
+      @include('posts.header')
+
       <h1>{{ $post->titulo }}</h1>
         <div class="divider"></div>
         <div class="image-w-text">
@@ -35,13 +30,7 @@
             	<li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" title="Pin it"><img alt="Pin it" src="/img/flat_web_icon_set/Pinterest.png"></a></li>
             </ul>
           </div>
-          <div class="tags container-flex">
-             @forelse($post->etiquetas as $etiqueta)
-                <span class="tag c-gray-1 text-capitalize">#{{  $etiqueta->nombre }}</span>
-            @empty
-                <span class="tag c-gray-1 text-capitalize"></span>
-             @endforelse
-          </div>
+          @include('posts.etiquetas')
       </footer>
       <div class="comments">
       <div class="divider"></div>

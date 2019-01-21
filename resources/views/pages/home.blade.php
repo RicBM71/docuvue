@@ -25,30 +25,17 @@
                     </div>                
                 @endif
                 <div class="content-post">
-                    <header class="container-flex space-between">
-                        <div class="date">
-                            <span class="c-gray-1">{{ $post->fecha_publi->format('M Y') }}</span>
-                        </div>
-                        <div class="post-category">
-                            <span class="category text-capitalize">
-                                <a href="{{ route('categorias.show', $post->categoria) }}">{{ $post->categoria->nombre }}</a>
-                            </span>
-                        </div>
-                    </header>
+                    @include('posts.header')
                     <h1>{{ $post->titulo }}</h1>
                     <div class="divider"></div>
                     <p>{{ $post->extracto }}</p>
                     <footer class="container-flex space-between">
                         <div class="read-more">
-                            <a href="blog/{{ $post->id }}" class="text-uppercase c-green">Leer más</a>
+                            <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">Leer más</a>
                         </div>
-                        <div class="tags container-flex">
-                            @forelse($post->etiquetas as $etiqueta)
-                                <span class="tag c-gray-1 text-capitalize"><a href="{{ route('etiquetas.show',$etiqueta) }}">#{{  $etiqueta->nombre }}</a></span>
-                            @empty
-                                <span class="tag c-gray-1 text-capitalize"></span>
-                            @endforelse
-                        </div>
+
+                        @include('posts.etiquetas')
+                        
                     </footer>
                 </div>
             </article>
