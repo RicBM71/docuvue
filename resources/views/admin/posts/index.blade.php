@@ -40,7 +40,7 @@
 				 					<a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
 				 					<form method="POST" action="{{ route('admin.posts.destroy', $post) }}" style="display: inline;">
 				 						@csrf @method('DELETE')
-				 						<button class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>
+				 						<button class="btn btn-xs btn-danger" onclick="return confirm('¿Desea borrar el registro?')"><i class="fa fa-times"></i></button>
 				 					</form>
 				 					
 				 				</td>

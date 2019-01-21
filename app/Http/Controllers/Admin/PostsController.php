@@ -131,7 +131,7 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
 
-        $post->etiquetas()->detach();   
+        //$post->etiquetas()->detach();   también lo llemavamos a boot()
 
         //$post->fotos->delete(); de esta forma no dispara el evento deleting del modelo foto
         // foreach ($post->fotos as $foto) {
@@ -141,8 +141,9 @@ class PostsController extends Controller
         // $post->fotos->each(function($foto){
         //     $foto->delete();
         // });
-        // y esto es los mismo
-        $post->fotos->each->delete();
+        // y esto es los mismo, que finalmente los llevamos al modelo post:
+        // en function boot()
+        // $post->fotos->each->delete();
 
         $post->delete();
 

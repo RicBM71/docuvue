@@ -15,6 +15,19 @@ class Post extends Model
         'titulo', 'cuerpo', 'extracto', 'fecha_publi', 'categoria_id',
     ];
 
+
+    protected static function boot(){
+
+        parent::boot();
+
+        static::deleting(function($post){
+            
+            $post->etiquetas()->detach();   
+            $post->fotos->each->delete();
+            //$post->delete();
+        });
+    }    
+
     // establecemos la relación única post->categoría, un post solo pertenece a una categoría
     public function categoria()
     {
