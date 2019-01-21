@@ -7,7 +7,7 @@
 @section('contenido')
   <article class="post container">
       @if ($post->fotos->count()===1)
-                     <figure><img src="{{ $post->fotos->first()->url }}" alt="66" class="img-responsive"></figure>
+                     <figure><img src="{{ url($post->fotos->first()->url) }}" alt="66" class="img-responsive"></figure>
       @elseif($post->fotos->count() > 1)
           @include('posts.carousel')
       @endif

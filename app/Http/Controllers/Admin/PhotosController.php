@@ -27,7 +27,7 @@ class PhotosController extends Controller
     	//return Storage::url($fotoUrl);
 
     	//dejar así:
-    	$foto = request()->file('foto')->store('public');
+    	$foto = request()->file('foto')->store('posts','public');
 
     	$fotoUrl = Storage::url($foto);
 
@@ -36,6 +36,12 @@ class PhotosController extends Controller
     	 	'url'	=> $fotoUrl,
     	 	'post_id' => $post->id
     	]);
+
+        // esto puede sustitur al create de arriba, quizás de momento lo veo más claro 
+        // cmomo está
+        // $post->fotos()->create[
+        //     'url' = > $fotoUrl
+        // ]
     }
     public function destroy(Photo $foto)
     {
@@ -43,9 +49,9 @@ class PhotosController extends Controller
        // dd($fotoo);
        $foto->delete();
 
-       $fotoPath = str_replace('storage', 'public', $foto->url);
+       // $fotoPath = str_replace('storage', 'public', $foto->url);
 
-       Storage::delete($fotoPath);
+       // Storage::delete($fotoPath);
 
        return back()->with('flash', 'Se ha borrado la foto');
     }

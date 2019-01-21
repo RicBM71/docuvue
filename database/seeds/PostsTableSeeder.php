@@ -6,6 +6,7 @@ use App\Post;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 
 class PostsTableSeeder extends Seeder
@@ -18,6 +19,8 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
 
+    	//Storage::disk->('public')->deleteDirectory('posts');
+    	Storage::deleteDirectory('public/posts');
     	Post::truncate();
     	Categoria::truncate();
     	Etiqueta::truncate();
@@ -30,7 +33,7 @@ class PostsTableSeeder extends Seeder
 	        $post->titulo = $faker->sentence();
 	        $post->extracto = $faker->sentence();
 	        $post->cuerpo = $faker->paragraph();
-	        $post->fecha_publi = $faker->dateTime();
+	        $post->fecha_publi = $faker->dateTime()->format('d/m/Y');
 	        $post->categoria_id = $faker->randomDigitNotNull();
 	        $post->save();
 	    }

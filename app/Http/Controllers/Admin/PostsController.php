@@ -127,4 +127,27 @@ class PostsController extends Controller
 
     //     return back()->with('flash','Post guardado');
     // }
+
+    public function destroy(Post $post)
+    {
+
+        $post->etiquetas()->detach();   
+
+        //$post->fotos->delete(); de esta forma no dispara el evento deleting del modelo foto
+        // foreach ($post->fotos as $foto) {
+        //     $foto->delete(); // de esta forma sí.
+        // }
+        //esto de abajo es lo mismo que el foreach pero con colecciones
+        // $post->fotos->each(function($foto){
+        //     $foto->delete();
+        // });
+        // y esto es los mismo
+        $post->fotos->each->delete();
+
+        $post->delete();
+
+        return redirect()
+            ->route('admin.posts.index')
+            ->with('flash', 'Publicación borrada!');
+    }
 }
