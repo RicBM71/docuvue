@@ -40,7 +40,8 @@ class PostsTableSeeder extends Seeder
 	        $post->cuerpo = $faker->paragraph();
 	        $post->fecha_publi = $faker->dateTime()->format('d/m/Y');
 	        $post->categoria_id = $faker->randomDigitNotNull();
-	        $post->user_id = 1;
+	        if ($i <= 5) $post->user_id = 1;
+	        else $post->user_id = 2;
 	        $post->save();
 	    }
 

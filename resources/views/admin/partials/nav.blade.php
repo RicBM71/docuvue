@@ -1,6 +1,7 @@
     <ul class="sidebar-menu">
         <li class="header">Nav</li>
         <!-- Optionally, you can add icons to the links -->
+        <li><a href="{{ route('pages.home') }}">Inicio público</a></li>
         <li {{ request()->is('admin') ? 'class=active' : '' }}><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
         <li class="treeview {{ request()->is('admin/posts*') ? 'active' : '' }}">
           <a href="#"><i class="fa fa-bars"></i> <span>Blog</span>

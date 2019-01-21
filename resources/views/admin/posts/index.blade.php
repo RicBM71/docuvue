@@ -26,6 +26,7 @@
 				 				<th>ID</th>
 				 				<th>Titulo</th>
 				 				<th>Extracto</th>
+				 				<th>Owner</th>
 				 				<th>Acciones</th>
 				 			</tr>
 				 		</thead>
@@ -35,6 +36,7 @@
 				 				<td>{{ $post->id }}</td>
 				 				<td>{{ $post->titulo }}</td>
 				 				<td>{{ $post->extracto }}</td>
+				 				<td>{{ $post->owner->name }}</td>
 				 				<td>
 				 					<a href="{{ route('posts.show', $post) }}" class="btn btn-xs btn-default" target="_blank"><i class="fa fa-eye"></i></a>
 				 					<a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>

@@ -14,7 +14,9 @@ class PostsController extends Controller
 {
     public function index()
     {
-    	$posts = Post::all();
+    	//$posts = Post::all();
+       // dd(auth()->user()->posts());
+        $posts = auth()->user()->posts;
     	return view('admin.posts.index',compact('posts'));
     }
 
@@ -29,6 +31,8 @@ class PostsController extends Controller
 
      public function store(Request $request)
      {
+        $this->authorize('create', new Post);
+
          $this->validate($request, [
              'titulo'    => 'required|min:3',
          ]);
@@ -44,15 +48,19 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        $categorias = Categoria::all();
-        $etiquetas = Etiqueta::all();
+        $this->authorize('view', $post);
 
-        return view('admin.posts.edit',compact('categorias','etiquetas','post'));
+        return view('admin.posts.edit',[
+            'post' => $post,
+            'etiquetas'  => Etiqueta::all(),            
+            'categorias' => Categoria::all(),
+        ]);
         
     }
 
     public function update(Post $post, StorePostRequest $request)
     {
+        $this->authorize('update', $post);
         
         // $post->titulo = $request->get('titulo');
         // $post->cuerpo = $request->get('cuerpo');
@@ -130,6 +138,8 @@ class PostsController extends Controller
 
     public function destroy(Post $post)
     {
+
+        $this->authorize('delete', $post);
 
         //$post->etiquetas()->detach();   también lo llemavamos a boot()
 
