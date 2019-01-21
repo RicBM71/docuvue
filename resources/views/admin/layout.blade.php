@@ -382,5 +382,24 @@ desired effect
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
 @include('admin.posts.create')
+@unless (request()->is('admin.posts/*'))
+
+    <script>
+
+      if (window.location.hash == '#create'){    
+        $('#exampleModal').modal('show');
+      }
+
+      $('#exampleModal').on('hide.bs.modal', function(){
+          //console.log(window.location.hash);
+          window.location.hash = '#';
+      });
+    $('#exampleModal').on('shown.bs.modal', function(){
+          window.location.hash = '#create';
+          $('#titulo').focus();
+      });
+    </script>
+@unless
+
 </body>
 </html>

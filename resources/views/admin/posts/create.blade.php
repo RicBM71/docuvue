@@ -1,6 +1,6 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
-		<form action="{{ route('admin.posts.store') }}" method="POST">
+		<form action="{{ route('admin.posts.store', '#create') }}" method="POST">
 			@csrf
 			<div class="modal-content">
 				<div class="modal-header">
@@ -12,10 +12,10 @@
 				<div class="modal-body">
 					<div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
 						<label>Título</label>
-						<input type="text" class="form-control" 
+						<input id="titulo" type="text" class="form-control" 
 						name="titulo" 
 						placeholder="Título"
-						required="required" 
+						autofocus required 
 						value = "{{ old('titulo') }}">
 						{!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
 
