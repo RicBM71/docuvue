@@ -58,6 +58,19 @@ class Post extends Model
                     ->latest('fecha_publi'); 
 
     }
+
+    public function scopePermitidos($query)
+    {
+      //  if (auth()->user()->hasRole('Admin')){
+        if (auth()->user()->can('view', $this)){ // busca la política e PostPolicy, pasar instancia
+            //return $this::all();
+            return $query; // retorna el query builder sin restricciones
+        }else{
+            return $query->where('user_id', auth()->id());  // solo sus posts, lo del usuario autenticado
+        }
+    }
+
+
     // creamos la relación uno a muchos, un post tendrá una o varias fotos
     public function fotos()
     {

@@ -14,9 +14,17 @@ class PostsController extends Controller
 {
     public function index()
     {
-    	//$posts = Post::all();
+    	
        // dd(auth()->user()->posts());
-        $posts = auth()->user()->posts;
+        
+        // if (auth()->user()->hasRole('Admin')){
+        //     $posts = Post::all();
+        // }else{
+        //     $posts = auth()->user()->posts;  
+        // }
+        //allowed en ejemplo
+        $posts = Post::permitidos()->get();
+
     	return view('admin.posts.index',compact('posts'));
     }
 
@@ -48,7 +56,7 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        $this->authorize('view', $post);
+        $this->authorize('update', $post);
 
         return view('admin.posts.edit',[
             'post' => $post,

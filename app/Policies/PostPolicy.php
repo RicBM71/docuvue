@@ -10,6 +10,14 @@ class PostPolicy
 {
     use HandlesAuthorization;
 
+    // esto se ejecuta antes de cualquier método
+    public function before($user)
+    {
+        if($user->hasRole('Admin')){
+            return true;
+        }
+    }
+
     /**
      * Determine whether the user can view the post.
      *
@@ -19,7 +27,8 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-        return $user->id === $post->user_id;
+        return $user->id === $post->user_id
+            || $user->hasPermissionTo('Ver Posts');
     }
 
     /**
@@ -30,7 +39,7 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        return true;    
+        return $user->hasPermissionTo('Crear Posts');
     }
 
     /**
@@ -42,7 +51,8 @@ class PostPolicy
      */
     public function update(User $user, Post $post)
     {
-        return $user->id === $post->user_id;
+        return $user->id === $post->user_id 
+            || $user->hasPermissionTo('Actualizar Posts');;
     }
 
     /**
@@ -54,7 +64,8 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        return $user->id === $post->user_id;
+        return $user->id === $post->user_id
+            || $user->hasPermissionTo('Borrar Posts');;
     }
 
     /**
