@@ -4,11 +4,11 @@
 
 	<div class="row">
 		<div class="col-md-6">
-			<div class="box box-primary with-border">
-				<div class="box-header">
-					Datos usuario
+			<div class="box box-primary">
+				<div class="box box-header with-border">
+					<h3 class="box-title">Datos usuario</h3>
 				</div>
-				<div class="box box-body">
+				<div class="box-body">
 					<form method="POST" action="{{ route('admin.users.update', $user) }}">
 						@csrf @method('PUT')
 						<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
@@ -47,6 +47,46 @@
 					</form>
 				</div>
 			</div>		
+		</div>
+		<div class="col-md-6">
+			<div class="box box-primary">
+				<div class="box box-header with-border">
+					<h3 class="box-title">Roles</h3>
+				</div>
+				<div class="box-body">
+					<form action="{{ route('admin.users.roles.update', $user) }}" method="POST">
+						@csrf @method('PUT')
+						
+						@foreach ($roles as $id => $name)
+							<div class="checkbox">
+								<label>
+									<input name="roles[]" type="checkbox" value="{{ $name }}" {{ $user->roles->contains($id) ? 'checked' : '' }}>{{ $name }}
+								</label>
+							</div>						
+						@endforeach
+						<button class="btn btn-primary btn-block">Actualizar Role</button>
+					</form>
+				</div>
+			</div>
+			<div class="box box-primary">
+				<div class="box box-header with-border">
+					<h3 class="box-title">Permisos</h3>
+				</div>
+				<div class="box-body">
+					<form action="{{ route('admin.users.permissions.update', $user) }}" method="POST">
+						@csrf @method('PUT')
+						
+						@foreach ($permisos as $id => $name)
+							<div class="checkbox">
+								<label>
+									<input name="permissions[]" type="checkbox" value="{{ $name }}" {{ $user->permissions->contains($id) ? 'checked' : '' }}>{{ $name }}
+								</label>
+							</div>						
+						@endforeach
+						<button class="btn btn-primary btn-block">Actualizar Permiso</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 	
