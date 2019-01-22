@@ -29,7 +29,12 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        
+        $user = new User;
+        $roles = Role::with('permissions')->get(); // para listar también los permisos
+        $permisos = Permission::pluck('name','id');
+
+        return view('admin.users.create', compact('user','roles','permisos'));
     }
 
     /**
@@ -40,7 +45,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -63,7 +68,7 @@ class UsersController extends Controller
     public function edit(User $user)
     {
 
-        $roles = Role::pluck('name','id');
+        $roles = Role::with('permissions')->get(); // para listar también los permisos
         $permisos = Permission::pluck('name','id');
 
         return view('admin.users.edit', compact('user','roles','permisos'));
