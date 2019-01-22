@@ -13,6 +13,7 @@ Route::get('etiquetas/{etiqueta}', 'EtiquetasController@show')->name('etiquetas.
 
 
 Route::group([
+	 	//'as' => '.admin' ver php artisan r:l para ver problema admin.admin.
 		'prefix' => 'admin',
 		'namespace' => 'Admin', 
 		'middleware' => 'auth'], 
@@ -20,12 +21,16 @@ Route::group([
 		//Route::get('admin', 'AdminController@index')->name('admin');
 		//esto es igual a lo de abajo, al meterlo aquí se entraría con admin/admin y no
 		Route::get('/', 'AdminController@index')->name('admin');
-		Route::get('posts', 'PostsController@index')->name('admin.posts.index');	
-		Route::get('posts/create', 'PostsController@create')->name('admin.posts.create');	
-		Route::post('posts/store', 'PostsController@store')->name('admin.posts.store');	
-		Route::get('posts/{post}', 'PostsController@edit')->name('admin.posts.edit');	
-		Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');	
-		Route::delete('posts/{post}', 'PostsController@destroy')->name('admin.posts.destroy');	
+
+		Route::resource('posts', 'PostsController', ['except'=>'show', 'as' => 'admin']);
+		// Route::get('posts', 'PostsController@index')->name('admin.posts.index');	
+		// Route::get('posts/create', 'PostsController@create')->name('admin.posts.create');	
+		// Route::post('posts/store', 'PostsController@store')->name('admin.posts.store');	
+		// Route::get('posts/{post}', 'PostsController@edit')->name('admin.posts.edit');	
+		// Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');	
+		// Route::delete('posts/{post}', 'PostsController@destroy')->name('admin.posts.destroy');	
+
+		Route::resource('users', 'UsersController', ['as' => 'admin']);
 
 		Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');	
 		Route::delete('photos/{foto}','PhotosController@destroy')->name('admin.photos.destroy');
