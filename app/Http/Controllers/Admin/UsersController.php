@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\UsuarioFueCreado;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
 use App\User;
@@ -45,7 +46,24 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $data['password']= str_random(8);
+
+        $user = User::create($data);
+
+        $user->assignRole($request->roles);
+        $user->givePermissionTo($request->permissions);
+
+        // enviar email
+        UsuarioFueCreado::dispatch($user, $data['password']);
+
+        return redirect()->route('admin.users.index')->withFlash('El usuario ha sido creado');
     }
 
     /**

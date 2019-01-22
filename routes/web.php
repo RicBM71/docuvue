@@ -1,5 +1,8 @@
 <?php
 
+// Route::get('email', function(){
+// 	return new App\Mail\CredencialesLogin(App\User::first(), 'aaa');
+// });
 //Route::get('posts', 'PostController@show')->name('show');
 
 Route::get('/', 'PagesController@home')->name('pages.home');
