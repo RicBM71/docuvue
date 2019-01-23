@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Categoria;
-use App\Etiqueta;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePostRequest;
 use App\Post;
+use App\Etiqueta;
+use App\Categoria;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 
 class PostsController extends Controller
 {

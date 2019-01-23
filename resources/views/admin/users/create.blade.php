@@ -31,7 +31,7 @@
 						</div>
 						<div class="form-group">
 							<label>Permisos</label>
-							@include('admin.permissions.checkboxes')
+							@include('admin.permissions.checkboxes', ['model' => $user])
 						</div>
 						
 						
