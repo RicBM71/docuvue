@@ -19,7 +19,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::Permitidos()->get();
+
         return view('admin.users.index',compact('users'));
     }
 
@@ -30,8 +31,11 @@ class UsersController extends Controller
      */
     public function create()
     {
-        
+
         $user = new User;
+
+        $this->authorize('create', $user);
+
         $roles = Role::with('permissions')->get(); // para listar también los permisos
         $permisos = Permission::pluck('name','id');
 
@@ -46,6 +50,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', new User);
 
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -74,6 +79,8 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
+        $this->authorize('view', $user);
+
         return view('admin.users.show', compact('user'));
     }
 
@@ -85,6 +92,8 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+
+        $this->authorize('update', $user);
 
         $roles = Role::with('permissions')->get(); // para listar también los permisos
         $permisos = Permission::pluck('name','id');
@@ -103,20 +112,28 @@ class UsersController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
 
+        $this->authorize('update', $user);
            // dd($request);
         $user->update($request->validated());
 
-        return back()->withFlash('Usuario actualizado');
+        //return back()->withFlash('Usuario actualizado');
+        return redirect()->route('admin.users.edit', $user)
+             ->withFlash('El usuario ha sido actualizado');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  User $user de esta manera inyectamos el modelo y de esta forma
+     *          laravel busca el usuario automáticamente
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $this->authorize('delete', $user);
+
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->withFlash('El usuario ha sido eliminado');
     }
 }

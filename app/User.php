@@ -39,4 +39,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+    * @param 
+    * $this es una instancia del usuario actual
+    */
+    public function scopePermitidos($query)
+    {
+
+        if (auth()->user()->can('view', $this)){ // busca la política e PostPolicy, pasar instancia
+            return $query; // retorna el query builder sin restricciones
+        }else{
+            return $query->where('id', auth()->id());  
+        }
+    }
 }

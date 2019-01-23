@@ -4,12 +4,88 @@
 		"selected_items":
 		[
 			[
+				"Cre",
+				"CredencialesLogin\t(EnviarCredencialesLogin.php)"
+			],
+			[
+				"M",
+				"Mail\t(EnviarCredencialesLogin.php)"
+			],
+			[
+				"pa",
+				"password"
+			],
+			[
+				"with",
+				"withFlash"
+			],
+			[
+				"per",
+				"permissions"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"pe",
+				"permissions\t(UsersController.php)"
+			],
+			[
+				"set",
+				"setActiveRoute\t(nav.blade.php)"
+			],
+			[
+				"permisi",
+				"permissions\t(show.blade.php)"
+			],
+			[
+				"btn-",
+				"btn-block"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"User",
+				"UsersRolesController\t(UsersRolesController.php)"
+			],
+			[
+				"wi",
+				"with-border"
+			],
+			[
+				"ru",
+				"rules"
+			],
+			[
 				"user",
-				"user_id"
+				"username"
+			],
+			[
+				"ro",
+				"role"
+			],
+			[
+				"tex",
+				"text-muted"
+			],
+			[
+				"lay",
+				"layout.blade.php \tBlade Autocomplete"
 			],
 			[
 				"fun",
 				"fun\tfunction …"
+			],
+			[
+				"P",
+				"Permission\t(User.php)"
+			],
+			[
+				"S",
+				"Spatie\t(User.php)"
 			],
 			[
 				"is_n",
@@ -84,10 +160,6 @@
 				"font-size\tproperty"
 			],
 			[
-				"pa",
-				"pagination"
-			],
-			[
 				"str_re",
 				"str_replace"
 			],
@@ -114,10 +186,6 @@
 			[
 				"fore",
 				"foreach\tblade-foreach"
-			],
-			[
-				"wi",
-				"width\tAttr"
 			],
 			[
 				"scrip",
@@ -158,10 +226,6 @@
 			[
 				"hea",
 				"header\t<header>"
-			],
-			[
-				"re",
-				"required\tAttr"
 			],
 			[
 				"lan",
@@ -240,10 +304,6 @@
 				"adminlte"
 			],
 			[
-				"ro",
-				"rows\tAttr"
-			],
-			[
 				"ac",
 				"active\t(index.blade.php)"
 			],
@@ -290,10 +350,6 @@
 			[
 				"str",
 				"string\t(2014_10_12_000000_create_users_table.php)"
-			],
-			[
-				"S",
-				"Schema"
 			],
 			[
 				"la",
@@ -458,117 +514,114 @@
 			[
 				"sessio",
 				"session_register"
-			],
-			[
-				"sot",
-				"store\t(web.php)"
-			],
-			[
-				"hr",
-				"href\tAttr"
-			],
-			[
-				"se",
-				"section\tTag"
-			],
-			[
-				"Cre",
-				"create"
-			],
-			[
-				"rOU",
-				"Route"
-			],
-			[
-				"mtho",
-				"method_field\t(edit.blade.php)"
-			],
-			[
-				"cs",
-				"csrf_field\t(contacto.blade.php)"
-			],
-			[
-				"sub",
-				"submit\t(contacto.blade.php)"
-			],
-			[
-				"rout",
-				"route"
-			],
-			[
-				"mo",
-				"method\tblade-method"
-			],
-			[
-				"metho",
-				"method"
-			],
-			[
-				"men",
-				"mensaje"
-			],
-			[
-				"bo",
-				"border\tAttr"
-			],
-			[
-				"sto",
-				"store\t(web.php)"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/Post.php",
+			"file": "app/Http/Controllers/Admin/UsersController.php",
 			"settings":
 			{
-				"buffer_size": 2749,
+				"buffer_size": 3065,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/posts/show.blade.php",
+			"file": "app/Events/UsuarioFueCreado.php",
 			"settings":
 			{
-				"buffer_size": 2327,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "resources/views/posts/header.blade.php",
-			"settings":
-			{
-				"buffer_size": 357,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Policies/PostPolicy.php",
-			"settings":
-			{
-				"buffer_size": 1673,
+				"buffer_size": 734,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/User.php",
+			"file": "app/Listeners/EnviarCredencialesLogin.php",
 			"settings":
 			{
-				"buffer_size": 643,
+				"buffer_size": 710,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/Admin/PostsController.php",
+			"file": "app/Mail/CredencialesLogin.php",
 			"settings":
 			{
-				"buffer_size": 5514,
+				"buffer_size": 748,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Policies/UserPolicy.php",
+			"settings":
+			{
+				"buffer_size": 2104,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Providers/AuthServiceProvider.php",
+			"settings":
+			{
+				"buffer_size": 622,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Providers/AppServiceProvider.php",
+			"settings":
+			{
+				"buffer_size": 562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/mail.php",
+			"settings":
+			{
+				"buffer_size": 4688,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/web.php",
+			"settings":
+			{
+				"buffer_size": 2302,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 721,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/emails/credenciales-login.blade.php",
+			"settings":
+			{
+				"buffer_size": 404,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Requests/UpdateUserRequest.php",
+			"settings":
+			{
+				"buffer_size": 1262,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -588,6 +641,10 @@
 			[
 				"in",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"sor",
+				"Sort Lines (Case Sensitive)"
 			],
 			[
 				"ind",
@@ -670,35 +727,51 @@
 		"/C/laragon/www/docutec",
 		"/C/laragon/www/docutec/app",
 		"/C/laragon/www/docutec/app/Http",
-		"/C/laragon/www/docutec/app/Policies",
-		"/C/laragon/www/docutec/app/Providers",
-		"/C/laragon/www/docutec/resources",
-		"/C/laragon/www/docutec/resources/views",
-		"/C/laragon/www/docutec/resources/views/errors",
-		"/C/laragon/www/docutec/resources/views/posts",
-		"/C/laragon/www/docutec/vendor"
+		"/C/laragon/www/docutec/app/Providers"
 	],
 	"file_history":
 	[
+		"/C/laragon/www/docutec/app/Providers/EventServiceProvider.php",
+		"/C/laragon/www/docutec/routes/web.php",
+		"/C/laragon/www/docutec/app/Http/Controllers/Admin/UsersController.php",
+		"/C/laragon/www/docutec/database/seeds/UsersTableSeeder.php",
+		"/C/laragon/www/docutec/resources/views/admin/users/create.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/users/edit.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/permissions/checkboxes.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/roles/checkboxes.blade.php",
+		"/C/laragon/www/docutec/app/User.php",
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/pages/examples/profile.html",
+		"/C/laragon/www/docutec/resources/views/admin/users/show.blade.php",
+		"/C/laragon/www/docutec/app/Http/Controllers/Admin/UsersPermissionsController.php",
+		"/C/laragon/www/docutec/app/Http/Controllers/Admin/UsersRolesController.php",
+		"/C/laragon/www/docutec/resources/views/admin/users/index.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/partials/nav.blade.php",
+		"/C/laragon/www/docutec/resources/views/partials/nav.blade.php",
+		"/C/laragon/www/docutec/vendor/laravel/framework/src/Illuminate/Support/Facades/Hash.php",
+		"/C/laragon/www/docutec/app/Http/Requests/UpdateUserRequest.php",
+		"/C/laragon/www/docutec/app/Policies/PostPolicy.php",
+		"/C/laragon/www/docutec/app/Http/Controllers/Auth/RegisterController.php",
+		"/C/laragon/www/docutec/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php",
+		"/C/laragon/www/docutec/vendor/phpunit/php-file-iterator/src/Facade.php",
+		"/C/laragon/www/docutec/vendor/nexmo/client/src/User/User.php",
+		"/C/laragon/www/docutec/vendor/spatie/laravel-permission/src/Traits/HasRoles.php",
+		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PostsController.php",
+		"/C/laragon/www/docutec/resources/views/admin/layout.blade.php",
+		"/C/laragon/www/docutec/app/Post.php",
+		"/C/laragon/www/docutec/database/seeds/DatabaseSeeder.php",
+		"/C/laragon/www/docutec/resources/views/posts/show.blade.php",
+		"/C/laragon/www/docutec/resources/views/posts/header.blade.php",
 		"/C/laragon/www/docutec/app/Providers/AuthServiceProvider.php",
 		"/C/laragon/www/docutec/resources/views/pages/home.blade.php",
 		"/C/laragon/www/docutec/resources/views/posts/etiquetas.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/layout.blade.php",
-		"/C/laragon/www/docutec/routes/web.php",
 		"/C/laragon/www/docutec/resources/views/errors/404.blade.php",
 		"/C/laragon/www/docutec/resources/views/errors/403.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/partials/nav.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/posts/index.blade.php",
 		"/C/laragon/www/docutec/database/seeds/PostsTableSeeder.php",
-		"/C/laragon/www/docutec/database/seeds/UsersTableSeeder.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/PostsController.php",
-		"/C/laragon/www/docutec/resources/views/posts/show.blade.php",
-		"/C/laragon/www/docutec/app/Post.php",
 		"/C/laragon/www/docutec/database/migrations/2019_01_15_183101_create_posts_table.php",
-		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PostsController.php",
 		"/C/laragon/www/docutec/resources/views/layout.blade.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/PagesController.php",
-		"/C/laragon/www/docutec/resources/views/partials/nav.blade.php",
 		"/C/Users/rbart/Downloads/Zendero-csuicg/about.html",
 		"/C/laragon/www/docutec/app/Http/Helpers.php",
 		"/C/laragon/www/docutec/composer.json",
@@ -735,7 +808,6 @@
 		"/C/laragon/www/docutec/database/migrations/2019_01_16_094717_create_etiqueta_post_table.php",
 		"/C/laragon/www/docutec/vendor/laravel/framework/src/Illuminate/Support/Carbon.php",
 		"/C/laragon/www/docutec/vendor/nesbot/carbon/src/Carbon/Carbon.php",
-		"/C/laragon/www/docutec/database/seeds/DatabaseSeeder.php",
 		"/C/Users/rbart/Downloads/Zendero-csuicg/single-post.html",
 		"/C/laragon/www/docutec/resources/views/scripts/discus.blade.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PostController.php",
@@ -786,28 +858,7 @@
 		"/C/laragon/www/blogvue/resources/views/layouts/app.blade.php",
 		"/C/laragon/www/blogvue/resources/views/admin/layout.old.blade.php",
 		"/C/laragon/www/blogvue/vendor/symfony/routing/Router.php",
-		"/C/laragon/www/blogvue/config/auth.php",
-		"/C/laragon/www/blogvue/vendor/symfony/routing/Route.php",
-		"/C/Users/rbart/Downloads/AdminLTE-2.4.5/AdminLTE-2.4.5/starter.html",
-		"/C/laragon/www/blogvue/database/migrations/2019_01_09_085509_create_categorias_table.php",
-		"/C/laragon/www/blogvue/database/migrations/2019_01_09_112931_create_etiqueta_post_table.php",
-		"/C/laragon/www/blogvue/database/seeds/PostsTableSeeder.php",
-		"/C/laragon/www/blogvue/database/migrations/2019_01_09_112351_create_etiquetas_table.php",
-		"/C/laragon/www/blogvue/database/seeds/DatabaseSeeder.php",
-		"/C/laragon/www/blogvue/resources/views/layout.blade.php",
-		"/C/laragon/www/app/resources/views/contact.blade.php",
-		"/C/laragon/www/app/app/Http/Controllers/MensajesController.php",
-		"/C/laragon/www/app/routes/web.php",
-		"/C/laragon/www/app/resources/views/layout.blade.php",
-		"/C/laragon/www/app/resources/views/about.blade.php",
-		"/C/laragon/www/app/resources/views/partials/nav.blade.php",
-		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Http/Request.php",
-		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
-		"/C/laragon/www/app/app/Http/Controllers/PortfolioController.php",
-		"/C/laragon/www/app/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-		"/C/laragon/www/app/app/helpers.php",
-		"/C/laragon/www/app/composer.json",
-		"/C/laragon/www/app/app/Providers/AppServiceProvider.php"
+		"/C/laragon/www/blogvue/config/auth.php"
 	],
 	"find":
 	{
@@ -826,6 +877,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"model",
+			"bcrypt",
+			"button",
+			"posts",
+			"make",
+			"passwor",
+			"email",
+			"username",
+			"Username",
+			"username",
+			"post",
+			".posts",
+			"$post",
+			"post",
+			"posts",
 			"Alexander Pierce",
 			"404",
 			"welcome",
@@ -886,24 +952,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Post.php",
+					"file": "app/Http/Controllers/Admin/UsersController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2749,
+						"buffer_size": 3065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2683,
-								2683
+								1697,
+								1714
 							]
 						],
 						"settings":
@@ -914,64 +980,308 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 888.0,
+						"translation.y": 1372.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "resources/views/posts/show.blade.php",
+					"file": "app/Events/UsuarioFueCreado.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2327,
+						"buffer_size": 734,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1602,
-								1602
+								477,
+								477
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 746.0,
+						"translation.y": 167.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Listeners/EnviarCredencialesLogin.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								699,
+								699
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "resources/views/posts/header.blade.php",
+					"buffer": 3,
+					"file": "app/Mail/CredencialesLogin.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 357,
+						"buffer_size": 748,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								319,
-								319
+								745,
+								745
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Policies/UserPolicy.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1308,
+								1308
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1092.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Providers/AuthServiceProvider.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								299,
+								428
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Providers/AppServiceProvider.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "config/mail.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2127,
+								2127
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1176.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								10
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								477,
+								477
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "resources/views/emails/credenciales-login.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								386
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -982,20 +1292,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/Policies/PostPolicy.php",
+					"buffer": 11,
+					"file": "app/Http/Requests/UpdateUserRequest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1673,
+						"buffer_size": 1262,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								904,
-								904
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1006,72 +1316,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 588.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/User.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								625,
-								625
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Http/Controllers/Admin/PostsController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								779,
-								779
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 504.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1134,12 +1382,36 @@
 		"selected_items":
 		[
 			[
-				"post",
-				"app\\Http\\Controllers\\Admin\\PostsController.php"
-			],
-			[
 				"web",
 				"routes\\web.php"
+			],
+			[
+				"users.ed",
+				"resources\\views\\admin\\users\\edit.blade.php"
+			],
+			[
+				"nav",
+				"resources\\views\\admin\\partials\\nav.blade.php"
+			],
+			[
+				"regis",
+				"app\\Http\\Controllers\\Auth\\RegisterController.php"
+			],
+			[
+				"user",
+				"vendor\\nexmo\\client\\src\\User\\User.php"
+			],
+			[
+				"lay",
+				"resources\\views\\admin\\layout.blade.php"
+			],
+			[
+				"po",
+				"app\\Policies\\PostPolicy.php"
+			],
+			[
+				"post",
+				"app\\Http\\Controllers\\Admin\\PostsController.php"
 			],
 			[
 				"sho",
@@ -1226,10 +1498,6 @@
 				"app\\Http\\Controllers\\PhotoController.php"
 			],
 			[
-				"nav",
-				"resources\\views\\admin\\partials\\nav.blade.php"
-			],
-			[
 				"wle",
 				"resources\\views\\welcome.blade.php"
 			],
@@ -1252,10 +1520,6 @@
 			[
 				"dash",
 				"resources\\views\\admin\\dashboard.blade.php"
-			],
-			[
-				"lay",
-				"resources\\views\\layout.blade.php"
 			],
 			[
 				".en",
