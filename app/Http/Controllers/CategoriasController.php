@@ -15,7 +15,7 @@ class CategoriasController extends Controller
     	//de esta otra forma, lo devuelve como una colección independiente de posts.
     			//return $categoria->posts;
     	
-    	$posts = $categoria->posts()->paginate();
+    	$posts = $categoria->posts()->publicados()->paginate();
     	//return $categor
 
     	$titulo = $categoria->nombre;

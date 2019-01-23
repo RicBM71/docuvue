@@ -15,6 +15,8 @@ class Post extends Model
         'titulo', 'cuerpo', 'extracto', 'fecha_publi', 'categoria_id', 'user_id',
     ];
 
+    // protected $with = ['categoria','etiquetas','owner', 'fotos'];
+
 
     protected static function boot(){
 
@@ -53,7 +55,8 @@ class Post extends Model
         //             ->latest('fecha_publi') // orden descendente
         //             ->get(); 
 
-        $query->whereNotNull('fecha_publi')
+        $query->with(['categoria','etiquetas','owner', 'fotos'])
+                    ->whereNotNull('fecha_publi')
                     ->where('fecha_publi', '<=', Carbon::now() )
                     ->latest('fecha_publi'); 
 

@@ -14,8 +14,15 @@ class PagesController extends Controller
     	
     	//$posts = Post::publicados()->get();
 		//return $posts = Post::publicados()->paginate(1);
-		$posts = Post::publicados()->paginate(15);
 
+		//$posts = Post::publicados()->paginate(15);
+            // de esta forma pasamos el nombre de la categoría y ahorramos querys
+            // debe coincidir con el nombre de la relación en el modelo Post en este caso
+            //Post::with(['categoria','etiquetas','owner', 'fotos'])->publicados()->paginate(15);
+            // lo vamos a llevar al modelo
+        $posts = Post::publicados()->paginate(15);
+        
+        //return $posts;
     	//$posts = Post::all();
         //dd($posts);
         return view('pages.home',compact('posts'));
