@@ -14,7 +14,7 @@
             <li><a href="#" data-toggle="modal" data-target="#exampleModal">Crear post</a></li>
           </ul>
         </li>
-         <li class="treeview {{ setActiveRoute(['admin.users.index','admin.users.create']) }}">
+         <li class="treeview {{ setActiveRoute(['admin.users.index','admin.roles.index','admin.permissions.index']) }}">
           <a href="#"><i class="fa fa-users"></i> <span>Usuarios</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -22,7 +22,11 @@
           </a>
           <ul class="treeview-menu">
             <li class="{{ setActiveRoute('admin.users.index') }}"><a href="{{ route('admin.users.index') }}">Ver Usuarios</a></li>
-            <li class="{{ setActiveRoute('admin.users.create') }}"><a href="{{ route('admin.users.create') }}">Crear Usuario</a></li>
+            @can('view', new App\User)
+              <li class="{{ setActiveRoute('admin.roles.index') }}"><a href="{{ route('admin.roles.index') }}">Roles</a></li>
+              <li class="{{ setActiveRoute('admin.permissions.index') }}"><a href="{{ route('admin.permissions.index') }}">Permisos</a></li>            
+            @endcan
           </ul>
+
         </li>
       </ul>

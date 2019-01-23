@@ -29,7 +29,7 @@ class SaveRolesRequest extends FormRequest
             'guard_name'  => 'required',
         ];
 
-        if ($this->method !== 'POST'){
+        if ($this->method === 'POST'){
             $rules['name']  = 'required|unique:roles';
         }
 

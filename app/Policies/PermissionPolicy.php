@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use App\Permission;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PermissionPolicy
@@ -12,10 +12,15 @@ class PermissionPolicy
 
     public function before($user)
     {
-        dd($user);
+        
         if($user->hasRole('Admin')){
             return true;
         }
-        return false;
+        
     }
+
+    public function view(User $user, Permission $permsion)
+    {
+        return $user->hasRole('Admin');
     }
+}

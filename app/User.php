@@ -47,7 +47,9 @@ class User extends Authenticatable
     public function scopePermitidos($query)
     {
 
-        if (auth()->user()->can('view', $this)){ // busca la política e PostPolicy, pasar instancia
+        //dd(auth()->user()->can('view', $this));
+
+        if (auth()->user()->can('view', $this)){ // busca la política e UserPolicy, pasar instancia
             return $query; // retorna el query builder sin restricciones
         }else{
             return $query->where('id', auth()->id());  

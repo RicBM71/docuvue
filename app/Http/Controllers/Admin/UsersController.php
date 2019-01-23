@@ -66,7 +66,7 @@ class UsersController extends Controller
         $user->givePermissionTo($request->permissions);
 
         // enviar email
-        UsuarioFueCreado::dispatch($user, $data['password']);
+        //UsuarioFueCreado::dispatch($user, $data['password']);
 
         return redirect()->route('admin.users.index')->withFlash('El usuario ha sido creado');
     }

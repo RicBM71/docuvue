@@ -10,9 +10,9 @@ class UserPolicy
     use HandlesAuthorization;
 
 // esto se ejecuta antes de cualquier método
-    public function before($user)
+    public function before($authUser)
     {
-        if($user->hasRole('Admin')){
+        if($authUser->hasRole('Admin')){
             return true;
         }
     }
@@ -26,8 +26,12 @@ class UserPolicy
      */
     public function view(User $authUser, User $user)
     {
+
+        //dd($authUser->id);
+        //return $authUser->hasPermissionTo('Ver Usuarios');
+
          return $authUser->id === $user->id
-            || $user->hasPermissionTo('Ver Usuarios');
+            || $authUser->hasPermissionTo('Ver Usuarios');
     }
 
     /**
@@ -36,9 +40,9 @@ class UserPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
-    {
-        return $user->hasPermissionTo('Crear Usuarios');
+    public function create(User $authUser)
+    {        
+        return $authUser->hasPermissionTo('Crear Usuarios');
     }
 
     /**
@@ -51,7 +55,7 @@ class UserPolicy
     public function update(User $authUser, User $user)
     {
        return $authUser->id === $user->id
-            || $user->hasPermissionTo('Actualizar Usuarios');
+            || $authUser->hasPermissionTo('Actualizar Usuarios');
     }
 
     /**
@@ -63,8 +67,8 @@ class UserPolicy
      */
     public function delete(User $authUser, User $user)
     {
-        return $authUser->id === $user->id
-            || $user->hasPermissionTo('Borrar Usuarios');
+        return $authUser->id !== $user->id
+            && $authUser->hasPermissionTo('Borrar Usuarios');
     }
 
     /**
@@ -74,7 +78,7 @@ class UserPolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function restore(User $user, User $model)
+    public function restore(User $authUser, User $model)
     {
         //
     }
@@ -86,7 +90,7 @@ class UserPolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function forceDelete(User $user, User $model)
+    public function forceDelete(User $authUser, User $model)
     {
         //
     }

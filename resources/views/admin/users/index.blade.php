@@ -16,7 +16,9 @@
           <div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title">Todos los usuarios</h3>
-             <a href="{{ route('admin.users.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear usuario</a>
+              	@can('create', $users->first())
+             		<a href="{{ route('admin.users.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear usuario</a>
+             	@endcan
             </div>
 
 				 <div class="box-body">
@@ -40,12 +42,18 @@
 				 				<td>{{ $user->email }}</td>
 				 				<td>{{ $user->getRoleNames()->implode(', ') }}</td>
 				 				<td>
-				 					<a href="{{ route('admin.users.show', $user) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
-				 					<a href="{{ route('admin.users.edit', $user) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-				 					<form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
-				 						@csrf @method('DELETE')
-				 						<button class="btn btn-xs btn-danger" onclick="return confirm('¿Desea borrar el registro?')"><i class="fa fa-times"></i></button>
-				 					</form>
+				 					@can('view', $user)
+				 						<a href="{{ route('admin.users.show', $user) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
+				 					@endcan
+				 					@can('update', $user)
+				 						<a href="{{ route('admin.users.edit', $user) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+				 					@endcan
+				 					@can('delete', $user)
+				 						<form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
+				 							@csrf @method('DELETE')
+				 							<button class="btn btn-xs btn-danger" onclick="return confirm('¿Desea borrar el registro?')"><i class="fa fa-times"></i></button>
+				 						</form>
+				 					@endcan
 				 					
 				 				</td>
 				 			</tr>
