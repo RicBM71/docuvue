@@ -531,8 +531,16 @@
 			"file": "resources/views/admin/layout.blade.php",
 			"settings":
 			{
-				"buffer_size": 251734,
+				"buffer_size": 260684,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/rbart/Documents/metronic_v5.5.5/theme/classic/demos/default/index.html",
+			"settings":
+			{
+				"buffer_size": 260534,
 				"line_ending": "Windows"
 			}
 		}
@@ -635,8 +643,7 @@
 	"expanded_folders":
 	[
 		"/C/laragon/www/docutec",
-		"/C/laragon/www/docutec/public",
-		"/C/laragon/www/docutec/public/adminmtr"
+		"/C/laragon/www/docutec/public"
 	],
 	"file_history":
 	[
@@ -786,6 +793,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\"assets/app/med",
+			"img",
+			"assets/de",
+			"../../vendo",
+			"\"../../",
 			"=\"assets/",
 			"assets/",
 			"assets",
@@ -916,7 +928,7 @@
 						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -925,15 +937,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 251734,
+						"buffer_size": 260684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2651,
-								2651
+								3062,
+								941
 							]
 						],
 						"settings":
@@ -944,10 +956,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1698.0,
+						"translation.y": 700.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/rbart/Documents/metronic_v5.5.5/theme/classic/demos/default/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 260534,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								260534
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1277,7 +1319,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 267.0,
 	"status_bar_visible": true,
 	"template_settings":
