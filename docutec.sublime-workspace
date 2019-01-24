@@ -520,11 +520,20 @@
 	"buffers":
 	[
 		{
-			"file": "public/css/app.css",
+			"file": "resources/views/admin/old_layout.blade.php",
 			"settings":
 			{
-				"buffer_size": 175243,
-				"line_ending": "Unix"
+				"buffer_size": 14566,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 251734,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -625,10 +634,14 @@
 	},
 	"expanded_folders":
 	[
-		"/C/laragon/www/docutec"
+		"/C/laragon/www/docutec",
+		"/C/laragon/www/docutec/public",
+		"/C/laragon/www/docutec/public/adminmtr"
 	],
 	"file_history":
 	[
+		"/C/laragon/www/docutec/package-lock.json",
+		"/C/laragon/www/docutec/docutec.sublime-project",
 		"/C/laragon/www/docutec/routes/web.php",
 		"/C/laragon/www/docutec/public/css/app.css",
 		"/C/laragon/www/docutec/app/Post.php",
@@ -754,13 +767,11 @@
 		"/C/laragon/www/blogvue/database/migrations/2019_01_08_185418_create_posts_table.php",
 		"/C/laragon/www/blogvue/resources/views/admin/posts/index.blade.php",
 		"/C/laragon/www/blogvue/resources/views/admin/posts/create.blade.php",
-		"/C/laragon/www/blogvue/app/Providers/AppServiceProvider.php",
-		"/C/laragon/www/blogvue/.gitignore",
-		"/C/laragon/www/blogvue/vendor/laravel/framework/src/Illuminate/Support/Facades/Schema.php"
+		"/C/laragon/www/blogvue/app/Providers/AppServiceProvider.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 73.0
 	},
 	"find_in_files":
 	{
@@ -775,6 +786,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\"assets/",
+			"assets/",
+			"assets",
+			"../..",
 			"users",
 			"role",
 			"Role",
@@ -870,35 +885,66 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/css/app.css",
+					"file": "resources/views/admin/old_layout.blade.php",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 175243,
+						"buffer_size": 14566,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								171349,
-								171349
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 285016.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/admin/layout.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2651,
+								2651
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1698.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
