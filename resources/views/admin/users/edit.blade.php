@@ -1,38 +1,59 @@
 @extends('admin.layout')
-
+@section('subheader')
+<div class="m-subheader ">
+            <div class="d-flex align-items-center">
+              <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">Usuarios</h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                  <li class="m-nav__item m-nav__item--home">
+                    <a href="{{ route('admin') }}" class="m-nav__link m-nav__link--icon">
+                      <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                  </li>        
+                </ul>
+              </div>
+              <div>
+              </div>
+            </div>
+</div>
+@stop
 @section('contenido')
-
+<div class="m-content">
 	<div class="row">
 		<div class="col-md-6">
-			<div class="box box-primary">
-				<div class="box box-header with-border">
-					<h3 class="box-title">Datos usuario</h3>
+			<div class="m-portlet">
+              	<div class="m-portlet__head">
+		            <div class="m-portlet__head-caption">
+        				<div class="m-portlet__head-title">
+            				<h3 class="m-portlet__head-text">Editar usuario</h3>
+          				</div>
+        			</div>
 				</div>
-				<div class="box-body">
+				<div class="m-portlet__body">
 					<form method="POST" action="{{ route('admin.users.update', $user) }}">
 						@csrf @method('PUT')
-						<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+						<div class="form-group {{ $errors->has('name') ? 'has-danger' : '' }}">
 							<label for="name">Nombre</label>
 							<input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control">
-							{!! $errors->first('name', '<span class="help-block">:message</span>') !!}
+							{!! $errors->first('name', '<span class="form-control-feedback">:message</span>') !!}
 						</div>
-						<div class="form-group {{ $errors->has('username') ? 'has-error' : '' }}">
+						<div class="form-group {{ $errors->has('username') ? 'has-danger' : '' }}">
 							<label for="username">Usuario</label>
 							<input type="text" name="username" value="{{ old('username', $user->username) }}" class="form-control">
-							{!! $errors->first('username', '<span class="help-block">:message</span>') !!}
+							{!! $errors->first('username', '<span class="form-control-feedback">:message</span>') !!}
 						</div>
-						<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+						<div class="form-group {{ $errors->has('email') ? 'has-danger' : '' }}">
 							<label for="email">email</label>
 							<input type="text" name="email" value="{{ old('email', $user->email) }}" class="form-control">
-							{!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+							{!! $errors->first('email', '<span class="form-control-feedback">:message</span>') !!}
 						</div>
-						<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+						<div class="form-group {{ $errors->has('password') ? 'has-danger' : '' }}">
 							<label for="password">Password</label>
 							<input type="password" 
 									name="password" 
 									placeholder="Indicar contraseña" 
 									class="form-control">
-							{!! $errors->first('password', '<span class="help-block">:message</span>') !!}
+							{!! $errors->first('password', '<span class="form-control-feedback">:message</span>') !!}
 						</div>
 						<div class="form-group">
 							<label for="password_confirmation">Repetir Password</label>
@@ -40,20 +61,25 @@
 									name="password_confirmation" 
 									placeholder="Repetir contraseña" 
 									class="form-control">
-							<span class="help-block">No se modificará la contraseña si se deja en blanco</span>
+							<span class="form-control-feedback">No se modificará la contraseña si se deja en blanco</span>
 						</div>
 
 						<button class="btn btn-primary btn-block">Enviar</button>
 					</form>
 				</div>
-			</div>		
+			</div>
 		</div>
+
 		<div class="col-md-6">
-			<div class="box box-primary">
-				<div class="box box-header with-border">
-					<h3 class="box-title">Roles</h3>
+			<div class="m-portlet">
+              	<div class="m-portlet__head">
+		            <div class="m-portlet__head-caption">
+        				<div class="m-portlet__head-title">
+            				<h3 class="m-portlet__head-text">Editar Role</h3>
+          				</div>
+        			</div>
 				</div>
-				<div class="box-body">
+				<div class="m-portlet__body">
 					@role('Admin')
 						<form action="{{ route('admin.users.roles.update', $user) }}" method="POST">
 							@csrf @method('PUT')
@@ -75,11 +101,15 @@
 					@endrole
 				</div>
 			</div>
-			<div class="box box-primary">
-				<div class="box box-header with-border">
-					<h3 class="box-title">Permisos</h3>
+			<div class="m-portlet">
+              	<div class="m-portlet__head">
+		            <div class="m-portlet__head-caption">
+        				<div class="m-portlet__head-title">
+            				<h3 class="m-portlet__head-text">Editar Permisos</h3>
+          				</div>
+        			</div>
 				</div>
-				<div class="box-body">
+				<div class="m-portlet__body">
 					@role('Admin')
 						<form action="{{ route('admin.users.permissions.update', $user) }}" method="POST">
 							@csrf @method('PUT')
@@ -100,6 +130,4 @@
 			</div>
 		</div>
 	</div>
-	
-
 @endsection

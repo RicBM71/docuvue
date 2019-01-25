@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"datatables"
+			],
+			[
+				"ad",
+				"adminmtr"
+			],
+			[
 				"auth",
 				"authUser"
 			],
@@ -506,42 +514,63 @@
 			[
 				"com",
 				"compact"
-			],
-			[
-				"secti",
-				"section\t(welcome.blade.php)"
-			],
-			[
-				"au",
-				"auth"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "resources/views/admin/old_layout.blade.php",
-			"settings":
-			{
-				"buffer_size": 14566,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "resources/views/admin/layout.blade.php",
 			"settings":
 			{
-				"buffer_size": 260684,
+				"buffer_size": 145230,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/rbart/Documents/metronic_v5.5.5/theme/classic/demos/default/index.html",
+			"file": "resources/views/admin/users/old_index.blade.php",
 			"settings":
 			{
-				"buffer_size": 260534,
+				"buffer_size": 2717,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/users/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 9495,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/adminmtr/js/users/index.js",
+			"settings":
+			{
+				"buffer_size": 517,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/adminmtr/js/datatable.Spanish.lang",
+			"settings":
+			{
+				"buffer_size": 1483,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/laragon/www/metronic/theme/classic/demos/default/assets/vendors/custom/datatables/datatables.bundle.js",
+			"settings":
+			{
+				"buffer_size": 2487254,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -557,8 +586,12 @@
 		"selected_items":
 		[
 			[
-				"in",
+				"rei",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"in",
+				"Indentation: Convert to Spaces"
 			],
 			[
 				"sor",
@@ -643,10 +676,22 @@
 	"expanded_folders":
 	[
 		"/C/laragon/www/docutec",
-		"/C/laragon/www/docutec/public"
+		"/C/laragon/www/docutec/public",
+		"/C/laragon/www/docutec/public/adminmtr",
+		"/C/laragon/www/docutec/public/adminmtr/js"
 	],
 	"file_history":
 	[
+		"/C/laragon/www/metronic/docs/api_reference/datatables/demos/orders.php",
+		"/C/laragon/www/metronic/theme/classic/demos/default/crud/datatables/basic/basic.html",
+		"/C/laragon/www/metronic/theme/classic/demos/default/crud/datatables/basic/paginations.html",
+		"/C/laragon/www/docutec/resources/views/admin/users/copias.php",
+		"/C/laragon/www/docutec/public/adminmtr/assets/demo/custom/crud/datatables/basic/paginations.js",
+		"/C/laragon/www/metronic/theme/classic/demos/default/components/base/tables.html",
+		"/C/laragon/www/docutec/resources/views/admin/old_layout.blade.php",
+		"/C/laragon/www/docutec/public/index.php",
+		"/C/Users/rbart/Documents/metronic_v5.5.5/theme/classic/demos/default/index.html",
+		"/C/laragon/www/docutec/resources/views/admin/layout.blade.php",
 		"/C/laragon/www/docutec/package-lock.json",
 		"/C/laragon/www/docutec/docutec.sublime-project",
 		"/C/laragon/www/docutec/routes/web.php",
@@ -706,7 +751,6 @@
 		"/C/laragon/www/docutec/vendor/phpunit/php-file-iterator/src/Facade.php",
 		"/C/laragon/www/docutec/vendor/nexmo/client/src/User/User.php",
 		"/C/laragon/www/docutec/vendor/spatie/laravel-permission/src/Traits/HasRoles.php",
-		"/C/laragon/www/docutec/resources/views/admin/layout.blade.php",
 		"/C/laragon/www/docutec/database/seeds/DatabaseSeeder.php",
 		"/C/laragon/www/docutec/resources/views/posts/show.blade.php",
 		"/C/laragon/www/docutec/resources/views/posts/header.blade.php",
@@ -765,16 +809,7 @@
 		"/C/laragon/www/docutec/config/app.php",
 		"/C/laragon/www/docutec/resources/views/layouts/app.blade.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/PostController.php",
-		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/starter.html",
-		"/C/laragon/www/docutec/database/migrations/2019_01_16_094200_create_etiquetas_table.php",
-		"/C/laragon/www/docutec/database/migrations/2019_01_15_193853_create_categorias_table.php",
-		"/C/Users/rbart/Downloads/Zendero-csuicg/index.html",
-		"/C/laragon/www/docutec/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/C/laragon/www/docutec/database/factories/UserFactory.php",
-		"/C/laragon/www/blogvue/database/migrations/2019_01_08_185418_create_posts_table.php",
-		"/C/laragon/www/blogvue/resources/views/admin/posts/index.blade.php",
-		"/C/laragon/www/blogvue/resources/views/admin/posts/create.blade.php",
-		"/C/laragon/www/blogvue/app/Providers/AppServiceProvider.php"
+		"/C/Users/rbart/Downloads/AdminLTE-2.3.11/AdminLTE-2.3.11/starter.html"
 	],
 	"find":
 	{
@@ -793,6 +828,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"language",
+			"olang",
+			"entries",
+			"OrderID",
+			"Ship",
+			"Ship City",
+			"m_table_1",
+			"datatabl",
+			"m_table_1_wrapper",
+			"m_table_1",
+			"view",
+			"edit",
+			"btn",
+			"bnt btn",
+			"edit",
+			"footer",
+			"table",
+			"m_table_1",
+			"../../..",
+			"m_table_1",
+			"<table",
+			"m-con",
+			"dashbo",
 			"=\"assets/app/med",
 			"img",
 			"assets/de",
@@ -897,92 +955,123 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/admin/old_layout.blade.php",
-					"semi_transient": true,
+					"file": "resources/views/admin/layout.blade.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14566,
+						"buffer_size": 145230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								139161,
+								139161
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
+						"translation.y": 123724.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "resources/views/admin/layout.blade.php",
+					"file": "resources/views/admin/users/old_index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 260684,
+						"buffer_size": 2717,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3062,
-								941
+								2441,
+								2706
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 244.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/admin/users/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9495,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9495,
+								9495
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 700.0,
+						"translation.y": 5256.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/C/Users/rbart/Documents/metronic_v5.5.5/theme/classic/demos/default/index.html",
+					"buffer": 3,
+					"file": "public/adminmtr/js/users/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 260534,
+						"buffer_size": 517,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								260534
+								267,
+								267
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"_anf_new": "",
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -990,6 +1079,67 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/adminmtr/js/datatable.Spanish.lang",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/laragon/www/metronic/theme/classic/demos/default/assets/vendors/custom/datatables/datatables.bundle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2487254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339592,
+								339610
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 65.0,
+						"translation.y": 327484.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1051,6 +1201,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"old_l",
+				"resources\\views\\admin\\old_layout.blade.php"
+			],
 			[
 				"eti",
 				"app\\Http\\Controllers\\EtiquetasController.php"
@@ -1319,8 +1473,8 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 267.0,
+	"side_bar_visible": true,
+	"side_bar_width": 340.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

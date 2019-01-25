@@ -1,32 +1,32 @@
-    <ul class="sidebar-menu">
-        <li class="header">Nav</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li><a href="{{ route('pages.home') }}">Inicio público</a></li>
-        <li class="{{ setActiveRoute('admin') }}"><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
-        <li class="treeview {{ setActiveRoute('admin.posts.index') }}">
-          <a href="#"><i class="fa fa-bars"></i> <span>Blog</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="{{ setActiveRoute('admin.posts.index') }}"><a href="{{ route('admin.posts.index') }}">Ver todos los posts</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#exampleModal">Crear post</a></li>
-          </ul>
-        </li>
-         <li class="treeview {{ setActiveRoute(['admin.users.index','admin.roles.index','admin.permissions.index']) }}">
-          <a href="#"><i class="fa fa-users"></i> <span>Usuarios</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="{{ setActiveRoute('admin.users.index') }}"><a href="{{ route('admin.users.index') }}">Ver Usuarios</a></li>
-            @can('view', new App\User)
-              <li class="{{ setActiveRoute('admin.roles.index') }}"><a href="{{ route('admin.roles.index') }}">Roles</a></li>
-              <li class="{{ setActiveRoute('admin.permissions.index') }}"><a href="{{ route('admin.permissions.index') }}">Permisos</a></li>            
-            @endcan
-          </ul>
-
-        </li>
-      </ul>
+    <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " m-menu-vertical="1" m-menu-scrollable="1" m-menu-dropdown-timeout="500" style="position: relative;">
+            <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+              <li class="m-menu__item  m-menu__item--active" aria-haspopup="true"><a href="index.html" class="m-menu__link "><i class="m-menu__link-icon flaticon-line-graph"></i><span class="m-menu__link-title"> <span class="m-menu__link-wrap"> <span class="m-menu__link-text">Dashboard</span>
+                      <span class="m-menu__link-badge"><span class="m-badge m-badge--danger">2</span></span> </span></span></a></li>
+              <li class="m-menu__section ">
+                <h4 class="m-menu__section-text">Components</h4>
+                <i class="m-menu__section-icon flaticon-more-v2"></i>
+              </li>
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span class="m-menu__link-text">Usuarios</span><i
+                   class="m-menu__ver-arrow la la-angle-right"></i></a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                  <ul class="m-menu__subnav">
+                    <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"><span class="m-menu__link"><span class="m-menu__link-text">Usuarios</span></span></li>
+                    <li class="m-menu__item " aria-haspopup="true"><a href="{{ route('admin.users.index') }}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Listar</span></a></li>                                      
+                    <li class="m-menu__item " aria-haspopup="true"><a href="{{ route('admin.roles.index') }}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Roles</span></a></li>
+                    <li class="m-menu__item " aria-haspopup="true"><a href="{{ route('admin.permissions.index') }}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Permisos</span></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-share"></i><span class="m-menu__link-text">Blog</span><i
+                   class="m-menu__ver-arrow la la-angle-right"></i></a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                  <ul class="m-menu__subnav">
+                    <li class="m-menu__item " aria-haspopup="true"><a href="{{ route('admin.posts.index') }}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Posts</span></a></li>
+                    
+                  </ul>
+                </div>
+              </li>
+            
+             
+            </ul>
+          </div>

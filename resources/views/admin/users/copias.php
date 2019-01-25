@@ -5,6 +5,7 @@
 @endpush
 
 @section('subheader')
+
 <div class="m-subheader ">
             <div class="d-flex align-items-center">
               <div class="mr-auto">
@@ -43,7 +44,8 @@
 
 @section('contenido')
  <!--begin: Datatable -->
-    <div class="m-content">            
+    <div class="m-content">
+            
             <div class="m-portlet m-portlet--mobile">
               <div class="m-portlet__head">
                 <div class="m-portlet__head-caption">
@@ -56,7 +58,7 @@
                 <div class="m-portlet__head-tools">
                   <ul class="m-portlet__nav">
                     <li class="m-portlet__nav-item">
-                      <a href="{{ route('admin.users.create') }}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                      <a href="#" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
                         <span>
                           <i class="la la-plus"></i>
                           <span>Nuevo Usuario</span>
@@ -64,12 +66,13 @@
                       </a>
                     </li>
                     <li class="m-portlet__nav-item"></li>
+                    
                   </ul>
                 </div>
               </div>
               <div class="m-portlet__body">
+
                 <!--begin: Datatable -->
-              <!--begin: Datatable -->
                 <div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12">
                   <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
                   <thead>
@@ -108,7 +111,7 @@
                   </tr>
                   @endforeach                   
                 </tbody>
-                </table>
+                </table></div></div>
 
             </div>
 
@@ -127,7 +130,5 @@
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts -->
-    <script src="/adminmtr/js/users/index.js" type="text/javascript"></script>
-    {{-- <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script> --}}
-
+    <script src="/adminmtr/assets/demo/custom/crud/datatables/basic/paginations.js" type="text/javascript"></script>
 @endpush
