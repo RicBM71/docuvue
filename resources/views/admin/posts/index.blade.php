@@ -25,7 +25,6 @@
 
 @section('contenido')
  <!--begin: Datatable -->
-    <div class="m-content">            
             <div class="m-portlet m-portlet--mobile">
               <div class="m-portlet__head">
                 <div class="m-portlet__head-caption">
@@ -83,7 +82,6 @@
             </div>
 
             <!-- END EXAMPLE TABLE PORTLET-->
-          </div>            
 @include('admin.posts.create')          
 @stop
 

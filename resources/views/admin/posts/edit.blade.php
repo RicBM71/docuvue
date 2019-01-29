@@ -25,30 +25,7 @@
 </div>
 @stop
 @section('contenido')
-	@if ($post->fotos->count() > 0)
-		<div class="row">
-			<div class="col-12">
-				<div class="row">
-					@foreach ($post->fotos as $foto)		        			
-						<div class="col-2">	
-							<form action="{{ route('admin.photos.destroy', $foto) }}" method="POST">
-
-								@csrf	
-								@method('DELETE')
-
-								<button class="btn btn-danger btn-sm" style="position: absolute; margin:4px;">
-									<i class="la la-trash"></i>
-								</button>
-								<img class="img-fluid" src="{{ url($foto->url) }}" alt="">
-							</form>		
-						</div>		        									
-					@endforeach
-				</div>			
-			</div>
-		</div>
-	@endif
-	<div class="row">
-		<div class="col-md-12">			
+	
 			<div class="m-portlet">
 	              	<div class="m-portlet__head">
 			            <div class="m-portlet__head-caption">
@@ -96,6 +73,7 @@
 						<div class="form-group {{ $errors->has('extracto') ? 'has-danger' : '' }}">
 		        			<label>Extracto</label>
 		        			<textarea class="form-control" 
+		        					rows="6" 
 		        					name="extracto"
 		        					placeholder="Extracto del post">{{ old('extracto', $post->extracto) }}</textarea>
 		        			{!! $errors->first('extracto', '<span class="form-control-feedback">:message</span>') !!}   
@@ -116,22 +94,8 @@
 		        			{!! $errors->first('categoria_id', '<span class="help-block">:message</span>') !!}     				
 		        			</div>
 	        			</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8">
-						<div class="form-group {{ $errors->has('cuerpo') ? 'has-danger' : '' }}">
-		    				<label>Contenido</label>
-		        			<textarea id="editor" 
-		        					rows="10" class="form-control" 
-		        					name="cuerpo" 
-		        					placeholder="Body del post">{{ old('cuerpo', $post->cuerpo) }}</textarea>
-		        			{!! $errors->first('cuerpo', '<span class="form-control-feedback">:message</span>') !!}
-	        			</div>			        								
-					</div>
-					<div class="col-md-4">
-						<div class="form-group {{ $errors->has('etiquetas') ? 'has-danger' : '' }}">
-	        				<label>Etiquetas</label>	        				
+	        			<div class="form-group {{ $errors->has('etiquetas') ? 'has-danger' : '' }}">
+	        				<label class="col-form-label col-lg-6 col-sm-12">Etiquetas</label>	        				
                 				<select name="etiquetas[]" class="form-control m-select2"                 					
                 					multiple="multiple"
                 					data-placeholder="Seleciona etiquetas"
@@ -144,18 +108,56 @@
 	        			</div>
 					</div>
 				</div>
-				<div class="row">					
-				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group {{ $errors->has('cuerpo') ? 'has-danger' : '' }}">
+		    				<label>Contenido</label>
+		        			<textarea id="editor" 
+		        					rows="4" class="form-control" 
+		        					name="cuerpo" 
+		        					placeholder="Body del post">{{ old('cuerpo', $post->cuerpo) }}</textarea>
+		        			{!! $errors->first('cuerpo', '<span class="form-control-feedback">:message</span>') !!}
+	        			</div>			        								
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+	        				<div class="dropzone">	        					
+	        				</div>
+	        			</div>							
+					</div>
+				</div>				
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary btn-block">Guardar</button>
 				</div>
 			</div>
 		</div>
-
-												
 		</form>
+		@if ($post->fotos->count() > 0)
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					@foreach ($post->fotos as $foto)		        			
+						<div class="col-2">	
+							<form action="{{ route('admin.photos.destroy', $foto) }}" method="POST">
 
+								@csrf	
+								@method('DELETE')
+
+								<button class="btn btn-danger btn-sm" style="position: absolute; margin:4px;">
+									<i class="la la-trash"></i>
+								</button>
+								<img class="img-fluid" src="{{ url($foto->url) }}" alt="">
+							</form>		
+						</div>		        									
+					@endforeach
+				</div>			
+			</div>
+		</div>
+	@endif
 	</div>
+
+</div>
+
 @stop
 
 @push('styles')
@@ -192,33 +194,33 @@
         });
 
 
-	    // CKEDITOR.replace('editor');
-	    // CKEDITOR.config.height= 315;
+	    CKEDITOR.replace('editor');
+	    CKEDITOR.config.height= 315;
 
 	    $('.m-select2').select2({
 	    	tags: true
 	    });
 
-	    // var myDropzone = new Dropzone('.dropzone', {
-	    // 	url: '/admin/posts/{{ $post->id }}/photos', 
-	    // 	acceptedFiles: 'image/*',
-	    // 	maxFilesize: 2,
-	    // 	maxFiles: 10,
-	    // 	paramName: 'foto',
-	    // 	headers: {
-	    // 		'X-CSRF-TOKEN': '{{ csrf_token() }}'
-	    // 	},
-	    // 	dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
-	    // });
+	    var myDropzone = new Dropzone('.dropzone', {
+	    	url: '/admin/posts/{{ $post->id }}/photos', 
+	    	acceptedFiles: 'image/*',
+	    	maxFilesize: 2,
+	    	maxFiles: 10,
+	    	paramName: 'foto',
+	    	headers: {
+	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
+	    	},
+	    	dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
+	    });
 
-	    // myDropzone.on('error', function(file, res){
-	    // 	//console.log(res.errors.foto[0]);
-	    // 	var msg = res.errors.foto[0];
-	    // 	$('.dz-error-message:last > span').text(msg)
+	    myDropzone.on('error', function(file, res){
+	    	//console.log(res.errors.foto[0]);
+	    	var msg = res.errors.foto[0];
+	    	$('.dz-error-message:last > span').text(msg)
 
-	    // });
+	    });
 
-	    // Dropzone.autoDiscover = false;
+	    Dropzone.autoDiscover = false;
 	</script>
 @endpush
 

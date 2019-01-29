@@ -39,7 +39,6 @@
 
 @section('contenido')
  <!--begin: Datatable -->
-    <div class="m-content">            
             <div class="m-portlet m-portlet--mobile">
               <div class="m-portlet__head">
                 <div class="m-portlet__head-caption">
@@ -68,48 +67,47 @@
               <!--begin: Datatable -->
                 <div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12">
                   <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Nombre</th>               
-                      <th>Username</th>
-                      <th>e-mail</th>
-                      <th>Roles</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach ($users as $user)
-                  <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->username }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->getRoleNames()->implode(', ') }}</td>
-                    <td>
-                      @can('view', $user)
-                        <a href="{{ route('admin.users.show', $user) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="fa fa-eye"></i></a>
-                      @endcan
-                      @can('update', $user)
-                        <a href="{{ route('admin.users.edit', $user) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="la la-edit"></i></a>
-                      @endcan
-                      @can('delete', $user)
-                        <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
-                          @csrf @method('DELETE')
-                          <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-trash"></i></button>
-                        </form>
-                      @endcan
-                      
-                    </td>
-                  </tr>
-                  @endforeach                   
-                </tbody>
-                </table>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>               
+                        <th>Username</th>
+                        <th>e-mail</th>
+                        <th>Roles</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($users as $user)
+                      <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->username }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->getRoleNames()->implode(', ') }}</td>
+                        <td>
+                          @can('view', $user)
+                          <a href="{{ route('admin.users.show', $user) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="fa fa-eye"></i></a>
+                          @endcan
+                          @can('update', $user)
+                          <a href="{{ route('admin.users.edit', $user) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="la la-edit"></i></a>
+                          @endcan
+                          @can('delete', $user)
+                          <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
+                            @csrf @method('DELETE')
+                            <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-trash"></i></button>
+                          </form>
+                          @endcan
+                          
+                        </td>
+                      </tr>
+                      @endforeach                   
+                    </tbody>
+              </table>                  
 
             </div>
 
             <!-- END EXAMPLE TABLE PORTLET-->
-          </div>            
 @stop
 
 
@@ -121,7 +119,19 @@
     <!--begin::Page Vendors -->
 
     <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.min.js" type="text/javascript"></script>
-    <script src="/adminmtr/js/pagination.js" type="text/javascript"></script>
+   <script>
+      $('#m_table_1').dataTable( {
+                responsive: true,
+                pagingType: 'full_numbers',
+                info: false,
+                paging: true,    
+                lengthChange: false,
+                pageLength: 10,      
+                language: {
+                  "url": "/adminmtr/js/datatable.Spanish.lang"
+                  }
+            });     
+   </script>
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts -->
