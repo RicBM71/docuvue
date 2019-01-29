@@ -23,6 +23,7 @@ class PostsController extends Controller
         //     $posts = auth()->user()->posts;  
         // }
         //allowed en ejemplo
+        //$posts = Post::permitidos()->paginate(5);
         $posts = Post::permitidos()->get();
 
     	return view('admin.posts.index',compact('posts'));

@@ -119,13 +119,13 @@
 
 @push('scripts')
     <!--begin::Page Vendors -->
-    <script src="/adminmtr/js/pagination.js" type="text/javascript"></script>
-    <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 
+    <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.min.js" type="text/javascript"></script>
+    <script src="/adminmtr/js/pagination.js" type="text/javascript"></script>
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts -->
    
-    {{-- <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script>  --}}
+   {{--  <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script> --}}
 
 @endpush

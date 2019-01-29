@@ -8,31 +8,13 @@
 <div class="m-subheader ">
             <div class="d-flex align-items-center">
               <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">Usuarios</h3>
+                <h3 class="m-subheader__title m-subheader__title--separator">Posts</h3>
                 <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
                   <li class="m-nav__item m-nav__item--home">
-                    <a href="{{ route('admin') }}" class="m-nav__link m-nav__link--icon">
+                    <a href="{{ route('admin.posts.index')}}" class="m-nav__link m-nav__link--icon">
                       <i class="m-nav__link-icon la la-home"></i>
                     </a>
                   </li>
-                  {{-- <li class="m-nav__separator">-</li>
-                  <li class="m-nav__item">
-                    <a href="" class="m-nav__link">
-                      <span class="m-nav__link-text">DataTables</span>
-                    </a>
-                  </li>
-                  <li class="m-nav__separator">-</li>
-                  <li class="m-nav__item">
-                    <a href="" class="m-nav__link">
-                      <span class="m-nav__link-text">Basic</span>
-                    </a>
-                  </li>
-                  <li class="m-nav__separator">-</li>
-                  <li class="m-nav__item">
-                    <a href="" class="m-nav__link">
-                      <span class="m-nav__link-text">Basic Tables</span>
-                    </a>
-                  </li> --}}
                 </ul>
               </div>
               <div>
@@ -73,7 +55,7 @@
                   <thead>
                     <tr>
                       <th>Titulo</th>
-                      <th>Extracto</th>
+                      <th>F. Publicación</th>
                       <th>Owner</th>
                       <th>Acciones</th>
                     </tr>
@@ -82,7 +64,7 @@
                   @foreach ($posts as $post)
                   <tr>
                     <td>{{ $post->titulo }}</td>
-                    <td>{{ $post->extracto }}</td>
+                    <td>{{ optional($post->fecha_publi)->format('d/m/Y') }}</td>
                     <td>{{ $post->owner->name }}</td>
                     <td>
                       <a href="{{ route('posts.show', $post) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" target="_blank"><i class="fa fa-eye"></i></a>
@@ -93,7 +75,8 @@
                       </form>                 
                     </td>                    
                   </tr>
-                  @endforeach                   
+                  @endforeach      
+                {{--   {{ $posts->links() }}        --}}      
                 </tbody>
                 </table>
 
@@ -110,17 +93,17 @@
 
 @push('scripts')
     <!--begin::Page Vendors -->
-    <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-  <script src="/adminmtr/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+    <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.min.js" type="text/javascript"></script>
+ 
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts -->
-    <script src="/adminmtr/js/pagination.js" type="text/javascript"></script>
+    {{-- <script src="/adminmtr/js/pagination.js" type="text/javascript"></script> --}}
     {{-- <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script> --}}
- {{-- <script>
+ <script>
 
      // if (window.location.hash == '#create'){    
-        $('#exampleModal').modal('show');
+        // $('#exampleModal').modal('show');
      // }
 
       $('#exampleModal').on('hide.bs.modal', function(){
@@ -131,5 +114,18 @@
           window.location.hash = '#create';
           $('#titulo').focus();
       });
-    </script> --}}
+
+    $('#m_table_1').dataTable( {
+          responsive: true,
+          pagingType: 'full_numbers',
+          info: false,
+          paging: true,    
+          lengthChange: false,
+          pageLength: 5,      
+          language: {
+            "url": "/adminmtr/js/datatable.Spanish.lang"
+            }
+      });
+
+    </script>
 @endpush

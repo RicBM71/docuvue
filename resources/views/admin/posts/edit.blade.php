@@ -1,97 +1,161 @@
 @extends('admin.layout')
-{{-- @section('subheader')
+@section('subheader')
 <div class="m-subheader ">
             <div class="d-flex align-items-center">
               <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">Posts</h3>
+                <h3 class="m-subheader__title m-subheader__title--separator">Posts Editar</h3>
                 <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
                   <li class="m-nav__item m-nav__item--home">
                     <a href="{{ route('admin') }}" class="m-nav__link m-nav__link--icon">
                       <i class="m-nav__link-icon la la-home"></i>
                     </a>
-                  </li>        
+                  </li>
+                  <li class="m-nav__separator">-</li>
+                  <li class="m-nav__item">
+                    <a href="{{ route('admin.posts.index') }}" class="m-nav__link">
+                      <span class="m-nav__link-text">Posts</span>
+                    </a>
+                  </li>
+                  <li class="m-nav__separator">-</li>
                 </ul>
               </div>
               <div>
               </div>
             </div>
 </div>
-@stop --}}
+@stop
 @section('contenido')
-	
-	<div class="m-content">
-						<div class="form-group m-form__group row">
-										<label class="col-form-label col-lg-3 col-sm-12">Basic Example</label>
-										<div class="col-lg-4 col-md-9 col-sm-12">
-											<select class="form-control m-select2" id="m_select2_1" name="param">
-												<option value="MD">Maryland</option>
-												<option value="MA">Massachusetts</option>
-												<option value="MI">Michigan</option>
-												<option value="NH">New Hampshire</option>
-												<option value="NJ">New Jersey</option>
-												<option value="NY">New York</option>
-												<option value="NC">North Carolina</option>
-												<option value="OH">Ohio</option>
-												<option value="PA">Pennsylvania</option>
-												<option value="RI">Rhode Island</option>
-												<option value="SC">South Carolina</option>
-												<option value="VT">Vermont</option>
-												<option value="VA">Virginia</option>
-												<option value="WV">West Virginia</option>
-											</select>
+	@if ($post->fotos->count() > 0)
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					@foreach ($post->fotos as $foto)		        			
+						<div class="col-2">	
+							<form action="{{ route('admin.photos.destroy', $foto) }}" method="POST">
+
+								@csrf	
+								@method('DELETE')
+
+								<button class="btn btn-danger btn-sm" style="position: absolute; margin:4px;">
+									<i class="la la-trash"></i>
+								</button>
+								<img class="img-fluid" src="{{ url($foto->url) }}" alt="">
+							</form>		
+						</div>		        									
+					@endforeach
+				</div>			
+			</div>
+		</div>
+	@endif
+	<div class="row">
+		<div class="col-md-12">			
+			<div class="m-portlet">
+	              	<div class="m-portlet__head">
+			            <div class="m-portlet__head-caption">
+	        				<div class="m-portlet__head-title">
+	            				<h3 class="m-portlet__head-text">Editar Post</h3>
+	          				</div>
+	        			</div>
+					</div>
+			<div class="m-portlet__body">	
+				<form action="{{ route('admin.posts.update', $post) }}" method="POST">
+					@csrf {{ method_field('PUT') }}	
+				<div class="row">
+						<div class="col-md-8">
+							<div class="form-group {{ $errors->has('titulo') ? 'has-danger' : '' }}">
+		    				<label class="col-2 col-form-label">Título</label>
+		    				<input type="text" class="form-control" 
+		    					name="titulo" 
+		    					placeholder="título"
+		    					value = "{{ old('titulo', $post->titulo) }}">
+			    				{!! $errors->first('titulo', '<span class="form-control-feedback">:message</span>') !!}
+	        				</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="col-form-label col-lg-3 col-sm-12">Fecha</label>
+								<div>
+									<div class="input-group date">
+										<input name="fecha_publi" 
+						                  	type="text" 
+						                  	 class="form-control m-input"
+						                  	id="m_datepicker_3"
+						                  	value = "{{ old('fecha_publi', $post->fecha_publi ? $post->fecha_publi->format('d/m/Y') : '') }}">
+										<div class="input-group-append">
+											<span class="input-group-text">
+												<i class="la la-calendar"></i>
+											</span>
 										</div>
-									</div>									
-									<div class="form-group m-form__group row">
-										<label class="col-form-label col-lg-3 col-sm-12">Multi Select</label>
-										<div class="col-lg-4 col-md-9 col-sm-12">
-											<select class="form-control m-select2" id="m_select2_3" name="param" multiple="multiple">
-												<optgroup label="Alaskan/Hawaiian Time Zone">
-													<option value="AK" selected>Alaska</option>
-													<option value="HI">Hawaii</option>
-												</optgroup>
-												<optgroup label="Pacific Time Zone">
-													<option value="CA">California</option>
-													<option value="NV" selected>Nevada</option>
-													<option value="OR">Oregon</option>
-													<option value="WA">Washington</option>
-												</optgroup>
-												<optgroup label="Mountain Time Zone">
-													<option value="AZ">Arizona</option>
-													<option value="CO">Colorado</option>
-													<option value="ID">Idaho</option>
-													<option value="MT" selected>Montana</option>
-													<option value="NE">Nebraska</option>
-													<option value="NM">New Mexico</option>
-													<option value="ND">North Dakota</option>
-													<option value="UT">Utah</option>
-													<option value="WY">Wyoming</option>
-												</optgroup>
-												<optgroup label="Central Time Zone">
-													<option value="AL">Alabama</option>
-													<option value="AR">Arkansas</option>
-													<option value="IL">Illinois</option>
-													<option value="IA">Iowa</option>
-													<option value="KS">Kansas</option>
-													<option value="KY">Kentucky</option>
-													<option value="LA">Louisiana</option>
-													<option value="MN">Minnesota</option>
-													<option value="MS">Mississippi</option>
-													<option value="MO">Missouri</option>
-													<option value="OK">Oklahoma</option>
-													<option value="SD">South Dakota</option>
-													<option value="TX">Texas</option>
-													<option value="TN">Tennessee</option>
-													<option value="WI">Wisconsin</option>
-												</optgroup>
-												<optgroup label="Eastern Time Zone">													
-													<option value="VT">Vermont</option>
-													<option value="VA">Virginia</option>
-													<option value="WV">West Virginia</option>
-												</optgroup>
-											</select>
-										</div>
-									</div>						
-					</div>			
+									</div>
+								</div>
+							</div>														
+						</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group {{ $errors->has('extracto') ? 'has-danger' : '' }}">
+		        			<label>Extracto</label>
+		        			<textarea class="form-control" 
+		        					name="extracto"
+		        					placeholder="Extracto del post">{{ old('extracto', $post->extracto) }}</textarea>
+		        			{!! $errors->first('extracto', '<span class="form-control-feedback">:message</span>') !!}   
+	        			</div>						
+					</div>
+					<div class="col-md-4">						
+						<div class="form-group {{ $errors->has('categoria_id') ? 'has-danger' : '' }}">
+		        			<label class="col-form-label col-lg-6 col-sm-12">Categorías</label>
+		        			<div>
+		        			<select name="categoria_id" class="form-control m-select2">
+		        				
+		        				@foreach ($categorias as $categoria)
+		        					<option value="{{ $categoria->id }}"
+		        							{{ old('categoria_id', $post->categoria_id) == $categoria->id ? 'selected' : '' }}
+		        							>{{ $categoria->nombre }}</option>	
+		        				@endforeach
+		        			</select>	   
+		        			{!! $errors->first('categoria_id', '<span class="help-block">:message</span>') !!}     				
+		        			</div>
+	        			</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group {{ $errors->has('cuerpo') ? 'has-danger' : '' }}">
+		    				<label>Contenido</label>
+		        			<textarea id="editor" 
+		        					rows="10" class="form-control" 
+		        					name="cuerpo" 
+		        					placeholder="Body del post">{{ old('cuerpo', $post->cuerpo) }}</textarea>
+		        			{!! $errors->first('cuerpo', '<span class="form-control-feedback">:message</span>') !!}
+	        			</div>			        								
+					</div>
+					<div class="col-md-4">
+						<div class="form-group {{ $errors->has('etiquetas') ? 'has-danger' : '' }}">
+	        				<label>Etiquetas</label>	        				
+                				<select name="etiquetas[]" class="form-control m-select2"                 					
+                					multiple="multiple"
+                					data-placeholder="Seleciona etiquetas"
+                					style="width: 100%;">
+                					@foreach ($etiquetas as $etiqueta)
+                						<option {{ collect(old('etiquetas',$post->etiquetas->pluck('id')))->contains($etiqueta->id) ? 'selected' : '' }} value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                					@endforeach                  					
+                  				</select>
+                  				{!! $errors->first('etiquetas', '<span class="form-control-feedback">:message</span>') !!}   
+	        			</div>
+					</div>
+				</div>
+				<div class="row">					
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block">Guardar</button>
+				</div>
+			</div>
+		</div>
+
+												
+		</form>
+
+	</div>
 @stop
 
 @push('styles')
@@ -132,7 +196,7 @@
 	    // CKEDITOR.config.height= 315;
 
 	    $('.m-select2').select2({
-	    	// tags: true
+	    	tags: true
 	    });
 
 	    // var myDropzone = new Dropzone('.dropzone', {
