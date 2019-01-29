@@ -1,9 +1,5 @@
 @extends('admin.layout')
 
-@push('styles')
-  <link href="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-@endpush
-
 @section('subheader')
 <div class="m-subheader ">
             <div class="d-flex align-items-center">
@@ -100,7 +96,7 @@
                       @can('delete', $user)
                         <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
                           @csrf @method('DELETE')
-                          <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-edit"></i></button>
+                          <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-trash"></i></button>
                         </form>
                       @endcan
                       
@@ -118,16 +114,18 @@
 
 
 @push('styles')
+  <link href="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 @endpush
 
 @push('scripts')
     <!--begin::Page Vendors -->
+    <script src="/adminmtr/js/pagination.js" type="text/javascript"></script>
     <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts -->
-    <script src="/adminmtr/js/users/index.js" type="text/javascript"></script>
-    {{-- <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script> --}}
+   
+    {{-- <script src="/adminmtr/datatable/datatable.js" type="text/javascript"></script>  --}}
 
 @endpush

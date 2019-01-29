@@ -39,13 +39,17 @@ class PostsController extends Controller
 
      public function store(Request $request)
      {
+        //dd(auth()->user());
         $this->authorize('create', new Post);
 
          $this->validate($request, [
              'titulo'    => 'required|min:3',
          ]);
 
-         $post = Post::create(['titulo' =>  $request->get('titulo')]);
+         $post = Post::create([
+            'titulo' =>  $request->get('titulo'),
+            'user_id' => auth()->user()->id
+        ]);
 
          return redirect()->route('admin.posts.edit', compact('post'));
     

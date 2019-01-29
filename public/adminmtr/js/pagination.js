@@ -7,6 +7,8 @@ var DatatablesBasicPaginations = function() {
 		table.DataTable({
 			responsive: true,
 			pagingType: 'full_numbers',
+            info: false,
+            paging: false,    
   			oLanguage: {
   				"sSearch":         "Buscar:",
   				"sProcessing":"Procesando...",
@@ -21,12 +23,12 @@ var DatatablesBasicPaginations = function() {
                 "sUrl":            "",
                 "sInfoThousands":  ",",
                 "sLoadingRecords": "Cargando...",
-                // "oPaginate": {
-                //     "sFirst":    "Primero",
-                //     "sLast":     "Último",
-                //     "sNext":     "Siguiente",
-                //     "sPrevious": "Anterior"
-                // },
+                "oPaginate": {
+                    "sFirst":    "<<",
+                    "sLast":     ">>",
+                    "sNext":     ">",
+                    "sPrevious": "<"
+                },
                 "oAria": {
                     "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                     "sSortDescending": ": Activar para ordenar la columna de manera descendente"
@@ -48,11 +50,7 @@ var DatatablesBasicPaginations = function() {
 
 	};
 
-	$('#m_table_1').dataTable( {
-  "initComplete": function(settings, json) {
-    alert( 'DataTables has finished its initialisation.' );
-  }
-} );
+
 
 }();
 
