@@ -165,6 +165,8 @@
 	    	acceptedFiles: 'image/*',
 	    	maxFilesize: 2,
 	    	maxFiles: 1,
+	    	resizeWidth: 80,
+	    	resizeHeight: 80,
 	    	paramName: 'avatar',
 	    	headers: {
 	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'

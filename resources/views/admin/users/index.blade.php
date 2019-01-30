@@ -93,10 +93,12 @@
                           <a href="{{ route('admin.users.edit', $user) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="la la-edit"></i></a>
                           @endcan
                           @can('delete', $user)
-                          <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
-                            @csrf @method('DELETE')
-                            <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-trash"></i></button>
-                          </form>
+                            @if($user->id !== 1)
+                              <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;">
+                                @csrf @method('DELETE')
+                                <button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el registro?')"><i class="la la-trash"></i></button>
+                              </form>
+                            @endif
                           @endcan
                           
                         </td>

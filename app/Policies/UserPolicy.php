@@ -67,6 +67,10 @@ class UserPolicy
      */
     public function delete(User $authUser, User $user)
     {
+
+        if ($user->id === 1)
+            return false;
+
         return $authUser->id !== $user->id
             && $authUser->hasPermissionTo('Borrar Usuarios');
     }
