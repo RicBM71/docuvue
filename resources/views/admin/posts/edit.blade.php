@@ -1,28 +1,12 @@
 @extends('admin.layout')
-@section('subheader')
-<div class="m-subheader ">
-            <div class="d-flex align-items-center">
-              <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">Posts Editar</h3>
-                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
-                  <li class="m-nav__item m-nav__item--home">
-                    <a href="{{ route('admin') }}" class="m-nav__link m-nav__link--icon">
-                      <i class="m-nav__link-icon la la-home"></i>
-                    </a>
-                  </li>
-                  <li class="m-nav__separator">-</li>
-                  <li class="m-nav__item">
-                    <a href="{{ route('admin.posts.index') }}" class="m-nav__link">
-                      <span class="m-nav__link-text">Posts</span>
-                    </a>
-                  </li>
-                  <li class="m-nav__separator">-</li>
-                </ul>
-              </div>
-              <div>
-              </div>
-            </div>
-</div>
+@section('urlback')
+<a href="{{ route('admin.posts.index') }}" class="m-nav__link m-dropdown__toggle">										
+	<span class="m-nav__link-icon"><i class="flaticon-home"></i></span>
+</a>
+{{-- <a href="{{ route('admin.posts.index') }}" class="m-menu__link m-menu__toggle">
+	
+	<span class="m-menu__link-text"><i class="m-menu__link-icon flaticon-speech-bubble"></i>Postqs</span>
+</a> --}}
 @stop
 @section('contenido')
 	

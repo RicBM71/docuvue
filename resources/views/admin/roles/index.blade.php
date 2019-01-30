@@ -5,22 +5,6 @@
 @endpush
 
 @section('subheader')
-<div class="m-subheader ">
-            <div class="d-flex align-items-center">
-              <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">Roles</h3>
-                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
-                  <li class="m-nav__item m-nav__item--home">
-                    <a href="{{ route('admin.roles.index')}}" class="m-nav__link m-nav__link--icon">
-                      <i class="m-nav__link-icon la la-home"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-              </div>
-            </div>
-</div>
 @stop
 
 @section('contenido')
@@ -29,7 +13,7 @@
 		<div class="m-portlet__head-caption">
 			<div class="m-portlet__head-title">
 				<h3 class="m-portlet__head-text">
-					Listado
+					Roles
 				</h3>
 			</div>
 		</div>
@@ -52,7 +36,7 @@
   	<div class="m-portlet__body">
      <!--begin: Datatable -->
 		<div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">     
-			<table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
+			<table class="table table-sm table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
 		 		<thead>
 		 			<tr>
 		 				<th>ID</th>

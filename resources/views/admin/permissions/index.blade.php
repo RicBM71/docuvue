@@ -1,75 +1,92 @@
 @extends('admin.layout')
 
-@section('cabecera')
-
-<h1>
-        Permisos
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Permisos</li>
-      </ol>
+@section('subheader')
 @stop
 
 @section('contenido')
-          <div class="box box-primary">
-            <div class="box-header">
-              <h3 class="box-title">Permisos</h3>
-             <a href="{{ route('admin.permissions.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Role</a>
-            </div>
+<div class="m-portlet m-portlet--mobile">
+	<div class="m-portlet__head">
+		<div class="m-portlet__head-caption">
+			<div class="m-portlet__head-title">
+				<h3 class="m-portlet__head-text">
+					Listado
+				</h3>
+			</div>
+		</div>
+		<div class="m-portlet__head-tools">
+			@can('create', $permissions->first())
+			<ul class="m-portlet__nav">
+				<li class="m-portlet__nav-item">
+					<a href="{{ route('admin.permissions.create') }}" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+						<span>
+							<i class="la la-plus"></i>
+							<span>Nuevo Role</span>
+						</span>
+					</a>
+				</li>
+				<li class="m-portlet__nav-item"></li>
+			</ul>
+			@endcan
+		</div>
+	</div>
+  	<div class="m-portlet__body">
+     <!--begin: Datatable -->
+		<div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">     
+			<table class="table table-sm table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
+		 		<thead>
+		 			<tr>
+		 				<th>ID</th>
+		 				<th>Nombre</th>				 				
+		 				<th>Acciones</th>
+		 			</tr>
+		 		</thead>
+		 		<tbody>
+		 			@foreach ($permissions as $permission)
+		 			<tr>
+		 				<td>{{ $permission->id }}</td>
+		 				<td>{{ $permission->name }}</td>
+		 				<td>
+		 					@can('view', $permission)
+			 					<a href="{{ route('admin.permissions.edit', $permission) }}" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"><i class="la la-edit"></i></a>
+			 				@endcan
+			 				@can('view', $permission)
+			 					<form method="POST" action="{{ route('admin.permissions.destroy', $permission) }}" style="display: inline;">
+			 						@csrf @method('DELETE')
+			 						<button class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" onclick="return confirm('¿Desea borrar el role?')"><i class="la la-trash"></i></button>
+			 					</form>
+							@endcan			 					
+		 				</td>
+		 			</tr>
+		 			@endforeach
 
-				 <div class="box-body">
-				 	<table id="posts-table" class="table table-bordered table-striped">
-				 		<thead>
-				 			<tr>
-				 				<th>ID</th>
-				 				<th>Nombre</th>		
-				 				<th>Acciones</th>
-				 			</tr>
-				 		</thead>
-				 		<tbody>
-				 			@foreach ($permissions as $permision)
-				 			<tr>
-				 				<td>{{ $permision->id }}</td>
-				 				<td>{{ $permision->name }}</td>				 				
-				 				<td>
-				 					<a href="{{ route('admin.permissions.edit', $permision) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-				 					<form method="POST" action="{{ route('admin.permissions.destroy', $permision) }}" style="display: inline;">
-				 						@csrf @method('DELETE')
-				 						<button class="btn btn-xs btn-danger" onclick="return confirm('¿Desea borrar el permiso?')"><i class="fa fa-times"></i></button>
-				 					</form>
-				 				</td>
-				 			</tr>
-				 			@endforeach
-
-				 		</tbody>                
-				 	</table>
-				 </div>
+		 		</tbody>                
+		 	</table>
+		 </div>
 @stop
-
-
-
 @push('styles')
-	<link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  <link href="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 @endpush
 
 @push('scripts')
-	<!-- DataTables -->
-	<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>	
-	<script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
-	<script>
-	  $(function () {
-	    
-	    $('#posts-table').DataTable({
-	      // "paging": true,
-	      // "lengthChange": false,
-	      // "searching": false,
-	      // "ordering": true,
-	      // "info": true,
-	      // "autoWidth": false
-	    });
-	  });
-	</script>
-@endpush
+    <!--begin::Page Vendors -->
+    <script src="/adminmtr/assets/vendors/custom/datatables/datatables.bundle.min.js" type="text/javascript"></script>
+ 
+    <!--end::Page Vendors -->
 
+    <!--begin::Page Scripts -->    
+ <script>
+
+    $('#m_table_1').dataTable( {
+          responsive: true,
+          pagingType: 'full_numbers',
+          info: false,
+          paging: true,    
+          lengthChange: false,
+          pageLength: 10,      
+          language: {
+            "url": "/adminmtr/js/datatable.Spanish.lang"
+            }
+      });
+
+    </script>
+@endpush

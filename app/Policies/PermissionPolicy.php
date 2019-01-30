@@ -10,10 +10,10 @@ class PermissionPolicy
 {
     use HandlesAuthorization;
 
-    public function before($user)
+    public function before($authUser)
     {
         
-        if($user->hasRole('Admin')){
+        if($authUser->hasRole('Admin')){
             return true;
         }
         

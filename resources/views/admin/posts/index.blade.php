@@ -5,7 +5,7 @@
 @endpush
 
 @section('subheader')
-<div class="m-subheader ">
+{{-- <div class="m-subheader ">
             <div class="d-flex align-items-center">
               <div class="mr-auto">
                 <h3 class="m-subheader__title m-subheader__title--separator">Posts</h3>
@@ -20,7 +20,7 @@
               <div>
               </div>
             </div>
-</div>
+</div> --}}
 @stop
 
 @section('contenido')
@@ -30,7 +30,7 @@
                 <div class="m-portlet__head-caption">
                   <div class="m-portlet__head-title">
                     <h3 class="m-portlet__head-text">
-                      Listado
+                      Posts
                     </h3>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                 <!--begin: Datatable -->
               <!--begin: Datatable -->
                 <div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12">
-                  <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
+                  <table class="table table-sm table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline collapsed" id="m_table_1" role="grid" aria-describedby="m_table_1_info" >
                   <thead>
                     <tr>
                       <th>Titulo</th>
@@ -119,7 +119,7 @@
           info: false,
           paging: true,    
           lengthChange: false,
-          pageLength: 5,      
+          pageLength: 10,      
           language: {
             "url": "/adminmtr/js/datatable.Spanish.lang"
             }
