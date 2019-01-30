@@ -47,6 +47,10 @@ Route::group([
 		Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');	
 		Route::delete('photos/{foto}','PhotosController@destroy')->name('admin.photos.destroy');
 
+		Route::post('users/{user}/avatar', 'AvatarsController@store')->name('admin.avatar.store');	
+		Route::delete('avatars/{user}/delete', 'AvatarsController@destroy')->name('admin.avatar.destroy');
+
+		
 		//resto rutas admin
 });
 

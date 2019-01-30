@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Avatar;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -15,7 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         Permission::truncate();
         Role::truncate();
-        User::truncate();
+        User::truncate();        
 
         $adminRole = Role::create(['name'=>'Admin']);
         $userRole = Role::create(['name'=>'User']);

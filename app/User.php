@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'username', 'password',
+        'name', 'email', 'username', 'password', 'avatar'
     ];
 
+     
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -33,6 +34,11 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] =  Hash::make($password);
+    }
+
+    public function getAvatarAttribute($avatar){
+        if (is_null($avatar)) return '#'; 
+        else return $avatar;
     }
 
     public function posts()
@@ -54,5 +60,11 @@ class User extends Authenticatable
         }else{
             return $query->where('id', auth()->id());  
         }
+    }
+
+    // creamos la relación uno a uno, un usario tendrá una o varias fotos
+    public function fotos()
+    {        
+        return $this->hasMany(Avatar::class);        
     }
 }

@@ -62,11 +62,30 @@
 								class="form-control">
 						<span class="form-control-feedback">No se modificará la contraseña si se deja en blanco</span>
 					</div>
-					<div class="form-group">
-        				<div class="dropzone"></div>
-	        		</div>		
+					@if($user->avatar === '#')
+						<div class="form-group">
+	        				<div class="dropzone"></div>
+		        		</div>		
+		        	@endif
 					<button class="btn btn-primary btn-block">Enviar</button>
 				</form>
+				<br>
+				@if($user->avatar !== '#')
+					<form action="{{ route('admin.avatar.destroy', $user) }}" method="POST">
+
+						@csrf	
+						@method('DELETE')
+
+						<button class="btn btn-danger btn-sm" style="position: absolute; margin:4px;" onclick="return confirm('¿Desea borrar el avatar?')">
+							<i class="la la-trash"></i>
+						</button>
+						<div class="m-card-profile__pic">
+							<div class="m-card-profile__pic-wrapper">
+								<img class="img-fluid" src="{{ url($user->avatar) }}" alt="">
+							</div>
+						</div>
+					</form>
+				@endif
 			</div>
 		</div>
 	</div>
@@ -142,19 +161,19 @@
 	<script>
 		
 	    var myDropzone = new Dropzone('.dropzone', {
-	    	url: '/admin/users/{{ $user->id }}/photos', 
+	    	url: '/admin/users/{{ $user->id }}/avatar', 
 	    	acceptedFiles: 'image/*',
 	    	maxFilesize: 2,
 	    	maxFiles: 1,
-	    	paramName: 'foto',
+	    	paramName: 'avatar',
 	    	headers: {
 	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
 	    	},
-	    	dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
+	    	dictDefaultMessage: 'Arrastra la foto aquí para subir avatar'
 	    });
 
 	    myDropzone.on('error', function(file, res){
-	    	//console.log(res.errors.foto[0]);
+	    	// console.log(res.errors.foto[0]);
 	    	var msg = res.errors.foto[0];
 	    	$('.dz-error-message:last > span').text(msg)
 

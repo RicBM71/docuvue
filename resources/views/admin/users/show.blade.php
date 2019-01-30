@@ -32,11 +32,11 @@
 			<div class="col-md-3">				
 				<div class="m-card-profile">
 					<div class="m-card-profile__title m--hide">
-						Your Profile
+						Perfil Usuario
 					</div>
 					<div class="m-card-profile__pic">
 						<div class="m-card-profile__pic-wrapper">
-							<img src="/adminmtr/assets/app/media/img/users/user4.jpg" alt="{{ $user->name }}">
+							<img src="{{ url($user->avatar) }}" alt="{{ $user->name }}">
 						</div>
 					</div>
 					<div class="m-card-profile__details">
