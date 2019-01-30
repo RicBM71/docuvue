@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"row",
+				"rows\tAttr"
+			],
+			[
+				"fun",
+				"fun\tfunction …"
+			],
+			[
 				"conte",
 				"contenido\t(layout.blade.php)"
 			],
@@ -66,10 +74,6 @@
 			[
 				"perm",
 				"permision\t(index.blade.php)"
-			],
-			[
-				"fun",
-				"function"
 			],
 			[
 				"Rol",
@@ -510,15 +514,64 @@
 			[
 				"cont",
 				"content\t(contact.blade.php)"
-			],
-			[
-				"AC",
-				"action\tAttr"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "resources/views/admin/posts/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 8881,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/adminmtr/assets/demo/custom/crud/forms/widgets/bootstrap-datepicker.js",
+			"settings":
+			{
+				"buffer_size": 3321,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 40010,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/adminmtr/assets/demo/base/style.bundle.css",
+			"settings":
+			{
+				"buffer_size": 1788437,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/roles/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 2108,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/posts/old_edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 6960,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -625,19 +678,50 @@
 		"/C/laragon/www/docutec/resources",
 		"/C/laragon/www/docutec/resources/views",
 		"/C/laragon/www/docutec/resources/views/admin",
-		"/C/laragon/www/docutec/resources/views/admin/posts",
-		"/C/laragon/www/docutec/resources/views/admin/users"
+		"/C/laragon/www/docutec/resources/views/posts"
 	],
 	"file_history":
 	[
+		"/C/laragon/www/docutec/resources/views/admin/roles/create.blade.php",
+		"/C/laragon/www/metronic/theme/classic/demos/default/index.html",
+		"/C/laragon/www/docutec/resources/views/admin/roles/index.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/users/edit.blade.php",
+		"/C/laragon/www/metronic/theme/default/dist/default/crud/forms/widgets/select2.html",
 		"/C/laragon/www/docutec/resources/views/admin/layout.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/posts/index.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/posts/kkedit.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/users/index.blade.php",
+		"/C/laragon/www/docutec/resources/views/admin/partials/nav.blade.php",
+		"/C/laragon/www/docutec/public/adminmtr/assets/demo/base/scripts.bundle.js",
 		"/C/laragon/www/docutec/resources/views/admin/posts/edit.blade.php",
+		"/C/laragon/www/docutec/app/Post.php",
+		"/C/laragon/www/docutec/public/adminmtr/js/datatable.Spanish.lang",
+		"/C/laragon/www/docutec/public/adminmtr/js/pagination.js",
+		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PostsController.php",
+		"/C/laragon/www/docutec/public/adminmtr/_datatable/datatable.js",
+		"/C/laragon/www/docutec/app/Http/Controllers/PostsController.php",
+		"/C/laragon/www/docutec/app/Categoria.php",
+		"/C/laragon/www/docutec/app/User.php",
+		"/C/Users/rbart/Downloads/kk/index.html",
+		"/C/laragon/www/docutec/resources/views/admin/metro.layout.blade.php",
+		"/C/laragon/www/metronic/theme/classic/demos/default/assets/demo/base/scripts.bundle.js",
+		"/C/laragon/www/docutec/public/adminmtr/assets/vendors/custom/datatables/datatables.bundle.js",
+		"/C/laragon/www/metronic/docs/toggle.html",
+		"/C/laragon/www/docutec/public/adminmtr/assets/app/js/dashboard.js",
+		"/C/laragon/www/docutec/public/adminmtr/assets/app/js/ini.dashboard.js",
+		"/C/laragon/www/docutec/public/adminmtr/assets/demo/base/scripts.bundle.min.js",
+		"/C/laragon/www/docutec/public/adminmtr/assets/app/js/dashboard.min.js",
+		"/C/laragon/www/docutec/public/adminlte/js/pages/dashboard.js",
+		"/C/laragon/www/metronic/theme/classic/demos/demo9/index.html",
+		"/C/laragon/www/metronic/theme/classic/demos/default/crud/forms/widgets/select22.html",
+		"/C/laragon/www/docutec/public/adminmtr/datatable/datatable.js",
+		"/C/laragon/www/docutec/public/adminmtr/datatable/datatable.checkbox.js",
+		"/C/laragon/www/docutec/public/adminmtr/assets/vendors/custom/datatables/datatables.bundle.css",
+		"/C/laragon/www/metronic/select2.html",
+		"/C/laragon/www/metronic/theme/classic/demos/default/crud/forms/widgets/select2.html",
+		"/C/laragon/www/docutec/resources/views/admin/posts/kkedit.blade.php",
 		"/C/laragon/www/metronic/theme/default/dist/default/assets/demo/default/custom/crud/forms/widgets/select2.js",
 		"/C/laragon/www/docutec/public/adminmtr/crud/forms/widgets/select2.html",
 		"/C/laragon/www/docutec/resources/views/admin/posts/old_edit.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/users/edit.blade.php",
 		"/C/laragon/www/metronic/theme/default/dist/default/crud/forms/widgets/bootstrap-datepicker.html",
 		"/C/laragon/www/metronic/theme/classic/demos/default/crud/forms/widgets/bootstrap-datepicker.html",
 		"/C/laragon/www/docutec/public/adminmtr/assets/demo/custom/crud/forms/widgets/bootstrap-datepicker.js",
@@ -646,14 +730,12 @@
 		"/C/laragon/www/docutec/resources/views/admin/old_layout.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/posts/create.blade.php",
 		"/C/laragon/www/metronic/theme/classic/demos/default/components/base/modal.html",
-		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PostsController.php",
 		"/C/laragon/www/docutec/resources/views/admin/posts/old_index.blade.php",
 		"/C/laragon/www/docutec/public/adminlte/bootstrap/css/bootstrap.css",
 		"/C/laragon/www/docutec/public/adminmtr/vendors/bootstrap/dist/js/bootstrap.js",
 		"/C/laragon/www/docutec/public/adminmtr/vendors/bootstrap/dist/js/bootstrap.js.map",
 		"/C/laragon/www/docutec/public/adminmtr/vendors/bootstrap/js/dist/modal.js",
 		"/C/laragon/www/metronic/theme/angular/dist/demo/default/src/assets/vendors/base/vendors.bundle.js",
-		"/C/laragon/www/docutec/resources/views/admin/users/index.blade.php",
 		"/C/laragon/www/docutec/public/adminmtr/js/users/index.js",
 		"/C/laragon/www/metronic/theme/default/dist/default/crud/forms/validation/states.html",
 		"/C/laragon/www/docutec/resources/views/admin/users/old_edit.blade.php",
@@ -664,15 +746,12 @@
 		"/C/laragon/www/metronic/theme/classic/demos/default/assets/snippets/custom/pages/user/login.js",
 		"/C/laragon/www/metronic/theme/classic/demos/default/crud/forms/validation/states.html",
 		"/C/laragon/www/docutec/resources/views/auth/login.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/partials/nav.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/partials/old_nav.blade.php",
-		"/C/laragon/www/metronic/theme/classic/demos/default/index.html",
 		"/C/laragon/www/docutec/.env",
 		"/C/laragon/www/metronic/theme/classic/demos/default/snippets/pages/user/login-5.html",
 		"/C/laragon/www/docutec/resources/views/admin/roles/checkboxes.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/permissions/checkboxes.blade.php",
 		"/C/laragon/www/metronic/theme/classic/demos/default/assets/vendors/custom/datatables/datatables.bundle.js",
-		"/C/laragon/www/docutec/public/adminmtr/js/datatable.Spanish.lang",
 		"/C/laragon/www/metronic/docs/api_reference/datatables/demos/orders.php",
 		"/C/laragon/www/metronic/theme/classic/demos/default/crud/datatables/basic/basic.html",
 		"/C/laragon/www/metronic/theme/classic/demos/default/crud/datatables/basic/paginations.html",
@@ -685,15 +764,12 @@
 		"/C/laragon/www/docutec/docutec.sublime-project",
 		"/C/laragon/www/docutec/routes/web.php",
 		"/C/laragon/www/docutec/public/css/app.css",
-		"/C/laragon/www/docutec/app/Post.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/CategoriasController.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/EtiquetasController.php",
 		"/C/laragon/www/docutec/package.json",
 		"/C/laragon/www/docutec/app/Http/Controllers/PagesController.php",
-		"/C/laragon/www/docutec/app/User.php",
 		"/C/laragon/www/docutec/app/Http/Controllers/Admin/UsersController.php",
 		"/C/laragon/www/docutec/app/Policies/UserPolicy.php",
-		"/C/laragon/www/docutec/resources/views/admin/roles/index.blade.php",
 		"/C/laragon/www/docutec/resources/views/admin/users/show.blade.php",
 		"/C/laragon/www/docutec/app/Policies/PermissionPolicy.php",
 		"/C/laragon/www/docutec/app/Http/Requests/SaveRolesRequest.php",
@@ -708,7 +784,6 @@
 		"/C/laragon/www/docutec/resources/views/errors/403.blade.php",
 		"/C/laragon/www/docutec/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
 		"/C/laragon/www/docutec/resources/views/admin/roles/edit.blade.php",
-		"/C/laragon/www/docutec/resources/views/admin/roles/create.blade.php",
 		"/C/laragon/www/docutec/vendor/spatie/laravel-permission/src/Models/Role.php",
 		"/C/laragon/www/docutec/database/migrations/2019_01_15_183101_create_posts_table.php",
 		"/C/laragon/www/docutec/app/Http/Kernel.php",
@@ -734,34 +809,11 @@
 		"/C/laragon/www/docutec/database/seeds/DatabaseSeeder.php",
 		"/C/laragon/www/docutec/resources/views/posts/show.blade.php",
 		"/C/laragon/www/docutec/resources/views/posts/header.blade.php",
-		"/C/laragon/www/docutec/resources/views/pages/home.blade.php",
-		"/C/laragon/www/docutec/resources/views/posts/etiquetas.blade.php",
-		"/C/laragon/www/docutec/resources/views/errors/404.blade.php",
-		"/C/laragon/www/docutec/database/seeds/PostsTableSeeder.php",
-		"/C/laragon/www/docutec/app/Http/Controllers/PostsController.php",
-		"/C/laragon/www/docutec/resources/views/layout.blade.php",
-		"/C/Users/rbart/Downloads/Zendero-csuicg/about.html",
-		"/C/laragon/www/docutec/app/Http/Helpers.php",
-		"/C/laragon/www/docutec/composer.json",
-		"/C/laragon/www/docutec/public/css/framework.css",
-		"/C/laragon/www/docutec/resources/views/pages/about.blade.php",
-		"/C/laragon/www/docutec/resources/views/pages/archive.blade.php",
-		"/C/laragon/www/docutec/resources/views/pages/contact.blade.php",
-		"/C/laragon/www/docutec/app/Photo.php",
-		"/C/laragon/www/docutec/app/Http/Controllers/Admin/PhotosController.php",
-		"/C/laragon/www/docutec/config/filesystems.php",
-		"/C/laragon/www/docutec/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemManager.php",
-		"/C/laragon/www/docutec/app/Http/Requests/StorePostRequest.php",
-		"/C/laragon/www/docutec/app/Etiqueta.php",
-		"/C/laragon/www/docutec/app/Categoria.php",
-		"/C/laragon/www/docutec/resources/views/welcome.blade.php",
-		"/C/laragon/www/docutec/public/css/style.css",
-		"/C/laragon/www/docutec/public/css/twitter-bootstrap.css",
-		"/C/laragon/www/docutec/public/css/pagination-bootstrap.css"
+		"/C/laragon/www/docutec/resources/views/pages/home.blade.php"
 	],
 	"find":
 	{
-		"height": 71.0
+		"height": 73.0
 	},
 	"find_in_files":
 	{
@@ -776,6 +828,41 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"drop",
+			"#575962;",
+			"--blu",
+			"succes",
+			"yellow",
+			"yello",
+			"575962",
+			"as-error",
+			"error",
+			"help-block",
+			"has-error",
+			"bundle.js",
+			"vendors.bundle.js",
+			"alaska",
+			"multi-select",
+			"menu.js",
+			"m_ver_menu",
+			"menu",
+			"mutil",
+			"annual repors",
+			"anual repor",
+			"c=\"asse",
+			"script.bundle.js",
+			"f=\"ass",
+			"=\"../../ve",
+			"f=\"../../vend",
+			"m-content",
+			"rtl",
+			"datatables.bundle",
+			"mutil",
+			"datatable",
+			"select2",
+			"../../../as",
+			"../../../../../vend",
+			"../../../../../ve",
 			"m-conten",
 			"../../../a",
 			"../../../../../ve",
@@ -868,42 +955,7 @@
 			"email",
 			"username",
 			"Username",
-			"username",
-			"post",
-			".posts",
-			"$post",
-			"post",
-			"posts",
-			"Alexander Pierce",
-			"404",
-			"welcome",
-			"(",
-			");",
-			"'categoria'",
-			"wid",
-			"wit",
-			"language",
-			"Share on",
-			"c=\"im",
-			"\"img",
-			"color",
-			"et/color/",
-			"main",
-			"select2",
-			"ck-ed",
-			"\t\n",
-			"datepick",
-			"header-he",
-			"f=\"../../dist",
-			"../../boot",
-			"=\"../../plugins",
-			"register",
-			"=\"dist/",
-			"=\"bootstrap",
-			"datepi",
-			"example1",
-			"alexander",
-			"../../dist"
+			"username"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -911,6 +963,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"--color-form"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -921,14 +974,196 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "resources/views/admin/posts/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7922,
+								7922
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/adminmtr/assets/demo/custom/crud/forms/widgets/bootstrap-datepicker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2095,
+								2119
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1586.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/admin/layout.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1927,
+								1922
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 924.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/adminmtr/assets/demo/base/style.bundle.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1788437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								234089,
+								234097
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 19.0,
+						"translation.y": 233936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/views/admin/roles/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 924.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "resources/views/admin/posts/old_edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5020,
+								5020
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3230.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 33.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -973,7 +1208,7 @@
 	"project": "docutec.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 120.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -982,6 +1217,46 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"style.bun",
+				"public\\adminmtr\\assets\\demo\\base\\style.bundle.css"
+			],
+			[
+				"nav",
+				"resources\\views\\admin\\partials\\nav.blade.php"
+			],
+			[
+				"datatable.sp",
+				"public\\adminmtr\\js\\datatable.Spanish.lang"
+			],
+			[
+				"postcon",
+				"app\\Http\\Controllers\\PostsController.php"
+			],
+			[
+				"pagin",
+				"public\\adminmtr\\js\\pagination.js"
+			],
+			[
+				"categ",
+				"app\\Categoria.php"
+			],
+			[
+				"user",
+				"app\\User.php"
+			],
+			[
+				"post",
+				"app\\Post.php"
+			],
+			[
+				"dash",
+				"public\\adminmtr\\assets\\app\\js\\dashboard.js"
+			],
+			[
+				"datatables.bundle.js",
+				"public\\adminmtr\\assets\\vendors\\custom\\datatables\\datatables.bundle.js"
+			],
 			[
 				"create",
 				"resources\\views\\admin\\posts\\create.blade.php"
@@ -999,16 +1274,8 @@
 				"app\\Http\\Controllers\\CategoriasController.php"
 			],
 			[
-				"post",
-				"app\\Post.php"
-			],
-			[
 				"web",
 				"routes\\web.php"
-			],
-			[
-				"nav",
-				"resources\\views\\admin\\partials\\nav.blade.php"
 			],
 			[
 				"admin/na",
@@ -1073,10 +1340,6 @@
 			[
 				"regis",
 				"app\\Http\\Controllers\\Auth\\RegisterController.php"
-			],
-			[
-				"user",
-				"vendor\\nexmo\\client\\src\\User\\User.php"
 			],
 			[
 				"lay",
@@ -1183,10 +1446,6 @@
 				"app\\Http\\Controllers\\Auth\\LoginController.php"
 			],
 			[
-				"dash",
-				"resources\\views\\admin\\dashboard.blade.php"
-			],
-			[
 				".en",
 				".env"
 			],
@@ -1254,7 +1513,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 340.0,
 	"status_bar_visible": true,
 	"template_settings":

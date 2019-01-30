@@ -167,7 +167,8 @@
   <link href="/adminmtr/vendors/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/adminmtr/vendors/select2/dist/css/select2.min.css">
   	<!-- drop zone -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css"> --}}
+  <link href="/adminmtr/vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
 @endpush
 
 @push('scripts')
@@ -177,7 +178,8 @@
 	<script src="/adminmtr/vendors/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js"></script> 
 	<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
 	<script src="/adminmtr/vendors/select2/dist/js/select2.full.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script> --}}
+	<script src="/adminmtr/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
 	
 	<script>
 		// //Date picker
@@ -185,6 +187,7 @@
             todayBtn: "linked",
             clearBtn: false,
             todayHighlight: true,
+            orientation: "bottom left",
             autoclose: true,
             language: 'es',
             templates: {
