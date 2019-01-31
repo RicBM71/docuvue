@@ -164,28 +164,29 @@
 	<script src="/adminmtr/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
 	
 	<script>
-		
-	    var myDropzone = new Dropzone('.dropzone', {
-	    	url: '/admin/users/{{ $user->id }}/avatar', 
-	    	acceptedFiles: 'image/*',
-	    	maxFilesize: 2,
-	    	maxFiles: 1,
-	    	resizeWidth: 80,
-	    	resizeHeight: 80,
-	    	paramName: 'avatar',
-	    	headers: {
-	    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
-	    	},
-	    	dictDefaultMessage: 'Arrastra la foto aquí para subir avatar'
-	    });
+		@if($user->avatar === '#')
+		    var myDropzone = new Dropzone('.dropzone', {
+		    	url: '/admin/users/{{ $user->id }}/avatar', 
+		    	acceptedFiles: 'image/*',
+		    	maxFilesize: 2,
+		    	maxFiles: 1,
+		    	resizeWidth: 80,
+		    	resizeHeight: 80,
+		    	paramName: 'avatar',
+		    	headers: {
+		    		'X-CSRF-TOKEN': '{{ csrf_token() }}'
+		    	},
+		    	dictDefaultMessage: 'Arrastra la foto aquí para subir avatar'
+		    });
 
-	    myDropzone.on('error', function(file, res){
-	    	// console.log(res.errors.foto[0]);
-	    	var msg = res.errors.foto[0];
-	    	$('.dz-error-message:last > span').text(msg)
+		    myDropzone.on('error', function(file, res){
+		    	// console.log(res.errors.foto[0]);
+		    	var msg = res.errors.foto[0];
+		    	$('.dz-error-message:last > span').text(msg)
 
-	    });
+		    });
 
-	    Dropzone.autoDiscover = false;
+		    Dropzone.autoDiscover = false;
+		  @endif
 	</script>
 @endpush

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 	<!-- begin::Head -->
 	<head>
@@ -23,40 +23,12 @@
 
 		<!--begin:: Global Mandatory Vendors -->
 		<link href="/adminmtr/vendors/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
-
 		<!--end:: Global Mandatory Vendors -->
 
 		<!--begin:: Global Optional Vendors -->
-		{{-- <link href="/adminmtr/vendors/tether/dist/css/tether.css" rel="stylesheet" type="text/css" /> --}}
-		<link href="/adminmtr/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
-		{{-- <link href="/adminmtr/vendors/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" /> 
-		<link href="/adminmtr/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />  --}}
-		{{-- <link href="/adminmtr/vendors/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/animate.css/animate.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/jstree/dist/themes/default/style.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/morris.js/morris.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/chartist/dist/chartist.min.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/socicon/css/socicon.css" rel="stylesheet" type="text/css" /> --}}
-		<link href="/adminmtr/vendors/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/vendors/flaticon/css/flaticon.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/vendors/metronic/css/styles.css" rel="stylesheet" type="text/css" />
-		<link href="/adminmtr/vendors/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
-
+		@include('admin.partials.cssoptional')
 		<!--end:: Global Optional Vendors -->
+
 		@stack('styles')
 		<!--begin::Global Theme Styles -->
 		<link href="/adminmtr/assets/demo/base/style.bundle.css" rel="stylesheet" type="text/css" />
@@ -66,6 +38,7 @@
 		<!--end::Global Theme Styles -->
 
 		<!--begin::Page Vendors Styles -->
+
 {{-- 		<link href="/adminmtr/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
  --}}
 		<!--RTL version:<link href="/adminmtr/assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
@@ -153,61 +126,7 @@
 		<!--end:: Global Mandatory Vendors -->
 
 		<!--begin:: Global Optional Vendors -->
-	{{-- 	<script src="/adminmtr/vendors/jquery.repeater/src/lib.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jquery.repeater/src/repeater.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/block-ui/jquery.blockUI.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/bootstrap-datepicker.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/bootstrap-timepicker.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/bootstrap-daterangepicker.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-switch/dist/js/bootstrap-switch.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/bootstrap-switch.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/select2/dist/js/select2.full.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/handlebars/dist/handlebars.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/inputmask/dist/inputmask/inputmask.date.extensions.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/inputmask/dist/inputmask/inputmask.numeric.extensions.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/inputmask/dist/inputmask/inputmask.phone.extensions.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/nouislider/distribute/nouislider.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/autosize/dist/autosize.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/markdown/lib/markdown.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/bootstrap-markdown.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jquery-validation/dist/additional-methods.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/forms/jquery-validation.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/bootstrap-notify/bootstrap-notify.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/base/bootstrap-notify.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/toastr/build/toastr.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/jstree/dist/jstree.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/raphael/raphael.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/morris.js/morris.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/chartist/dist/chartist.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/chart.js/dist/Chart.bundle.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/charts/chart.init.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/vendors/jquery-idletimer/idle-timer.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/counterup/jquery.counterup.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
-		<script src="/adminmtr/vendors/js/framework/components/plugins/base/sweetalert2.init.js" type="text/javascript"></script> --}}
-
+		@include('admin.partials.jsoptional')
 		<!--end:: Global Optional Vendors -->
 			
 		<!--begin::Global Theme Bundle -->

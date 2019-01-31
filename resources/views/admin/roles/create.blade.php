@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('urlback')
 <a href="{{ route('admin.roles.index') }}" class="m-nav__link m-dropdown__toggle">										
-	<span class="m-nav__link-icon"><i class="flaticon-home"></i></span>
+	<span class="m-nav__link-icon"><i class="flaticon-network"></i></span>
 </a>
 @stop
 @section('contenido')

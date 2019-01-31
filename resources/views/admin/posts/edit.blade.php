@@ -1,12 +1,8 @@
 @extends('admin.layout')
 @section('urlback')
 <a href="{{ route('admin.posts.index') }}" class="m-nav__link m-dropdown__toggle">										
-	<span class="m-nav__link-icon"><i class="flaticon-home"></i></span>
+	<span class="m-nav__link-icon"><i class="flaticon-speech-bubble"></i></span>
 </a>
-{{-- <a href="{{ route('admin.posts.index') }}" class="m-menu__link m-menu__toggle">
-	
-	<span class="m-menu__link-text"><i class="m-menu__link-icon flaticon-speech-bubble"></i>Postqs</span>
-</a> --}}
 @stop
 @section('contenido')
 	
