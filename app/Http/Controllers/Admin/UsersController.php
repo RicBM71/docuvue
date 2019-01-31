@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Events\UsuarioFueCreado;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Permission;
+use App\Events\UsuarioFueCreado;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Permission;
+use App\Http\Requests\UpdateUserRequest;
 
 class UsersController extends Controller
 {
@@ -113,8 +114,11 @@ class UsersController extends Controller
     {
 
         $this->authorize('update', $user);
-           // dd($request);
-        $user->update($request->validated());
+
+        $data = $request->validated();
+
+        $data['password'] = Hash::make($data['password']);
+        $user->update($data);
 
         //return back()->withFlash('Usuario actualizado');
         return redirect()->route('admin.users.edit', $user)

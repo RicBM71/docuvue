@@ -13,6 +13,6 @@ Utiliza estas credenciales para acceder al sistema
 Login
 @endcomponent
 
-Saludos,<br>
+Saludos.<br>
 {{ config('app.name') }}
 @endcomponent

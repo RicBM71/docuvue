@@ -52,7 +52,7 @@
           <div class="m-login__container">
             <div class="m-login__logo">
               <a href="#">
-                <img src="/adminmtr/assets/app/media/img/logos/logo-1.png">
+                <img src="/adminmtr/img/logo/logo.png">
               </a>
             </div>
             <div class="m-login__signin">
@@ -71,17 +71,17 @@
                 </div>
                 <div class="row m-login__form-sub">
                   <div class="col m--align-left m-login__form-left">
-                    <label class="m-checkbox  m-checkbox--focus">
-                      <input type="checkbox" name="remember"> Remember me
+                    <label class="m-checkbox m-checkbox--state-primary">
+                      <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
                       <span></span>
                     </label>
                   </div>
                   <div class="col m--align-right m-login__form-right">
-                    <a href="#" id="m_login_forget_password" class="m-link">Recordar Contraseña</a>
+                    <a href="{{ route('password.request') }}" id="m_login_forget_password" class="m-link">Recordar Contraseña</a>
                   </div>
                 </div>
                 <div class="m-login__form-action">
-                  <button type="submit" id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">Login</button>
+                  <button type="submit" id="m_login_signin_submit" class="btn m-btn--pill m-btn--air  btn-primary btn-lg">Login</button>
                 </div>
               </form>
             </div>

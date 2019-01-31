@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -31,10 +32,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] =  Hash::make($password);
-    }
+    // public function setPasswordAttribute($password)
+    // {
+    //     $this->attributes['password'] =  Hash::make($password);
+    // }
 
     public function getAvatarAttribute($avatar){
         if (is_null($avatar)) return '#'; 
@@ -66,5 +67,13 @@ class User extends Authenticatable
     public function fotos()
     {        
         return $this->hasMany(Avatar::class);        
+    }
+
+    /**
+    *   Reescribimos método de CanResetPassword
+    */    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }

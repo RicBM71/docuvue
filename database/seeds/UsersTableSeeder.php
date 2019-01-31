@@ -39,9 +39,9 @@ class UsersTableSeeder extends Seeder
         $user = new User;
 
         $user->name = "Ric";
-		$user->email = "r@rr.es";
+		$user->email = "info@sanaval.com";
 		$user->username = "ricardo.bm";
-		$user->password = ('123');
+		$user->password = Hash::make('123');
 		$user->save();
         $user->assignRole($adminRole);
 
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
         $user->name = "Pepe";
         $user->email = "pepe@rr.es";
         $user->username = "pepe";
-        $user->password = ('123');
+        $user->password = Hash::make('123');
         $user->save();
         $user->assignRole($userRole);
 

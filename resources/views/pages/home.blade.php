@@ -1,253 +1,269 @@
-@extends('layout')
+<!DOCTYPE html>
 
-@section('contenido')
-    <section class="posts container">
-        @if (isset($titulo))
-            <h2>Post {{ $titulo }}</h2>
-        @endif
+<html lang="en">
 
-        @foreach ($posts as $post)
-            <article class="post">                
-                @if ($post->fotos->count() === 1)
-                     <figure><img src="{{ $post->fotos->first()->url }}" alt="1" class="img-responsive"></figure>
-                @elseif ($post->fotos->count() > 1)
-                    <div class="gallery-photos" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 464 }'>
-                    
-                        @foreach ($post->fotos->take(4) as $foto)
+	<!-- begin::Head -->
+	<head>
+		<meta charset="utf-8" />
+		<title>Metronic | Dashboard</title>
+		<meta name="description" content="Latest updates and statistic charts">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
-                            <figure class="grid-item grid-item--height2">
-                                @if ($loop->iteration === 4)
-                                     <div class="overlay">{{ $post->fotos->count() }} Fotos</div>
-                                @endif
-                                <img width="100%" src="{{ $foto->url }}" class="image-responsive" alt="" >
-                            </figure>
-                        @endforeach
-                    </div>                
-                @endif
-                <div class="content-post">
-                    @include('posts.header')
-                    <h1>{{ $post->titulo }}</h1>
-                    <div class="divider"></div>
-                    <p>{{ $post->extracto }}</p>
-                    <footer class="container-flex space-between">
-                        <div class="read-more">
-                            <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">Leer más</a>
-                        </div>
+		<!--begin::Web font -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+			WebFont.load({
+            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+          });
+        </script>
 
-                        @include('posts.etiquetas')
-                        
-                    </footer>
-                </div>
-            </article>
-        @endforeach
+		<!--end::Web font -->
 
+		<!--begin:: Global Mandatory Vendors -->
+		<link href="/adminmtr/vendors/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
 
-       {{--  <article class="post w-image">
-            <figure><img src="img/img-post-1.png" alt="" class="img-responsive"></figure>
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 18</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category text-capitalize">i do observe</span>
-                    </div>
-                </header>
-                <h1>You know, I'd rather argue with you, then laugh with anyone else. </h1>
-                <div class="divider"></div>
-                <cite class="cite">Curabitur luctus placerat lorem id eleifend. Nulla ac lacus finibus, tempor velit hendrerit, vulputate lacus. Nunc fermentum nunc sem, ac eleifend tellus cursus nec. Donec a euismod est, vitae accumsan purus. Proin aliquet ex massa, ac finibus magna commodo vitae. </cite>
-                <p>Quisque congue lacus mattis massa luctus, nec hendrerit purus aliquet. Ut ac elementum urna. Pellentesque suscipit metus et egestas congue. Duis eu pellentesque turpis, ut maximus metus. Sed ultrices tellus vitae rutrum congue. Fusce luctus augue id nisl suscipit, vel sollicitudin orci egestas. Morbi posuere venenatis ipsum, ac vestibulum quam dignissim efficitur. Ut vitae rutrum augue, in volutpat quam. Cras a viverra ipsum. Aenean ut consequat ex, vitae vulputate nunc. Vestibulum metus nisi, aliquam sed tincidunt sit amet, pretium et augue.</p>
-                <p>Sed sagittis commodo dolor. Vivamus elementum sem sed sapien bibendum viverra. Curabitur semper scelerisque turpis eu ullamcorper. Morbi tincidunt auctor orci id consequat. Nulla odio mi, iaculis id congue quis, euismod id nisi. In varius congue diam, et viverra lorem bibendum ut.</p>
-                <footer class="container-flex space-between">
-                    <div class="read-more">
-                        <a href="#" class="text-uppercase c-green">read more</a>
-                    </div>
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1 text-capitalize">#yosemite</span>
-                        <span class="tag c-gray-1 text-capitalize">#peak</span>
-                        <span class="tag c-gray-1 text-capitalize">#photo</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+		<!--end:: Global Mandatory Vendors -->
 
-       {{--  <article class="post w-gallery">
-            <div class="gallery-photos masonry">
-                <figure class="gallery-image"><img src="img/img-post-gallery-1.png" alt=""></figure>
+		
 
-                <figure class="gallery-image"><img src="img/img-post-gallery-3.png" alt=""></figure>
+		<!--begin::Global Theme Styles -->
+		<link href="/pages/base/style.bundle.css" rel="stylesheet" type="text/css" />
 
-                <figure class="gallery-image"><img src="img/img-post-gallery-2.png" alt=""></figure>
+		<link href="/adminmtr/vendors/vendors/flaticon/css/flaticon.css" rel="stylesheet" type="text/css" />
 
-                <figure class="gallery-image"><img src="img/img-post-gallery-hover.png" alt=""></figure>
-            </div>
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 14</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category text-capitalize">i do photos</span>
-                    </div>
-                </header>
-                <h1>Everything in the universe has a rhythm, everything dances.</h1>
-                <div class="divider"></div>
-                <p>Donec hendrerit magna vitae metus viverra tincidunt. Cras dolor lacus, placerat sed nulla in, egestas pharetra neque. Sed sit amet aliquet erat. Integer nec mi convallis, condimentum odio quis, pharetra tellus. Donec mollis libero in volutpat luctus. Cras laoreet pulvinar dapibus. Nulla laoreet odio at nunc semper vestibulum. Sed magna mauris, molestie eu ipsum et, pharetra egestas neque.</p>
-                <footer class="container-flex space-between">
-                    <div class="read-more">
-                        <a href="#" class="text-uppercase c-green">read more</a>
-                    </div>
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1">#Yosemite</span>
-                        <span class="tag c-gray-1">#Photo</span>
-                        <span class="tag c-gray-1">#Hi-Res</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+		<!--end::Global Theme Styles -->
 
-        <article class="post w-video">
-            <div class="video">
-                <iframe width="100%" height="480" src="https://www.youtube.com/embed/Zsqep7_9_mw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 14</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category text-capitalize">i do watch</span>
-                    </div>
-                </header>
-                <h1>As human beings, we have a natural compulsion to fill empty spaces.</h1>
-                <div class="divider"></div>
-                <footer class="container-flex space-between">
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1">#Yosemite</span>
-                        <span class="tag c-gray-1">#Peak</span>
-                        <span class="tag c-gray-1">#Video</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+		<link rel="shortcut icon" href="/pages/media/img/logo/favicon.ico" />
+	</head>
 
-        <article class="post cite">
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 14</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category text-capitalize">i do quote</span>
-                    </div>
-                </header>
-                <figure class="img-cite"><img src="img/img-cite.png" alt=""></figure>
-                <h2>There is always something left to love. And if you ain’t learned that, you ain’t learned nothing.</h2>
-                <footer>
-                    <div class="tags container-flex">
-                        <span>— Lorraine Hansberry</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+	<!-- end::Head -->
 
-        <article class="post audio">
-            <div class="c-audio">
-                <iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/315307209&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-            </div>
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 14</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category">i do listen</span>
-                    </div>
-                </header>
-                <h1>Music was my refuge. I could crawl into the space between the notes and curl my back to loneliness.</h1>
-                <div class="divider"></div>
-                <p>Donec hendrerit magna vitae metus viverra tincidunt. Cras dolor lacus, placerat sed nulla in, egestas pharetra neque. Sed sit amet aliquet erat. Integer nec mi convallis, condimentum odio quis, pharetra tellus. Donec mollis libero in volutpat luctus. Cras laoreet pulvinar dapibus. Nulla laoreet odio at nunc semper vestibulum. Sed magna mauris, molestie eu ipsum et, pharetra egestas neque.</p>
-                <footer class="container-flex space-between">
-                    <div class="read-more">
-                        <a href="#" class="text-uppercase c-green">read more</a>
-                    </div>
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1">#Weekend</span>
-                        <span class="tag c-gray-1">#Music</span>
-                        <span class="tag c-gray-1">#Discovery</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+	<!-- begin::Body -->
+	<body class="m--skin- m-content--skin-light m-header--fixed m-header--fixed-mobile m-aside-left--offcanvas-default m-aside-left--enabled m-aside-left--fixed m-aside-left--skin-dark m-aside--offcanvas-default">
 
-        <article class="post w-slider">
-            <figure><img src="img/img-slider-1.png" alt="" class="img-responsive"></figure>
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 12</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category text-capitalize">i do explore</span>
-                    </div>
-                </header>
-                <h1>Nature and Books belong to the eyes that see them. </h1>
-                <div class="divider"></div>
-                <cite class="cite">Nunc a enim interdum lectus accumsan sagittis. Ut mauris diam, efficitur vitae malesuada ut, tempus et mi. Sed eget leo vehicula, dapibus arcu id, viverra erat. Proin auctor non nulla sed mollis.</cite>
-                <p>Nulla elit leo, tincidunt eu lacus ut, suscipit gravida tortor. Praesent feugiat, neque non pellentesque, velit sem hendrerit arcu, eu viverra ligula eu tortor. Suspendisse et cursus enim. Curabitur condimentum, sem quis pharetra hendrerit, leo odio rhoncus felis, sed posuere augue diam feugiat enim. Donec gravida non metus eu pretium. Ut sed sodales dolor, non vehicula enim. Nam fringilla blandit sem, eget vestibulum arcu porta sed. Mauris sit amet nulla id ante semper luctus id a enim.</p>
-                <p>Sed ac venenatis dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ut congue nulla. Aenean elementum gravida convallis. Integer ac neque nisi. Sed ac magna in risus convallis laoreet. Pellentesque in orci ante.</p>
-                <footer class="container-flex space-between">
-                    <div class="read-more">
-                        <a href="#" class="text-uppercase c-green">read more</a>
-                    </div>
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1 text-capitalize">#Idea</span>
-                        <span class="tag c-gray-1 text-capitalize">#Yosemite</span>
-                        <span class="tag c-gray-1 text-capitalize">#Vacation</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
+		<!-- begin:: Page -->
+		<div class="m-grid m-grid--hor m-grid--root m-page">
 
-        <article class="post image-w-text">
-            <div class="content-post">
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gray-1">sep 11</span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category">i do reflect</span>
-                    </div>
-                </header>
-                <h1>Democracy means simply the bludgeoning of the people by the people for the people.</h1>
-                <div class="divider"></div>
-                <div class="image-w-text-content">
-                    <figure class="block-left"><img src="img/img-post-2.png" alt=""></figure>
-                    <p>Quisque congue lacus mattis massa luctus, nec hendrerit purus aliquet. Ut ac elementum urna. Pellentesque suscipit metus et egestas congue. Duis eu pellentesque turpis, ut maximus metus. Sed ultrices tellus vitae rutrum congue. Fusce luctus augue id nisl suscipit, vel sollicitudin orci egestas. Morbi posuere venenatis ipsum, ac vestibulum quam dignissim efficitur. Ut vitae rutrum augue, in volutpat quam. Cras a viverra ipsum. Aenean ut consequat ex, vitae vulputate nunc. Vestibulum metus nisi, aliquam sed tincidunt sit amet, pretium et augue.</p>
-                    <p>Mauris sem odio, rhoncus eget euismod sed, pellentesque sit amet felis. Praesent dictum eleifend dui et efficitur. Nunc non orci in neque sodales semper. Etiam euismod volutpat lorem, vestibulum malesuada justo aliquet eget. Nunc lacus ante, varius a euismod eu, finibus commodo erat. Curabitur tincidunt sit amet nunc id interdum. Aliquam augue nisi, venenatis vitae ex at, lobortis fringilla nibh. Proin placerat enim vitae egestas eleifend. Aliquam</p>
-                    <p>quis orci dignissim, posuere nibh a, eleifend augue. Cras quis metus nec tortor aliquet ullamcorper. Quisque varius porta metus, ut maximus dolor euismod nec. Suspendisse sit amet feugiat turpis.</p>
-                    <cite class="cite-2">Curabitur ut leo pulvinar, consectetur magna eu, feugiat purus. Morbi hendrerit lectus turpis, a porttitor velit imperdiet id.</cite>
-                    <p>Nunc placerat dolor at lectus hendrerit dignissim. Ut tortor sem, consectetur nec hendrerit ut, ullamcorper ac odio. Donec viverra ligula at quam tincidunt imperdiet. Nulla mattis tincidunt auctor. Nullam scelerisque ante mauris, egestas commodo nisi gravida ultrices. Suspendisse dapibus feugiat tincidunt. Aliquam gravida quam at ipsum sagittis bibendum. </p>
-                </div>
-                <footer class="container-flex space-between">
-                    <div class="read-more">
-                        <a href="#" class="text-uppercase c-green">read more</a>
-                    </div>
-                    <div class="tags container-flex">
-                        <span class="tag c-gray-1">#Democracy</span>
-                        <span class="tag c-gray-1">#Introspection</span>
-                    </div>
-                </footer>
-            </div>
-        </article>
- --}}
-    </section><!-- fin del div.posts.container -->
-    {{ $posts->links() }}
-    {{-- <div class="pagination">
-        <ul class="list-unstyled container-flex space-center">
-            <li><a href="#" class="pagination-active">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-        </ul>
-    </div> --}}
-@stop
+			<!-- BEGIN: Header -->
+			<header id="m_header" class="m-grid__item    m-header " m-minimize="minimize" m-minimize-mobile="minimize" m-minimize-offset="200" m-minimize-mobile-offset="200">
+				<div class="m-container m-container--fluid m-container--full-height">
+					<div class="m-stack m-stack--ver m-stack--desktop  m-header__wrapper">
+
+						<!-- BEGIN: Brand -->
+						<div class="m-stack__item m-brand m-brand--mobile">
+							<div class="m-stack m-stack--ver m-stack--general">
+								<div class="m-stack__item m-stack__item--middle m-brand__logo">
+									<a href="{{ route('pages.home') }}" class="m-brand__logo-wrapper">
+										<img alt="" src="/adminmtr/img/logo/logo.png" />
+									</a>
+								</div>							
+							</div>
+						</div>
+
+						<!-- END: Brand -->
+						<div class="m-stack__item m-stack__item--middle m-stack__item--left m-header-head" id="m_header_nav">
+							<div class="m-stack m-stack--ver m-stack--desktop">
+								<div class="m-stack__item m-stack__item--middle m-stack__item--fit">
+
+									<!-- BEGIN: Aside Left Toggle -->
+									
+
+									<!-- END: Aside Left Toggle -->
+								</div>
+								<div class="m-stack__item m-stack__item--fluid">
+
+									<!-- BEGIN: Horizontal Menu -->
+									<button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark " id="m_aside_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+									<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">
+										<ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
+											<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span
+													 class="m-menu__item-here"></span><i class="m-menu__link-icon flaticon-analytics"></i><span class="m-menu__link-text">Dashboard</span><i class="m-menu__hor-arrow la la-angle-down"></i><i class="m-menu__ver-arrow la la-angle-right"></i></a>
+											</li>
+											<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span
+													 class="m-menu__item-here"></span><i class="m-menu__link-icon flaticon-notes"></i><span class="m-menu__link-text">Reports</span><i class="m-menu__hor-arrow la la-angle-down"></i><i class="m-menu__ver-arrow la la-angle-right"></i></a>
+											</li>												
+											<li class="m-menu__item  m-menu__item--submenu" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__item-here"></span><i
+													 class="m-menu__link-icon flaticon-user"></i><span class="m-menu__link-text">Login</span><i class="m-menu__hor-arrow la la-angle-down"></i><i class="m-menu__ver-arrow la la-angle-right"></i></a>													
+											</li>
+										</ul>
+									</div>
+
+									<!-- END: Horizontal Menu -->
+								</div>
+							</div>
+						</div>
+						<div class="m-stack__item m-stack__item--middle m-stack__item--right">
+
+							<!-- BEGIN: Brand -->
+							<a href="{{ route('pages.home') }}" class="m-brand m-brand--desktop">
+								<img alt="" src="/adminmtr/img/logo/logoh.png" />
+							</a>
+
+							<!-- END: Brand -->
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- END: Header -->
+
+			<!-- begin::Body -->
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor-desktop m-grid--desktop m-body">
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-container m-container--responsive m-container--xxl m-container--full-height">
+					<div class="m-grid__item m-grid__item--fluid m-wrapper">
+						
+						<!-- BEGIN: Subheader -->
+						<div class="m-subheader ">
+						</div>
+
+						<!-- END: Subheader -->
+						<div class="m-content">
+
+						<!--begin::Portlet-->
+						<div class="m-portlet">
+							<div class="m-portlet__body m-portlet__body--no-padding">
+								<div class="m-pricing-table-2">
+									<div class="m-pricing-table-2__head">
+										<div class="m-pricing-table-2__title m--font-light">
+											<h1>Aplicaciones web para PYMES</h1>
+										</div>
+									
+									</div>
+									<div class="tab-content">
+										<div class="tab-pane active" id="m-pricing-table_content1" aria-expanded="true">
+											<div class="m-pricing-table-2__content">
+												<div class="m-pricing-table-2__container">
+													<div class="m-pricing-table-2__items row">
+														<div class="m-pricing-table-2__item col-lg-4">
+															<div class="m-pricing-table-2__visual">
+																<div class="m-pricing-table-2__hexagon"></div>
+																<span class="m-pricing-table-2__icon m--font-info"><i class="fa flaticon-confetti"></i></span>
+															</div>
+															<h2 class="m-pricing-table-2__subtitle">ERP PYMES</h2>
+															<div class="m-pricing-table-2__features">
+																<p>Realizamos tu aplicación a la medida de tus necesidades, cuéntanos que necesitas y nos encargamos de todo el proyecto.</p>
+																<span>Análisis y Desarrollo</span>
+																<span>Framework Laravel</span>
+																<span>Proyectos Terminados</span>
+																<span>Desde</span>
+															</div>
+															<span class="m-pricing-table-2__price">999</span>
+															<span class="m-pricing-table-2__label">€</span>
+															
+														</div>
+														<div class="m-pricing-table-2__item col-lg-4">
+															<div class="m-pricing-table-2__visual">
+																<div class="m-pricing-table-2__hexagon"></div>
+																<span class="m-pricing-table-2__icon m--font-info"><i class="fa  flaticon-rocket"></i></span>
+															</div>
+															<h2 class="m-pricing-table-2__subtitle">Alojamiento</h2>
+															<div class="m-pricing-table-2__features">
+																<p>Si no dispones de alojamiento, dominio o certificado nosotros te lo proporcionamos. Solo necesitarás tu Pc y tu conexión a Internet</p>
+																<span>Servidor Administrado</span>
+																<span>Backup diario</span>
+																<span>Dominio propio</span>
+																<span>Mensual</span>
+															</div>
+															<span class="m-pricing-table-2__price">100</span>
+															<span class="m-pricing-table-2__label">€</span>
+															
+														</div>
+														<div class="m-pricing-table-2__item col-lg-4">
+															<div class="m-pricing-table-2__visual">
+																<div class="m-pricing-table-2__hexagon"></div>
+																<span class="m-pricing-table-2__icon m--font-info"><i class="flaticon-support"></i></span>
+															</div>
+															<h2 class="m-pricing-table-2__subtitle">Soporte</h2>
+															<div class="m-pricing-table-2__features">
+																<p>Cuando finalicemos tu proyecto nos encargamos del mantenimiento de tu aplicación. Incluidas actualizaciones y soporte telefónico, email...</p>
+																<span>Atención telefónica</span>
+																<span>Mantenmiento servidor</span>
+																<span>Actualizaciones</span>
+																<span>Mensual</span>
+															</div>
+															<span class="m-pricing-table-2__price">125</span>
+															<span class="m-pricing-table-2__label">€</span>															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--end::Portlet-->
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- end:: Body -->
+
+			<!-- begin::Footer -->
+			<footer class="m-grid__item  m-footer ">
+				<div class="m-container m-container--responsive m-container--xxl m-container--full-height">
+					<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+						<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+							<span class="m-footer__copyright">
+								2019 &copy; <a href="#" class="m-link"> Sanaval Tecnología</a>
+							</span>
+						</div>
+						<div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+							<ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link">
+										<span class="m-nav__link-text">Nosotros</span>
+									</a>
+								</li>
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link">
+										<span class="m-nav__link-text">Política de Privacidad</span>
+									</a>
+								</li>																
+								<li class="m-nav__item m-nav__item--last">
+									<a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Soporte" data-placement="left">
+										<i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+			<!-- end::Footer -->
+		</div>
+
+		<!-- end:: Page -->
+
+		<!--begin:: Global Mandatory Vendors -->
+		{{-- <script src="../../vendors/jquery/dist/jquery.js" type="text/javascript"></script>
+		<script src="../../vendors/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+		<script src="../../vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="../../vendors/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+		<script src="../../vendors/moment/min/moment.min.js" type="text/javascript"></script>
+		<script src="../../vendors/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+		<script src="../../vendors/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+		<script src="../../vendors/wnumb/wNumb.js" type="text/javascript"></script> --}}
+
+		<!--end:: Global Mandatory Vendors -->
+
+		<!--end:: Global Optional Vendors -->
+
+		<!--begin::Global Theme Bundle -->
+		<script src="/pages/base/scripts.bundle.js" type="text/javascript"></script>
+
+		<!--end::Global Theme Bundle -->
+
+		
+		<!--end::Page Scripts -->
+	</body>
+
+	<!-- end::Body -->
+</html>
